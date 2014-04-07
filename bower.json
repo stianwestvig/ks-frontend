@@ -4,6 +4,7 @@
     "foundation": "zurb/bower-foundation"
   },
   "devDependencies": {
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "foundation-icon-fonts": "zurb/foundation-icon-fonts"
   }
 }

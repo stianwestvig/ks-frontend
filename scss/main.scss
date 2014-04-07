@@ -1,5 +1,140 @@
+@import "ksprofile";
 
 
-body {  }
+
+
+/********************************
+Header and navigation
+********************************/
+
+
+// overrides - todo: se om disse kan gjøres via settings
+.tab-bar {
+  margin-bottom: rem-calc(30);
+
+  .menu-icon {
+    color: $KSBluePrimary;
+
+    p {
+      position: relative;
+      top: 30px;
+      left: -26px;
+
+      font-size: rem-calc(11);
+      text-transform: uppercase;
+    }
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: normal;
+
+    &:first-letter {
+      font-size: rem-calc(26);
+    }
+
+    a {
+      color: $KSBluePrimary;
+    }
+  }
+}
+
+
+.tab-bar-section {
+  text-align: left;
+
+  &.right {
+    left: inherit;
+
+    .mytime {
+      text-transform: uppercase;
+
+      .ks-button-small {
+        min-width: rem-calc(40);
+        text-transform: none;
+      }
+    }
+  }
+}
+
+.left-off-canvas-menu {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+
+  //top: $tabbar-height;
+  bottom: initial;
+
+  // cheat:
+  min-height: rem-calc(800);
+}
+
+
+/********************************
+Buttons
+********************************/
+.ks-button {
+  @include button($padding:rem-calc(12), $bg:$KSRed, $full-width:false);
+}
+
+.ks-button-small {
+  @include button($padding:rem-calc(2), $bg:$KSRed, $full-width:false);
+
+  &.false { background-color: $KSRed;}
+  &.true { background-color: $KSGreen;}
+}
+
+
+/********************************
+Panels
+********************************/
+.ks-panel-blue {
+  @include panel($bg:$KSBlueLight, $padding:$panel-padding, $adjust:true);
+  border: none;
+}
+
+.ks-panel-green {
+  @include panel($bg:$KSGreen, $padding:$panel-padding, $adjust:true);
+  border: none;
+
+  li { color: $KSWhite; }
+}
+
+.ks-panel-calendar {
+  @include panel($bg:$KSWhite, $padding:$panel-padding, $adjust:true);
+}
+
+
+/********************************
+Other
+********************************/
+.teaser, .calendar {
+  h1, h2, h3, h4, h5, h6 {
+    color: $KSRed;
+  }
+}
+
+.byline {
+  margin-bottom: rem-calc(5);
+
+  .date {
+    /*i {
+      display: inline-block;
+      margin-right: rem-calc(5);
+    }*/
+
+    &:before {
+      content: "\f12b";
+      font-family: "foundation-icons";
+      display: inline-block;
+      margin-right: rem-calc(5);
+    }
+  }
+}
+
+.bottom-spacer {
+  height: rem-calc(80);
+}
+
 
 

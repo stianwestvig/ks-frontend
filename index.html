@@ -18,28 +18,32 @@
             <div class="small-12 columns">
                 <!-- header -->
                 <nav class="tab-bar">
-                    <section class="left-small">
+                    <section class="left">
                         <a class="left-off-canvas-toggle menu-icon" ng-click="toggleNav()" ><span></span>
                             <p>Meny</p>
                         </a>
                     </section>
 
-                    <section class="middle tab-bar-section">
+                    <section class="left">
                         <h1 class="title"><a href="#">Fiks</a></h1>
                     </section>
 
-                    <section class="right tab-bar-section">
+                    <section class="right">
                         <div class="row">
-                            <div class="small-4 columns">
-                                <div class="mytime">
-                                    Min tid: <a href="#" class="ks-button-small center {{myTimeStatus.status}}" ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
+                            <div class="small-12 columns">
+                                <div class="mytime left">
+                                    <span class="meta">Min tid: </span><a href="#" class="ks-button-small center {{myTimeStatus.status}}" ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
+                                </div>
+                                <div class="user right">
+                                    <span class="meta">Stian Westvig</span>
+                                    <!-- hvis lenke:  <a href="#">Stian Westvig</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="small-8 columns">
+                            <div class="small-12 columns">
                                 <div class="search">
-                                    <input type="text" name="search" id="search" />
+                                    <input type="text" name="search" class="searchfield" />
                                     <input class="ks-button-small" type="submit" value="Søk"/>
                                 </div>
                             </div>
@@ -79,8 +83,8 @@
                       <!-- really: h2 -->
                       <h3>Påmelding til kommunalpolitisk toppmøte 2014</h3>
                       <ul class="inline-list byline">
-                          <li class="date">17.03.2014</li>
-                          <li>AV: Sissel Ambjør</li>
+                          <li><span class="date">17.03.2014</span></li>
+                          <li><span class="align-with-date">AV: Sissel Ambjør</span></li>
                       </ul>
                       <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn? Skjønn eller regler?
                           Står det så bra til at vi bare kan lene oss tilbake - eller har vi grunn til uro? Hør statsminister

@@ -124,25 +124,39 @@ Panels
   li { color: $KSWhite; }
 }
 
+.ks-panel-white {
+  @include panel($bg:$KSWhite, $padding:$panel-padding, $adjust:true);
+  border: 2px solid $KSGreyBorder;
+}
+
 .ks-panel-calendar {
   @include panel($bg:$KSWhite, $padding:$panel-padding, $adjust:true);
 }
 
 
 /********************************
-Other
+Teaser carousel
 ********************************/
-.teaser, .calendar {
-  h1, h2, h3, h4, h5, h6 {
-    color: $KSRed;
+
+.teaser {
+  .ks-button-small {
+    padding: 5px 15px;
+    font-size: rem-calc(14);
   }
 }
+
+
+/********************************
+Articles
+********************************/
+
 
 .byline {
   margin-bottom: rem-calc(5);
 
-  span {
-    // vertical-align: middle;
+  li {
+    font-size: rem-calc(12);
+    line-height: rem-calc(16);
   }
   .date, .align-with-date {
     &:before {
@@ -159,6 +173,15 @@ Other
       margin-right: rem-calc(5);
 
     }
+  }
+}
+
+/********************************
+Other
+********************************/
+.teaser, .calendar {
+  h1, h2, h3, h4, h5, h6 {
+    color: $KSRed;
   }
 }
 

@@ -8,6 +8,7 @@ $KSBluePrimary: #1C4072;
 $KSBlueMedium: #00A1E0;
 $KSBlueLight: #CAE5F8;
 $KSGrey: #C8C8C8;
+$KSGreyBorder: #E7E7E7;
 $KSOrange: #F7B249;
 $KSRed: #CD2346;
 $KSGreen: #BEBC27;
@@ -33,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li {
   max-width: rem-calc(550);
+  font-size: rem-calc(14);
 }
 
 .meta {

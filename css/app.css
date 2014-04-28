@@ -7,7 +7,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
 p, li {
-  max-width: 34.375rem; }
+  max-width: 34.375rem;
+  font-size: 0.875rem; }
 
 .meta {
   color: #1c4072;
@@ -3501,7 +3502,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
 p, li {
-  max-width: 34.375rem; }
+  max-width: 34.375rem;
+  font-size: 0.875rem; }
 
 .meta {
   color: #1c4072;
@@ -3517,7 +3519,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
 p, li {
-  max-width: 34.375rem; }
+  max-width: 34.375rem;
+  font-size: 0.875rem; }
 
 .meta {
   color: #1c4072;
@@ -3674,6 +3677,26 @@ Panels
   .ks-panel-green li {
     color: white; }
 
+.ks-panel-white {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e3e3e3;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: white;
+  border: 2px solid #e7e7e7; }
+  .ks-panel-white > :first-child {
+    margin-top: 0; }
+  .ks-panel-white > :last-child {
+    margin-bottom: 0; }
+  .ks-panel-white h1, .ks-panel-white h2, .ks-panel-white h3, .ks-panel-white h4, .ks-panel-white h5, .ks-panel-white h6, .ks-panel-white p {
+    color: #333333; }
+  .ks-panel-white h1, .ks-panel-white h2, .ks-panel-white h3, .ks-panel-white h4, .ks-panel-white h5, .ks-panel-white h6 {
+    line-height: 1;
+    margin-bottom: 0.625rem; }
+    .ks-panel-white h1.subheader, .ks-panel-white h2.subheader, .ks-panel-white h3.subheader, .ks-panel-white h4.subheader, .ks-panel-white h5.subheader, .ks-panel-white h6.subheader {
+      line-height: 1.4; }
+
 .ks-panel-calendar {
   border-style: solid;
   border-width: 1px;
@@ -3694,13 +3717,20 @@ Panels
       line-height: 1.4; }
 
 /********************************
-Other
+Teaser carousel
 ********************************/
-.teaser h1, .teaser h2, .teaser h3, .teaser h4, .teaser h5, .teaser h6, .calendar h1, .calendar h2, .calendar h3, .calendar h4, .calendar h5, .calendar h6 {
-  color: #cd2346; }
+.teaser .ks-button-small {
+  padding: 5px 15px;
+  font-size: 0.875rem; }
 
+/********************************
+Articles
+********************************/
 .byline {
   margin-bottom: 0.3125rem; }
+  .byline li {
+    font-size: 0.75rem;
+    line-height: 1rem; }
   .byline .date:before, .byline .align-with-date:before {
     content: " ";
     font-size: 1.25rem;
@@ -3710,6 +3740,12 @@ Other
     font-family: "foundation-icons";
     display: inline-block;
     margin-right: 0.3125rem; }
+
+/********************************
+Other
+********************************/
+.teaser h1, .teaser h2, .teaser h3, .teaser h4, .teaser h5, .teaser h6, .calendar h1, .calendar h2, .calendar h3, .calendar h4, .calendar h5, .calendar h6 {
+  color: #cd2346; }
 
 .bottom-spacer {
   height: 5rem; }

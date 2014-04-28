@@ -2484,7 +2484,7 @@ meta.foundation-mq-topbar {
   bottom: 0;
   position: absolute;
   overflow-y: auto;
-  background: #333333;
+  background: #edf6fd;
   z-index: 1001;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
@@ -2504,7 +2504,7 @@ meta.foundation-mq-topbar {
   bottom: 0;
   position: absolute;
   overflow-y: auto;
-  background: #333333;
+  background: #edf6fd;
   z-index: 1001;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
@@ -2533,8 +2533,8 @@ ul.off-canvas-list {
   ul.off-canvas-list li a {
     display: block;
     padding: 0.66667rem;
-    color: rgba(255, 255, 255, 0.7);
-    border-bottom: 1px solid #262626;
+    color: #1c4072;
+    border-bottom: 1px solid #e7e7e7;
     transition: background 300ms ease; }
     ul.off-canvas-list li a:hover {
       background: #b3b3b3; }
@@ -3574,6 +3574,8 @@ Header and navigation
   transform: none;
   bottom: initial;
   min-height: 50rem; }
+  .left-off-canvas-menu li a:hover {
+    background: none !important; }
 
 /********************************
 Buttons
@@ -3726,6 +3728,9 @@ Teaser carousel
 /********************************
 Articles
 ********************************/
+.ks-panel-white .teaser img {
+  margin-bottom: 5px; }
+
 .byline {
   margin-bottom: 0.3125rem; }
   .byline li {

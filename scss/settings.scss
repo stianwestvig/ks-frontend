@@ -655,7 +655,7 @@ $rem-base: 16px;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: 250px;
-// $off-canvas-bg: #333;
+   $off-canvas-bg: $KSBlueLighter;
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: 0.3rem rem-calc(15);
@@ -667,8 +667,8 @@ $rem-base: 16px;
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: $KSBluePrimary;
-// $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
+   $off-canvas-link-color: $KSBluePrimary;
+   $off-canvas-link-border-bottom: 1px solid $KSGreyBorder;
 
 // Off Canvas Menu Icon Variables
    $tabbar-menu-icon-color: $KSBluePrimary;
@@ -692,6 +692,8 @@ $rem-base: 16px;
 // $off-canvas-overlay-box-shadow: -4px 0 4px rgba(#000, 0.5), 4px 0 4px rgba(#000, 0.5);
 // $off-canvas-overlay-background: rgba(#FFF, 0.2);
 // $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
+
+
 
 // Transition Variables
 // $menu-slide: "transform 500ms ease";

@@ -1,280 +1,290 @@
 <!doctype html>
 <html class="no-js" lang="en" ng-app>
-    <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KS Fiks</title>
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="js/navigation-controller.js"></script>
     <!-- todo: ie8 responsive script -->
-    </head>
-  <body>
+</head>
+<body>
 
 
-    <div ng-controller="navigation">
-        <div class="row">
-            <div class="small-12 columns">
-                <!-- header -->
-                <nav class="tab-bar">
-                    <section class="left">
-                        <a class="left-off-canvas-toggle menu-icon" ng-click="toggleNav()" ><span></span>
-                            <p>Meny</p>
-                        </a>
-                    </section>
+<div ng-controller="navigation">
+    <div class="row">
+        <div class="small-12 columns">
+            <!-- header -->
+            <nav class="tab-bar">
+                <section class="left">
+                    <a class="left-off-canvas-toggle menu-icon" ng-click="toggleNav()"><span></span>
 
-                    <section class="left">
-                        <h1 class="title"><a href="#">Fiks</a></h1>
-                    </section>
+                        <p>Meny</p>
+                    </a>
+                </section>
 
-                    <section class="right">
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <div class="mytime left">
-                                    <span class="meta">Min tid: </span><a href="#" class="ks-button-small center {{myTimeStatus.status}}" ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
-                                </div>
-                                <div class="user right">
-                                    <span class="meta">Stian Westvig</span>
-                                    <!-- hvis lenke:  <a href="#">Stian Westvig</a> -->
-                                </div>
+                <section class="left">
+                    <h1 class="title"><a href="#">Fiks</a></h1>
+                </section>
+
+                <section class="right">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="mytime left">
+                                <span class="meta">Min tid: </span><a href="#"
+                                                                      class="ks-button-small center {{myTimeStatus.status}}"
+                                                                      ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
+                            </div>
+                            <div class="user right">
+                                <span class="meta">Stian Westvig</span>
+                                <!-- hvis lenke:  <a href="#">Stian Westvig</a> -->
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <div class="search">
-                                    <input type="text" name="search" class="searchfield" />
-                                    <input class="ks-button-small" type="submit" value="Søk"/>
-                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="search">
+                                <input type="text" name="search" class="searchfield"/>
+                                <input class="ks-button-small" type="submit" value="Søk"/>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                </nav>
+            </nav>
 
-            </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="small-12 columns">
-                <aside class="left-off-canvas-menu" ng-hide="hideNavigation">
-                    <ul class="off-canvas-list">
-                        <li><a href="#">Hva skjer?</a></li>
-                        <li><a href="#">Finn kollega</a></li>
-                        <li><a href="#">Politikk</a></li>
-                        <li><a href="#">Støtte og tjenester</a></li>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Organisasjon</a></li>
-                    </ul>
-                </aside>
+    <div class="row">
+        <div class="small-12 columns">
+            <aside class="left-off-canvas-menu" ng-hide="hideNavigation">
+                <ul class="off-canvas-list">
+                    <li><a href="#">Hva skjer?</a></li>
+                    <li><a href="#">Finn kollega</a></li>
+                    <li><a href="#">Politikk</a></li>
+                    <li><a href="#">Støtte og tjenester</a></li>
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Organisasjon</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+
+
+<section class="main-section">
+    <!-- main content -->
+
+    <div class="row">
+        <div class="small-12 medium-12 large-8 columns">
+            <img src="img/meeting.png" alt="Kommunemøte 2013"/>
+        </div>
+        <div class="small-12 medium-12 large-4 columns">
+            <div class="teaser">
+                <!-- really: h2 -->
+                <h3>Påmelding til kommunalpolitisk toppmøte 2014</h3>
+                <ul class="inline-list byline">
+                    <li><span class="date">17.03.2014</span></li>
+                    <li><span class="align-with-date">AV: Sissel Ambjør</span></li>
+                </ul>
+                <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn? Skjønn eller regler?
+                    Står det så bra til at vi bare kan lene oss tilbake - eller har vi grunn til uro? Hør statsminister
+                    Erna Solberg, tidligere statsminister Jens Stoltenberg og andre topppolitikeres ideer og
+                    løsninger. </p>
+
+                <div class="text-center">
+                    <a href="#" class="ks-button-small center">Påmelding</a>
+                </div>
+                <ul class="inline-list right">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
             </div>
         </div>
     </div>
 
 
-      <section class="main-section">
-          <!-- main content -->
+    <div class="row">
+        <div class="small-12 medium-12 large-4 large-push-8 columns">
+            <div class="row">
+                <div class="small-12 medium-6 large-12 columns">
 
-          <div class="row">
-              <div class="small-12 medium-12 large-8 columns">
-                  <img src="img/meeting.png" alt="Kommunemøte 2013" />
-              </div>
-              <div class="small-12 medium-12 large-4 columns">
-                  <div class="teaser">
-                      <!-- really: h2 -->
-                      <h3>Påmelding til kommunalpolitisk toppmøte 2014</h3>
-                      <ul class="inline-list byline">
-                          <li><span class="date">17.03.2014</span></li>
-                          <li><span class="align-with-date">AV: Sissel Ambjør</span></li>
-                      </ul>
-                      <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn? Skjønn eller regler?
-                          Står det så bra til at vi bare kan lene oss tilbake - eller har vi grunn til uro? Hør statsminister
-                          Erna Solberg, tidligere statsminister Jens Stoltenberg og andre topppolitikeres ideer og løsninger. </p>
-                      <div class="text-center">
-                          <a href="#" class="ks-button-small center">Påmelding</a>
-                      </div>
-                      <ul class="inline-list right">
-                          <li><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
+                    <!-- husk -->
+                    <div class="ks-panel-blue">
+                        <!-- really: h2 -->
+                        <h3>HUSK</h3>
 
+                        <p>Avdelingsmøte 25. april kl 16:00</p>
+                    </div>
 
-          <div class="row">
-              <div class="small-12 medium-12 large-4 large-push-8 columns">
-                  <div class="row">
-                      <div class="small-12 medium-6 large-12 columns">
+                    <!-- calendar -->
+                    <div class="ks-panel-calendar">
+                        <div class="calendar">
+                            <h5>Kalender</h5>
+                            <ul>
+                                <li>MAR 11</li>
+                                <li>MAR 14</li>
+                                <li>MAR 17</li>
+                            </ul>
+                            <a href="#">Se i kalender</a>
+                        </div>
+                    </div>
+                </div>
 
-                          <!-- husk -->
-                          <div class="ks-panel-blue">
-                              <!-- really: h2 -->
-                              <h3>HUSK</h3>
-                              <p>Avdelingsmøte 25. april kl 16:00</p>
-                          </div>
+                <div class="small-12 medium-6 large-12 columns">
 
-                          <!-- calendar -->
-                          <div class="ks-panel-calendar">
-                              <div class="calendar">
-                                  <h5>Kalender</h5>
-                                  <ul>
-                                      <li>MAR 11</li>
-                                      <li>MAR 14</li>
-                                      <li>MAR 17</li>
-                                  </ul>
-                                  <a href="#">Se i kalender</a>
-                              </div>
-                          </div>
-                      </div>
+                    <!-- snarveier -->
+                    <div class="ks-panel-green">
+                        <h5>Mine snarveier</h5>
+                        <ul>
+                            <li>Ks.no</li>
+                            <li>Påmelding</li>
+                            <li>Kalender</li>
+                            <li>Arkivering</li>
+                            <li>Ks.no</li>
+                            <li>Påmelding</li>
+                            <li>Kalender</li>
+                            <li>Arkivering</li>
+                        </ul>
+                    </div>
 
-                      <div class="small-12 medium-6 large-12 columns">
+                </div>
+            </div>
+        </div>
 
-                          <!-- snarveier -->
-                          <div class="ks-panel-green">
-                              <h5>Mine snarveier</h5>
-                              <ul>
-                                  <li>Ks.no</li>
-                                  <li>Påmelding</li>
-                                  <li>Kalender</li>
-                                  <li>Arkivering</li>
-                                  <li>Ks.no</li>
-                                  <li>Påmelding</li>
-                                  <li>Kalender</li>
-                                  <li>Arkivering</li>
-                              </ul>
-                          </div>
+        <div class="small-12 medium-12 large-8 large-pull-4 columns">
 
-                      </div>
-                  </div>
-              </div>
+            <!-- 4x articles -->
+            <div class="ks-panel-white">
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <div class="teaser">
+                            <!-- really: h2 -->
+                            <a href="#">
+                                <h5>Påmelding til kommunalpolitisk toppmøte 2014</h5>
+                            </a>
 
-              <div class="small-12 medium-12 large-8 large-pull-4 columns">
+                            <div class="row">
+                                <div class="small-12 medium-6 columns">
+                                    <a href="#">
+                                        <img src="img/meeting.png" alt="Kommunemøte 2013"/>
+                                    </a>
+                                </div>
+                                <div class="small-12 medium-6 columns">
+                                    <ul class="inline-list byline">
+                                        <li class="date">17.03.2014</li>
+                                    </ul>
+                                    <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                        <div class="teaser">
+                            <!-- really: h2 -->
+                            <a href="#">
+                                <h5>Påmelding til kommunalpolitisk toppmøte</h5>
+                            </a>
 
-                  <!-- 4x articles -->
-                  <div class="ks-panel-white">
-                      <div class="row">
-                          <div class="small-12 medium-6 columns">
-                              <div class="teaser">
-                                  <!-- really: h2 -->
-                                  <a href="#">
-                                      <h5>Påmelding til kommunalpolitisk toppmøte 2014</h5>
-                                  </a>
-                                  <div class="row">
-                                      <div class="small-12 medium-6 columns">
-                                          <a href="#">
-                                              <img src="img/meeting.png" alt="Kommunemøte 2013" />
-                                          </a>
-                                      </div>
-                                      <div class="small-12 medium-6 columns">
-                                          <ul class="inline-list byline">
-                                              <li class="date">17.03.2014</li>
-                                          </ul>
-                                          <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="small-12 medium-6 columns">
-                              <div class="teaser">
-                                  <!-- really: h2 -->
-                                  <a href="#">
-                                      <h5>Påmelding til kommunalpolitisk toppmøte</h5>
-                                  </a>
-                                  <div class="row">
-                                      <div class="small-12 medium-6 columns">
-                                          <a href="#">
-                                              <img src="img/meeting.png" alt="Kommunemøte 2013" />
-                                          </a>
-                                      </div>
-                                      <div class="small-12 medium-6 columns">
-                                          <ul class="inline-list byline">
-                                              <li class="date">17.03.2014</li>
-                                          </ul>
-                                          <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="small-12 medium-6 columns">
-                              <div class="teaser">
-                                  <!-- really: h2 -->
-                                  <a href="#">
-                                      <h5>Utvendig vindusvask 17. mars</h5>
-                                  </a>
-                                  <div class="row">
-                                      <div class="small-12 medium-6 columns">
-                                          <a href="#">
-                                              <img src="img/window_wash.png" alt="Kommunemøte 2013" />
-                                          </a>
-                                      </div>
-                                      <div class="small-12 medium-6 columns">
-                                          <ul class="inline-list byline">
-                                              <li class="date">17.03.2014</li>
-                                          </ul>
-                                          <p>Denne dagen får vi vindusvask. Vær hjelpsom når de kommer. </p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="small-12 medium-6 columns">
-                              <div class="teaser">
-                                  <!-- really: h2 -->
-                                  <a href="#">
-                                      <h5>Påmelding til kommunalpolitisk toppmøte 2014</h5>
-                                  </a>
-                                  <div class="row">
-                                      <div class="small-12 medium-6 columns">
-                                          <a href="#">
-                                              <img src="img/meeting.png" alt="Kommunemøte 2013" />
-                                          </a>
-                                      </div>
-                                      <div class="small-12 medium-6 columns">
-                                          <ul class="inline-list byline">
-                                              <li class="date">17.03.2014</li>
-                                          </ul>
-                                          <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end: articles-wrapper -->
+                            <div class="row">
+                                <div class="small-12 medium-6 columns">
+                                    <a href="#">
+                                        <img src="img/meeting.png" alt="Kommunemøte 2013"/>
+                                    </a>
+                                </div>
+                                <div class="small-12 medium-6 columns">
+                                    <ul class="inline-list byline">
+                                        <li class="date">17.03.2014</li>
+                                    </ul>
+                                    <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <div class="teaser">
+                            <!-- really: h2 -->
+                            <a href="#">
+                                <h5>Utvendig vindusvask 17. mars</h5>
+                            </a>
 
-              </div>
+                            <div class="row">
+                                <div class="small-12 medium-6 columns">
+                                    <a href="#">
+                                        <img src="img/window_wash.png" alt="Kommunemøte 2013"/>
+                                    </a>
+                                </div>
+                                <div class="small-12 medium-6 columns">
+                                    <ul class="inline-list byline">
+                                        <li class="date">17.03.2014</li>
+                                    </ul>
+                                    <p>Denne dagen får vi vindusvask. Vær hjelpsom når de kommer. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                        <div class="teaser">
+                            <!-- really: h2 -->
+                            <a href="#">
+                                <h5>Påmelding til kommunalpolitisk toppmøte 2014</h5>
+                            </a>
 
-              <div class="small-12 large-8 large-pull-4 columns">
-                  <!-- hva skjer? -->
-                  <div class="panel">
-                      <h5>Hva skjer?</h5>
-                      <ul>
-                          <li>Ole Jørgen Grann</li>
-                          <li>Kristi Kierulf</li>
-                          <li>Tone Marie Solheim</li>
-                      </ul>
-                  </div>
-              </div>
+                            <div class="row">
+                                <div class="small-12 medium-6 columns">
+                                    <a href="#">
+                                        <img src="img/meeting.png" alt="Kommunemøte 2013"/>
+                                    </a>
+                                </div>
+                                <div class="small-12 medium-6 columns">
+                                    <ul class="inline-list byline">
+                                        <li class="date">17.03.2014</li>
+                                    </ul>
+                                    <p>Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end: articles-wrapper -->
 
-          </div>
+        </div>
 
+        <div class="small-12 large-8 large-pull-4 columns">
+            <!-- hva skjer? -->
+            <div class="panel">
+                <h5>Hva skjer?</h5>
+                <ul>
+                    <li>Ole Jørgen Grann</li>
+                    <li>Kristi Kierulf</li>
+                    <li>Tone Marie Solheim</li>
+                </ul>
+            </div>
+        </div>
 
-          <div class="bottom-spacer"></div>
+    </div>
 
-          <!-- footer -->
-      </section>
-      <!-- end: main-section -->
+    <div class="bottom-spacer"></div>
 
-      <!--<a class="exit-off-canvas"></a>-->
+    <!-- footer -->
+</section>
+<!-- end: main-section -->
 
-      <!--</div>-->
-    <!--</div>-->
+<!-- close the off-canvas menu -->
+<a class="exit-off-canvas"></a>
 
-    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
-    <!--<script src="bower_components/foundation/js/foundation.min.js"></script>-->
-    <script src="js/app.js"></script>
-  </body>
+<!--</div>-->
+<!--</div>-->
+
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--<script src="bower_components/foundation/js/foundation.min.js"></script>-->
+<script src="js/app.js"></script>
+</body>
 </html>

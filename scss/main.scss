@@ -75,10 +75,6 @@ Header and navigation
   }
 }
 
-
-
-
-
 .left-off-canvas-menu {
   -webkit-transform: none;
   -moz-transform: none;
@@ -89,6 +85,14 @@ Header and navigation
 
   // cheat:
   min-height: rem-calc(800);
+
+  li {
+    a {
+      &:hover {
+        background: none!important;
+      }
+    }
+  }
 }
 
 
@@ -150,6 +154,14 @@ Teaser carousel
 Articles
 ********************************/
 
+// 4x articles on frontpage:
+.ks-panel-white {
+  .teaser {
+    img {
+      margin-bottom: 5px;
+    }
+  }
+}
 
 .byline {
   margin-bottom: rem-calc(5);

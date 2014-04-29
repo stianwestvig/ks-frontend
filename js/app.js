@@ -1,3 +1,18 @@
-// $(document).foundation();
+var app = angular.module('app', ['mm.foundation', 'ngRoute']);
 
-var app = angular.module('app', ['mm.foundation']);
+
+app.config(function($routeProvider, $locationProvider){
+
+
+
+
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/frontpage.html'
+        })
+        .when('/article', {
+            templateUrl: 'views/article.html'
+        });
+
+
+});

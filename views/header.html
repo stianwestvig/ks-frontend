@@ -1,10 +1,10 @@
-<div ng-controller="navigation">
+<div ng-controller="navigationController as navigation">
     <div class="row">
         <div class="small-12 columns">
             <!-- header -->
             <nav class="tab-bar">
                 <section class="left">
-                    <a class="left-off-canvas-toggle menu-icon" ng-click="toggleNav()"><span></span>
+                    <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
 
                         <p>Meny</p>
                     </a>
@@ -19,8 +19,8 @@
                         <div class="small-12 columns">
                             <div class="mytime left">
                                 <span class="meta">Min tid: </span><a href="#"
-                                                                      class="ks-button-small center {{myTimeStatus.status}}"
-                                                                      ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
+                                                                      class="ks-button-small center {{navigation.myTimeStatus.status}}"
+                                                                      ng-click="navigation.toggleMyTime()">{{navigation.myTimeStatus.label}}</a>
                             </div>
                             <div class="user right">
                                 <span class="meta">Stian Westvig</span>
@@ -45,7 +45,7 @@
 
     <div class="row">
         <div class="small-12 columns">
-            <aside class="left-off-canvas-menu" ng-hide="hideNavigation">
+            <aside class="left-off-canvas-menu" ng-hide="navigation.hideNavigation">
                 <ul class="off-canvas-list">
                     <li><a href="#">Hva skjer?</a></li>
                     <li><a href="#">Finn kollega</a></li>

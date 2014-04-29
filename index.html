@@ -13,66 +13,7 @@
 <body>
 
 
-<div ng-controller="navigation">
-    <div class="row">
-        <div class="small-12 columns">
-            <!-- header -->
-            <nav class="tab-bar">
-                <section class="left">
-                    <a class="left-off-canvas-toggle menu-icon" ng-click="toggleNav()"><span></span>
-
-                        <p>Meny</p>
-                    </a>
-                </section>
-
-                <section class="left">
-                    <h1 class="title"><a href="#">Fiks</a></h1>
-                </section>
-
-                <section class="right">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="mytime left">
-                                <span class="meta">Min tid: </span><a href="#"
-                                                                      class="ks-button-small center {{myTimeStatus.status}}"
-                                                                      ng-click="toggleMyTime()">{{myTimeStatus.label}}</a>
-                            </div>
-                            <div class="user right">
-                                <span class="meta">Stian Westvig</span>
-                                <!-- hvis lenke:  <a href="#">Stian Westvig</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="search">
-                                <input type="text" name="search" class="searchfield"/>
-                                <input class="ks-button-small" type="submit" value="Søk"/>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </nav>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="small-12 columns">
-            <aside class="left-off-canvas-menu" ng-hide="hideNavigation">
-                <ul class="off-canvas-list">
-                    <li><a href="#">Hva skjer?</a></li>
-                    <li><a href="#">Finn kollega</a></li>
-                    <li><a href="#">Politikk</a></li>
-                    <li><a href="#">Støtte og tjenester</a></li>
-                    <li><a href="#">Personal</a></li>
-                    <li><a href="#">Organisasjon</a></li>
-                </ul>
-            </aside>
-        </div>
-    </div>
-</div>
+<div ng-include src="'views/header.html'"></div>
 
 
 <section class="main-section">

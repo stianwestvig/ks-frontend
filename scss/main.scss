@@ -7,10 +7,10 @@
 Header and navigation
 ********************************/
 
-
-// overrides - todo: se om disse kan gjøres via settings
 .tab-bar {
-  margin-bottom: rem-calc(30);
+  overflow: hidden;
+  height: auto;
+  margin-bottom: rem-calc(20);
 
   .menu-icon {
     color: $KSBluePrimary;
@@ -139,15 +139,46 @@ Panels
 
 
 /********************************
-Teaser carousel
+slide carousel
 ********************************/
 
-.teaser {
-  .ks-button-small {
-    padding: 5px 15px;
-    font-size: rem-calc(14);
+.slide {
+  // transition: opacity 0.1s;
+
+  &.ng-hide-add{
+    display: inline !important;
+    //opacity: 1;
+  }
+
+  &.ng-hide-remove{
+    //background: blue;
+    //opacity: 0;
+  }
+
+  .teaser {
+    .ks-button-small {
+      padding: 5px 15px;
+      font-size: rem-calc(14);
+    }
+  }
+
+  ul.pager {
+    li {
+      margin-left: rem-calc(2);
+      a {
+        padding: rem-calc(1 7);
+
+        &.active {
+          background-color: $KSRed;
+          color: $KSWhite;
+        }
+      }
+    }
+
+
   }
 }
+
 
 
 /********************************
@@ -164,7 +195,7 @@ Articles
 }
 
 .byline {
-  margin-bottom: rem-calc(5);
+  margin-bottom: rem-calc(10);
 
   li {
     font-size: rem-calc(12);
@@ -227,19 +258,7 @@ Other
   }
 }
 
-.slide {
-  // transition: opacity 0.1s;
 
-  &.ng-hide-add{
-    display: inline !important;
-    //opacity: 1;
-  }
-
-  &.ng-hide-remove{
-    //background: blue;
-    //opacity: 0;
-  }
-}
 
 
 

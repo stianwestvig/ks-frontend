@@ -3534,7 +3534,9 @@ p, li {
 Header and navigation
 ********************************/
 .tab-bar {
-  margin-bottom: 1.875rem; }
+  overflow: hidden;
+  height: auto;
+  margin-bottom: 1.25rem; }
   .tab-bar .menu-icon {
     color: #1c4072; }
     .tab-bar .menu-icon p {
@@ -3722,11 +3724,20 @@ Panels
       line-height: 1.4; }
 
 /********************************
-Teaser carousel
+slide carousel
 ********************************/
-.teaser .ks-button-small {
+.slide.ng-hide-add {
+  display: inline !important; }
+.slide .teaser .ks-button-small {
   padding: 5px 15px;
   font-size: 0.875rem; }
+.slide ul.pager li {
+  margin-left: 0.125rem; }
+  .slide ul.pager li a {
+    padding: 0.0625rem 0.4375rem; }
+    .slide ul.pager li a.active {
+      background-color: #cd2346;
+      color: white; }
 
 /********************************
 Articles
@@ -3735,7 +3746,7 @@ Articles
   margin-bottom: 5px; }
 
 .byline {
-  margin-bottom: 0.3125rem; }
+  margin-bottom: 0.625rem; }
   .byline li {
     font-size: 0.75rem;
     line-height: 1rem; }
@@ -3777,6 +3788,3 @@ Other
   bottom: 0; }
   .bottom-seeker.right {
     right: 0.9375rem; }
-
-.slide.ng-hide-add {
-  display: inline !important; }

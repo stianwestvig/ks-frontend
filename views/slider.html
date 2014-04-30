@@ -19,8 +19,8 @@
                 </div>
             </div>
         </div>
-        <ul class="inline-list right bottom-seeker">
-            <li ng-repeat="slide in slider.slides"><a ng-click="slider.setActive(slide)">{{$index +1}}</a></li>
+        <ul class="inline-list right bottom-seeker pager">
+            <li ng-repeat="slide in slider.slides"><a ng-class="{active: slide.active}" ng-click="slider.setActive(slide)">{{$index +1}}</a></li>
         </ul>
     </div>
 </div>

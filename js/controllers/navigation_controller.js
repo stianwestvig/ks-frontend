@@ -10,6 +10,10 @@ app.controller('navigationController', function($scope){
         navigation.hideNavigation = !navigation.hideNavigation;
     };
 
+    navigation.clicked = function(){
+        navigation.hideNavigation = true;
+    }
+
     navigation.toggleMyTime = function() {
         navigation.myTimeStatus.status = !navigation.myTimeStatus.status;
         if (navigation.myTimeStatus.status) {

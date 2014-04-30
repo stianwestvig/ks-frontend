@@ -202,4 +202,11 @@ Other
 }
 
 
+.equal-height-column {
+  // height: auto;
+  padding-bottom: $KSColumnHeight;
+  margin-bottom: -$KSColumnHeight;
+}
+
+
 

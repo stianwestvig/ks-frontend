@@ -1,4 +1,5 @@
 /***** KS Colors *****/
+/***** KS Measurements *****/
 /***** KS Typography *****/
 body {
   font-family: Calibri, Arial, Sans-Serif; }
@@ -3494,6 +3495,7 @@ ul.off-canvas-list {
   content: "\f21a"; }
 
 /***** KS Colors *****/
+/***** KS Measurements *****/
 /***** KS Typography *****/
 body {
   font-family: Calibri, Arial, Sans-Serif; }
@@ -3511,6 +3513,7 @@ p, li {
   font-size: 0.875rem; }
 
 /***** KS Colors *****/
+/***** KS Measurements *****/
 /***** KS Typography *****/
 body {
   font-family: Calibri, Arial, Sans-Serif; }
@@ -3754,3 +3757,7 @@ Other
 
 .bottom-spacer {
   height: 5rem; }
+
+.equal-height-column {
+  padding-bottom: 500px;
+  margin-bottom: -500px; }

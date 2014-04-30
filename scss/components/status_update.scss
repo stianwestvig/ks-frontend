@@ -1,0 +1,79 @@
+.status-update {
+.panel {
+  background-color: transparent;
+  border: none;
+}
+  h5.update {
+    margin-left: 10px;
+    display: inline;
+    &:before {
+      @extend .icomoon;
+      position: relative;
+      content: "\e602";
+      left: -6px;
+      top: 2px;
+    }
+  }
+
+  .text-container {
+    @include  clearfix();
+    $padding :rem-calc(5);
+    background-color: $KSGrey;
+    padding:$padding;
+    margin-top: rem-calc(20);
+    textarea {
+      margin-bottom: $padding;
+      width: 100%;
+      max-width: 100%;
+      height: rem-calc(100);
+      border: none;
+    }
+
+    &:before{
+      @include css-triangle ("up", 13px, $KSGrey);
+      position: absolute;
+      top: rem-calc(35);
+      left: 44%;
+    }
+  }
+  
+  .update-list {
+
+    h2 {
+      color:$KSBlueMedium;
+      font-size: rem-calc(18);
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    p{
+      font-size: rem-calc(16);
+      margin-bottom: 0;
+    }
+
+    ul.update-buttons {
+      @include inline-list;
+      margin: 0;
+
+      li:first-of-type{
+        margin-left: 0;
+      }
+      a{
+        color:$KSRed;
+        font-size: rem-calc(16);
+      }
+    }
+  }
+}
+
+@media #{$medium} {
+  .status-update {
+    .text-container {
+      &:before{
+        left: 88px;
+      }
+    }
+  }
+
+}
+

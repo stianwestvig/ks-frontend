@@ -1,6 +1,12 @@
 @import "ksprofile";
+@import "mixins";
 @import "vendor/fonts/fonts";
+@import "components/status_update";
 
+
+body {
+   line-height: 0;
+}
 
 /********************************
 Header and navigation
@@ -18,7 +24,6 @@ Header and navigation
       position: relative;
       top: 30px;
       left: -26px;
-
       font-size: rem-calc(11);
       text-transform: uppercase;
     }
@@ -119,10 +124,18 @@ Buttons
 
 .ks-button-small {
   @include button($padding:rem-calc(2), $bg:$KSRed, $full-width:false);
+  margin: 0;
+
 
   &.false { background-color: $KSRed;}
   &.true { background-color: $KSGreen;}
+
+
+  &.min-width {
+    min-width: 100px;
+  }
 }
+
 
 
 /********************************

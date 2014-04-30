@@ -3344,6 +3344,18 @@ p, li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icomoon, .status-update h5.update:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .icon-clock:before {
   content: "\e603"; }
 
@@ -3373,6 +3385,78 @@ p, li {
 
 .icon-bubble:before {
   content: "\e602"; }
+
+.status-update .panel {
+  background-color: transparent;
+  border: none; }
+.status-update h5.update {
+  margin-left: 10px;
+  display: inline; }
+  .status-update h5.update:before {
+    position: relative;
+    content: "\e602";
+    left: -6px;
+    top: 2px; }
+.status-update .text-container {
+  background-color: #c8c8c8;
+  padding: 0.3125rem;
+  margin-top: 1.25rem; }
+  .status-update .text-container:before, .status-update .text-container:after {
+    content: " ";
+    display: table; }
+  .status-update .text-container:after {
+    clear: both; }
+  .status-update .text-container textarea {
+    margin-bottom: 0.3125rem;
+    width: 100%;
+    max-width: 100%;
+    height: 6.25rem;
+    border: none; }
+  .status-update .text-container:before {
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 13px solid #c8c8c8;
+    border-top: 13px solid transparent;
+    position: absolute;
+    top: 2.1875rem;
+    left: 44%; }
+.status-update .update-list h2 {
+  color: #00a1e0;
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 0; }
+.status-update .update-list p {
+  font-size: 1rem;
+  margin-bottom: 0; }
+.status-update .update-list ul.update-buttons {
+  margin: 0 auto 1.0625rem auto;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin: 0; }
+  .status-update .update-list ul.update-buttons > li {
+    list-style: none;
+    float: left;
+    margin-left: 1.375rem;
+    display: block; }
+    .status-update .update-list ul.update-buttons > li > * {
+      display: block; }
+  .status-update .update-list ul.update-buttons li:first-of-type {
+    margin-left: 0; }
+  .status-update .update-list ul.update-buttons a {
+    color: #cd2346;
+    font-size: 1rem; }
+
+@media only screen and (min-width:40.063em) {
+  .status-update .text-container:before {
+    left: 88px; } }
+
+body {
+  line-height: 0; }
 
 /********************************
 Header and navigation
@@ -3482,7 +3566,8 @@ Buttons
   padding-left: 0.25rem;
   background-color: #cd2346;
   border-color: #a41c39;
-  color: white; }
+  color: white;
+  margin: 0; }
   .ks-button-small:hover, .ks-button-small:focus {
     background-color: #a41c39; }
   .ks-button-small:hover, .ks-button-small:focus {
@@ -3491,6 +3576,8 @@ Buttons
     background-color: #cd2346; }
   .ks-button-small.true {
     background-color: #bebc27; }
+  .ks-button-small.min-width {
+    min-width: 100px; }
 
 /********************************
 Panels

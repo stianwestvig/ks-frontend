@@ -1,10 +1,6 @@
-var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate']);
-
+var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate', 'ngSanitize']);
 
 app.config(function($routeProvider, $locationProvider){
-
-
-
 
     $routeProvider
         .when('/', {

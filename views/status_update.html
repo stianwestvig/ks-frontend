@@ -1,0 +1,33 @@
+<div class="small-12 large-8 large-pull-4 columns status-update" ng-controller="statusUpdateCtrl as statusUpdate">
+    <div class="panel">
+        <h5 class="update">Del oppdatering</h5>
+        <div class="text-container">
+            <textarea placeholder="Hva skjer?"></textarea>
+            <a href="#" class="ks-button-small right min-width">Del</a>
+        </div>
+        <hr/>
+
+        <div class="update-list">
+            <div ng-repeat="update in statusUpdate.updates">
+            <div class="update-item">
+                <div class="row">
+                <img ng-src="{{update.image}}" class="small-2 columns" />
+                <div class="small-10 columns">
+                    <h2>{{ update.name }}</h2>
+                    <p ng-bind-html="update.body" ></p>
+
+                    <ul class="update-buttons">
+                        <li><a href="">Kommentarer</a></li>
+                        <li><a href="">Lik</a></li>
+                        <li><span class="icon-comment-o"></span></li>
+                        <li><span class="icon-heart-o">{{ update.likes.length }}</span></li>
+                    </ul>
+
+                </div>
+                </div>
+            </div>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</div>

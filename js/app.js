@@ -1,4 +1,4 @@
-var app = angular.module('app', ['mm.foundation', 'ngRoute']);
+var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate']);
 
 
 app.config(function($routeProvider, $locationProvider){

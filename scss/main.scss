@@ -201,6 +201,8 @@ Other
   height: rem-calc(80);
 }
 
+
+/*
 .equal-column-container{
   overflow: hidden;
 }
@@ -210,6 +212,7 @@ Other
   padding-bottom: $KSColumnHeight;
   margin-bottom: -$KSColumnHeight;
 }
+*/
 
 .relativity {
   position: relative;
@@ -218,6 +221,25 @@ Other
 .bottom-seeker {
   position: absolute;
   bottom: 0;
+
+  &.right {
+    right: $column-gutter / 2;
+  }
 }
+
+.slide {
+  // transition: opacity 0.1s;
+
+  &.ng-hide-add{
+    display: inline !important;
+    //opacity: 1;
+  }
+
+  &.ng-hide-remove{
+    //background: blue;
+    //opacity: 0;
+  }
+}
+
 
 

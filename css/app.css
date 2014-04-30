@@ -3758,17 +3758,25 @@ Other
 .bottom-spacer {
   height: 5rem; }
 
-.equal-column-container {
-  overflow: hidden; }
+/*
+.equal-column-container{
+  overflow: hidden;
+}
 
 .equal-height-column {
   height: auto;
-  padding-bottom: 500px;
-  margin-bottom: -500px; }
-
+  padding-bottom: $KSColumnHeight;
+  margin-bottom: -$KSColumnHeight;
+}
+*/
 .relativity {
   position: relative; }
 
 .bottom-seeker {
   position: absolute;
   bottom: 0; }
+  .bottom-seeker.right {
+    right: 0.9375rem; }
+
+.slide.ng-hide-add {
+  display: inline !important; }

@@ -1,13 +1,13 @@
 
-<div ng-controller="sliderController as slider">
+<div ng-controller="sliderController as slider" class="not-equal-column-container relativity">
     <div ng-repeat="slide in slider.slides" ng-show="slide.active" class="row">
         <div class="small-12 medium-12 large-8 columns">
-            <div class="equal-height-column">
+            <div class="not-equal-height-column">
                 <img ng-src="{{slide.image}}" alt="{{slide.title}}"/>
             </div>
         </div>
         <div class="small-12 medium-12 large-4 columns">
-            <div class="equal-height-column">
+            <div class="not-equal-height-column">
                 <div class="teaser">
                     <!-- really: h2 -->
                     <h3>{{slide.title}}</h3>
@@ -21,14 +21,12 @@
                         <a href="#" class="ks-button-small center">Påmelding</a>
                     </div>
                 </div>
-                <ul class="inline-list right">
+                <ul class="inline-list right bottom-seeker">
                     <li ng-repeat="slide in slider.slides"><a ng-click="slider.setActive(slide)">{{$index +1}}</a></li>
                 </ul>
             </div>
         </div>
-
     </div>
-
 </div>
 
 

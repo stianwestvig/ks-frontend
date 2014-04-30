@@ -3758,6 +3758,17 @@ Other
 .bottom-spacer {
   height: 5rem; }
 
+.equal-column-container {
+  overflow: hidden; }
+
 .equal-height-column {
+  height: auto;
   padding-bottom: 500px;
   margin-bottom: -500px; }
+
+.relativity {
+  position: relative; }
+
+.bottom-seeker {
+  position: absolute;
+  bottom: 0; }

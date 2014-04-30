@@ -201,12 +201,23 @@ Other
   height: rem-calc(80);
 }
 
+.equal-column-container{
+  overflow: hidden;
+}
 
 .equal-height-column {
-  // height: auto;
+  height: auto;
   padding-bottom: $KSColumnHeight;
   margin-bottom: -$KSColumnHeight;
 }
 
+.relativity {
+  position: relative;
+}
+
+.bottom-seeker {
+  position: absolute;
+  bottom: 0;
+}
 
 

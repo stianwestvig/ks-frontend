@@ -1,6 +1,5 @@
 @import "ksprofile";
-
-
+@import "vendor/fonts/fonts";
 
 
 /********************************
@@ -173,17 +172,16 @@ Articles
   .date, .align-with-date {
     &:before {
         content: " ";
-        font-size: rem-calc(20);
+        font-size: rem-calc(15);
         vertical-align: middle;
     }
   }
   .date {
     &:before {
-      content: "\f12b";
-      font-family: "foundation-icons";
+      content: "\e603";
+      font-family: "icomoon";
       display: inline-block;
       margin-right: rem-calc(5);
-
     }
   }
 }

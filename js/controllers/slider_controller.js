@@ -2,7 +2,7 @@ app.controller('sliderController', function(){
     var slider = this;
     slider.slides = [
         {
-            'image': 'img/meeting.png',
+            'image': 'img/meeting2.jpg',
             'title': 'Påmelding til kommunalpolitisk toppmøte 2014',
             'author': 'Sissel Ambjør',
             'date': '17.03.2014',
@@ -21,9 +21,9 @@ app.controller('sliderController', function(){
         },
         {
             'image': 'img/meeting.png',
-            'title': 'Påmelding til kommunalpolitisk toppmøte 2014',
+            'title': 'Innkalling til Allmøte',
             'author': 'Sissel Ambjør',
-            'date': '17.03.2014',
+            'date': '19.03.2014',
             'teaser': 'Hva skal vårt lokaldemokrati bygge på i fremtiden? Tillit eller tilsyn? Skjønn eller regler? Står det så bra til at vi bare kan lene oss tilbake - eller har vi grunn til uro? Hør statsminister Erna Solberg, tidligere statsminister Jens Stoltenberg og andre topppolitikeres ideer og løsninger.',
             'link': '#/article',
             'active': false

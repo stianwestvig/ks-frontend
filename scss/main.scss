@@ -7,10 +7,10 @@
 Header and navigation
 ********************************/
 
-
-// overrides - todo: se om disse kan gjøres via settings
 .tab-bar {
-  margin-bottom: rem-calc(30);
+  overflow: hidden;
+  height: auto;
+  margin-bottom: rem-calc(20);
 
   .menu-icon {
     color: $KSBluePrimary;
@@ -25,18 +25,31 @@ Header and navigation
     }
   }
 
-  h1 {
-    text-transform: uppercase;
-    font-weight: normal;
+  .logo-container {
+    margin-top: rem-calc(10);
 
-    &:first-letter {
-      font-size: rem-calc(26);
+    .logo {
+      float: left;
+      height: rem-calc(35);
+      margin-right: rem-calc(10);
     }
 
-    a {
-      color: $KSBluePrimary;
+    h1 {
+      text-transform: uppercase;
+      font-weight: normal;
+      float: left;
+
+      &:first-letter {
+        font-size: rem-calc(26);
+      }
+
+      a {
+        color: $KSBluePrimary;
+      }
     }
   }
+
+
 
   section {
     text-align: left;
@@ -139,15 +152,47 @@ Panels
 
 
 /********************************
-Teaser carousel
+slide carousel
 ********************************/
 
-.teaser {
-  .ks-button-small {
-    padding: 5px 15px;
-    font-size: rem-calc(14);
+.slide {
+  // transition: opacity 0.1s;
+  margin-bottom: rem-calc(20);
+
+  &.ng-hide-add{
+    display: inline !important;
+    //opacity: 1;
+  }
+
+  &.ng-hide-remove{
+    //background: blue;
+    //opacity: 0;
+  }
+
+  .teaser {
+    .ks-button-small {
+      padding: 5px 15px;
+      font-size: rem-calc(14);
+    }
+  }
+
+  ul.pager {
+    li {
+      margin-left: rem-calc(2);
+      a {
+        padding: rem-calc(1 7);
+
+        &.active {
+          background-color: $KSRed;
+          color: $KSWhite;
+        }
+      }
+    }
+
+
   }
 }
+
 
 
 /********************************
@@ -164,7 +209,7 @@ Articles
 }
 
 .byline {
-  margin-bottom: rem-calc(5);
+  margin-bottom: rem-calc(10);
 
   li {
     font-size: rem-calc(12);
@@ -200,6 +245,34 @@ Other
 .bottom-spacer {
   height: rem-calc(80);
 }
+
+
+/*
+.equal-column-container{
+  overflow: hidden;
+}
+
+.equal-height-column {
+  height: auto;
+  padding-bottom: $KSColumnHeight;
+  margin-bottom: -$KSColumnHeight;
+}
+*/
+
+.relativity {
+  position: relative;
+}
+
+.bottom-seeker {
+  position: absolute;
+  bottom: 0;
+
+  &.right {
+    right: $column-gutter / 2;
+  }
+}
+
+
 
 
 

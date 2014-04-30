@@ -3545,13 +3545,20 @@ Header and navigation
       left: -26px;
       font-size: 0.6875rem;
       text-transform: uppercase; }
-  .tab-bar h1 {
-    text-transform: uppercase;
-    font-weight: normal; }
-    .tab-bar h1:first-letter {
-      font-size: 1.625rem; }
-    .tab-bar h1 a {
-      color: #1c4072; }
+  .tab-bar .logo-container {
+    margin-top: 0.625rem; }
+    .tab-bar .logo-container .logo {
+      float: left;
+      height: 2.1875rem;
+      margin-right: 0.625rem; }
+    .tab-bar .logo-container h1 {
+      text-transform: uppercase;
+      font-weight: normal;
+      float: left; }
+      .tab-bar .logo-container h1:first-letter {
+        font-size: 1.625rem; }
+      .tab-bar .logo-container h1 a {
+        color: #1c4072; }
   .tab-bar section {
     text-align: left; }
     .tab-bar section.right {
@@ -3726,18 +3733,20 @@ Panels
 /********************************
 slide carousel
 ********************************/
-.slide.ng-hide-add {
-  display: inline !important; }
-.slide .teaser .ks-button-small {
-  padding: 5px 15px;
-  font-size: 0.875rem; }
-.slide ul.pager li {
-  margin-left: 0.125rem; }
-  .slide ul.pager li a {
-    padding: 0.0625rem 0.4375rem; }
-    .slide ul.pager li a.active {
-      background-color: #cd2346;
-      color: white; }
+.slide {
+  margin-bottom: 1.25rem; }
+  .slide.ng-hide-add {
+    display: inline !important; }
+  .slide .teaser .ks-button-small {
+    padding: 5px 15px;
+    font-size: 0.875rem; }
+  .slide ul.pager li {
+    margin-left: 0.125rem; }
+    .slide ul.pager li a {
+      padding: 0.0625rem 0.4375rem; }
+      .slide ul.pager li a.active {
+        background-color: #cd2346;
+        color: white; }
 
 /********************************
 Articles

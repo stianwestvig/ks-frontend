@@ -25,18 +25,31 @@ Header and navigation
     }
   }
 
-  h1 {
-    text-transform: uppercase;
-    font-weight: normal;
+  .logo-container {
+    margin-top: rem-calc(10);
 
-    &:first-letter {
-      font-size: rem-calc(26);
+    .logo {
+      float: left;
+      height: rem-calc(35);
+      margin-right: rem-calc(10);
     }
 
-    a {
-      color: $KSBluePrimary;
+    h1 {
+      text-transform: uppercase;
+      font-weight: normal;
+      float: left;
+
+      &:first-letter {
+        font-size: rem-calc(26);
+      }
+
+      a {
+        color: $KSBluePrimary;
+      }
     }
   }
+
+
 
   section {
     text-align: left;
@@ -144,6 +157,7 @@ slide carousel
 
 .slide {
   // transition: opacity 0.1s;
+  margin-bottom: rem-calc(20);
 
   &.ng-hide-add{
     display: inline !important;

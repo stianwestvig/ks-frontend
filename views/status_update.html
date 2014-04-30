@@ -2,11 +2,10 @@
     <div class="panel">
         <h5 class="update">Del oppdatering</h5>
         <div class="text-container">
-            <textarea placeholder="Hva skjer?"></textarea>
-            <a href="#" class="ks-button-small right min-width">Del</a>
+            <textarea ng-model='update' placeholder="Hva skjer?"></textarea>
+            <a ng-click="statusUpdate.addUpdate(update)" class="ks-button-small right min-width">Del</a>
         </div>
         <hr/>
-
         <div class="update-list">
             <div ng-repeat="update in statusUpdate.updates">
             <div class="update-item">
@@ -15,14 +14,12 @@
                 <div class="small-10 columns">
                     <h2>{{ update.name }}</h2>
                     <p ng-bind-html="update.body" ></p>
-
                     <ul class="update-buttons">
-                        <li><a href="">Kommentarer</a></li>
-                        <li><a href="">Lik</a></li>
-                        <li><span class="icon-comment-o"></span></li>
-                        <li><span class="icon-heart-o">{{ update.likes.length }}</span></li>
+                        <li><a>Kommentarer</a></li>
+                        <li><a ng-click="statusUpdate.toggleLike(update)">{{ update.hasLiked  | iif : "Fjern liker" : "Liker"}}</a></li>
+                        <li class="comments">{{ update.comments.length }}</li>
+                        <li class="likes">{{ update.likes.length }}</li>
                     </ul>
-
                 </div>
                 </div>
             </div>

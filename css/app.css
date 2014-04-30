@@ -3344,7 +3344,7 @@ p, li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icomoon, .status-update h5.update:before {
+.icomoon, .status-update h5.update:before, .status-update .update-list ul.update-buttons li:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -3408,6 +3408,8 @@ p, li {
     clear: both; }
   .status-update .text-container textarea {
     margin-bottom: 0.3125rem;
+    line-height: 1rem;
+    padding-top: 0.625rem;
     width: 100%;
     max-width: 100%;
     height: 6.25rem;
@@ -3447,9 +3449,18 @@ p, li {
       display: block; }
   .status-update .update-list ul.update-buttons li:first-of-type {
     margin-left: 0; }
-  .status-update .update-list ul.update-buttons a {
-    color: #cd2346;
+  .status-update .update-list ul.update-buttons li {
     font-size: 1rem; }
+    .status-update .update-list ul.update-buttons li a {
+      color: #cd2346; }
+    .status-update .update-list ul.update-buttons li:before {
+      margin-right: 8px; }
+    .status-update .update-list ul.update-buttons li.comments:before {
+      content: "\f0e5"; }
+    .status-update .update-list ul.update-buttons li.likes:before {
+      content: "\f08a";
+      position: relative;
+      top: 1px; }
 
 @media only screen and (min-width:40.063em) {
   .status-update .text-container:before {

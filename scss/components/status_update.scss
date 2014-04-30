@@ -16,13 +16,15 @@
   }
 
   .text-container {
-    @include  clearfix();
+    @include clearfix();
     $padding :rem-calc(5);
     background-color: $KSGrey;
     padding:$padding;
     margin-top: rem-calc(20);
     textarea {
       margin-bottom: $padding;
+      line-height: 1rem;
+      padding-top: rem-calc(10);
       width: 100%;
       max-width: 100%;
       height: rem-calc(100);
@@ -38,7 +40,6 @@
   }
   
   .update-list {
-
     h2 {
       color:$KSBlueMedium;
       font-size: rem-calc(18);
@@ -58,9 +59,32 @@
       li:first-of-type{
         margin-left: 0;
       }
-      a{
-        color:$KSRed;
+
+      li {
         font-size: rem-calc(16);
+
+        a{
+          color:$KSRed;
+        }
+
+        &:before{
+          @extend .icomoon;
+          margin-right: 8px;
+        }
+
+        &.comments {
+          &:before {
+            content: "\f0e5";
+          }
+        }
+
+        &.likes {
+          &:before {
+            content: "\f08a";
+            position: relative;
+            top: 1px;
+          }
+        }
       }
     }
   }

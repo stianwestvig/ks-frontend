@@ -160,6 +160,11 @@ Panels
   @include panel($bg:$KSWhite, $padding:$panel-padding, $adjust:true);
 }
 
+.ks-panel-blueframe {
+  @include panel($bg:$KSWhite, $padding:$panel-padding/2, $adjust:true);
+  border: 2px solid $KSBlueMedium;
+}
+
 
 /********************************
 slide carousel

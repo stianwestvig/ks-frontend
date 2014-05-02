@@ -1,0 +1,16 @@
+.listpage {
+
+  h1 {}
+
+
+  ul.list {
+    list-style: none;
+    margin-left: 0;
+
+    h2 {
+      color: $KSRed;
+      font-size: rem-calc(28);
+    }
+  }
+
+}

@@ -45,6 +45,10 @@ p, li {
   font-size: rem-calc(14);
 }
 
+p.leadtext{
+  font-size: rem-calc(18);
+}
+
 .meta {
   color: $KSBluePrimary;
   line-height: rem-calc(30);

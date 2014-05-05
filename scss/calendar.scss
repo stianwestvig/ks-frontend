@@ -1,0 +1,53 @@
+.calendar {
+
+  .header {
+    h5 {
+      text-transform: uppercase;
+      font-size: rem-calc(14);
+    }
+    a, h5 {
+      display: inline;
+    }
+  }
+
+
+  table {
+    margin-bottom: rem-calc(16);
+
+    tr{
+
+      td {
+        line-height: 1rem;
+        padding: rem-calc(4 6);
+        text-align: center;
+
+        &.inactive {
+          color: $KSGreyInactiveCalendar;
+        }
+
+        &.events-1 {
+          background-color: $KSCalendarEvents1;
+        }
+        &.events-2 {
+          background-color: $KSCalendarEvents2;
+        }
+        &.events-3 {
+          background-color: $KSCalendarEvents3;
+          color: $KSWhite;
+        }
+        &.events-4 {
+          background-color: $KSCalendarEvents4;
+          color: $KSWhite;
+        }
+        &.events-5 {
+          background-color: $KSCalendarEvents5;
+          color: $KSWhite;
+        }
+
+      }
+
+    }
+
+  }
+
+}

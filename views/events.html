@@ -1,4 +1,4 @@
-<section class="main-section events">
+<section class="main-section events" ng-controller="CalendarCtrl as calendar">
     <!-- main content -->
 
     <div class="row">
@@ -56,7 +56,9 @@
             <div class="row">
                 <!-- right col pushed for medium -->
                 <div class="small-12 medium-4 medium-push-8 columns">
-                    <div ng-include src="'views/calendar.html'"></div>
+
+                    <datepicker ng-model="calendar.dt" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
+
                 </div>
 
                 <!-- main col pulled for medium -->

@@ -1,28 +1,46 @@
 .calendar {
 
-  .header {
-    h5 {
-      text-transform: uppercase;
-      font-size: rem-calc(14);
-    }
-    a, h5 {
-      display: inline;
-    }
-  }
-
-
   table {
     margin-bottom: rem-calc(16);
+
+    thead {
+      h5 {
+        text-transform: uppercase;
+        font-size: rem-calc(16);
+      }
+      a {
+        color: $KSBlack;
+
+        .icon-arrow-left {margin-left: rem-calc(14);}
+        .icon-arrow-right {margin-right: rem-calc(14);}
+      }
+
+      tr.h6 {
+        th {
+          line-height: rem-calc(16);
+          padding: rem-calc(0 2);
+          font-weight: normal;
+          color: $KSRed;
+        }
+      }
+    }
 
     tr{
 
       td {
-        line-height: 1rem;
+        line-height: rem-calc(16);
         padding: rem-calc(4 6);
-        text-align: center;
 
-        &.inactive {
-          color: $KSGreyInactiveCalendar;
+        a {
+          &.inactive {
+            color: $KSGreyInactiveCalendar;
+          }
+          &.current {
+            color: $KSRed;
+          }
+          &.selected {
+            font-weight: bold;
+          }
         }
 
         &.events-1 {
@@ -33,15 +51,25 @@
         }
         &.events-3 {
           background-color: $KSCalendarEvents3;
-          color: $KSWhite;
+          a {
+            color: $KSWhite;
+          }
         }
         &.events-4 {
           background-color: $KSCalendarEvents4;
-          color: $KSWhite;
+          a {
+            color: $KSWhite;
+          }
         }
         &.events-5 {
           background-color: $KSCalendarEvents5;
-          color: $KSWhite;
+          a {
+            color: $KSWhite;
+          }
+        }
+
+        a {
+          color: $KSBlack;
         }
 
       }

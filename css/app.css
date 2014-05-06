@@ -3878,8 +3878,50 @@ p.leadtext {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-delete-outline:before {
+  content: "\e607"; }
+
 .icon-clock:before {
   content: "\e603"; }
+
+.icon-arrow-left:before {
+  content: "\e608"; }
+
+.icon-arrow-down:before {
+  content: "\e609"; }
+
+.icon-arrow-up:before {
+  content: "\e60a"; }
+
+.icon-arrow-right:before {
+  content: "\e60b"; }
+
+.icon-search:before {
+  content: "\e60c"; }
+
+.icon-mobile:before {
+  content: "\e605"; }
+
+.icon-phone:before {
+  content: "\e606"; }
+
+.icon-search2:before {
+  content: "\e60d"; }
+
+.icon-home2:before {
+  content: "\e601"; }
+
+.icon-image:before {
+  content: "\e600"; }
+
+.icon-clock2:before {
+  content: "\e604"; }
+
+.icon-bubble:before {
+  content: "\e602"; }
+
+.icon-search3:before {
+  content: "\f002"; }
 
 .icon-home:before {
   content: "\f015"; }
@@ -3895,18 +3937,6 @@ p.leadtext {
 
 .icon-comment-o:before {
   content: "\f0e5"; }
-
-.icon-home2:before {
-  content: "\e601"; }
-
-.icon-image:before {
-  content: "\e600"; }
-
-.icon-clock2:before {
-  content: "\e604"; }
-
-.icon-bubble:before {
-  content: "\e602"; }
 
 .status-update .panel {
   background-color: transparent;
@@ -4314,29 +4344,46 @@ Other
   .events ul.list h2 {
     font-size: 1.75rem; }
 
-.calendar .header h5 {
-  text-transform: uppercase;
-  font-size: 0.875rem; }
-.calendar .header a, .calendar .header h5 {
-  display: inline; }
 .calendar table {
   margin-bottom: 1rem; }
+  .calendar table thead h5 {
+    text-transform: uppercase;
+    font-size: 1rem; }
+  .calendar table thead a {
+    color: black; }
+    .calendar table thead a .icon-arrow-left {
+      margin-left: 0.875rem; }
+    .calendar table thead a .icon-arrow-right {
+      margin-right: 0.875rem; }
+  .calendar table thead tr.h6 th {
+    line-height: 1rem;
+    padding: 0 0.125rem;
+    font-weight: normal;
+    color: #cd2346; }
   .calendar table tr td {
     line-height: 1rem;
-    padding: 0.25rem 0.375rem;
-    text-align: center; }
-    .calendar table tr td.inactive {
+    padding: 0.25rem 0.375rem; }
+    .calendar table tr td a.inactive {
       color: #b2b2b2; }
+    .calendar table tr td a.current {
+      color: #cd2346; }
+    .calendar table tr td a.selected {
+      font-weight: bold; }
     .calendar table tr td.events-1 {
       background-color: #fdf5f3; }
     .calendar table tr td.events-2 {
       background-color: #f6e1de; }
     .calendar table tr td.events-3 {
-      background-color: #e6a09e;
-      color: white; }
+      background-color: #e6a09e; }
+      .calendar table tr td.events-3 a {
+        color: white; }
     .calendar table tr td.events-4 {
-      background-color: #db7376;
-      color: white; }
+      background-color: #db7376; }
+      .calendar table tr td.events-4 a {
+        color: white; }
     .calendar table tr td.events-5 {
-      background-color: #cc1b43;
-      color: white; }
+      background-color: #cc1b43; }
+      .calendar table tr td.events-5 a {
+        color: white; }
+    .calendar table tr td a {
+      color: black; }

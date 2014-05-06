@@ -9,6 +9,7 @@
   "devDependencies": {
     "angular": "~1.2.16",
     "foundation-icon-fonts": "zurb/foundation-icon-fonts",
-    "angular-foundation": "~0.1.0"
+    "angular-foundation": "~0.1.0",
+    "angular-bootstrap": "~0.11.0"
   }
 }

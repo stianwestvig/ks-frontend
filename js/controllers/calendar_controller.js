@@ -77,31 +77,39 @@ var CalendarCtrl = function () {
     }
 
 
-    calendar.today = function() {
+    calendar.today = function()  {
+        /* Initialize the date object to today */
         calendar.dt = new Date();
-        calendar.setStartDate(new Date().getTime());
-        calendar.setEndDate(new Date().setDate(calendar.getStartDate().getDate() + 30));
 
-        /*tomorrow.setDate(today.getDate()+1);*/
+        /* Get timestamp version of the dateobject */
+        var timeStamp = calendar.dt.getTime();
 
+        /* set the start date to display: */
+        calendar.setStartDate(timeStamp);
 
-        console.log(calendar.endDate);
-
-        // Date.prototype.events.events = data;
-
-
-        console.log('calendar controller happening');
-        console.log(calendar.dt);
+        /* set the end date to display: */
+        calendar.setEndDate(calendar.getStartDate() + calendar.toSeconds(30));
     };
+
+
+    calendar.toSeconds = function(days){
+        var oneDay =  1 * 24 * 60 * 60 * 1000;
+        return days * oneDay;
+    }
+
+
+    calendar.dateToString = function(timestamp){
+        /* Take a timestamp, convert to string */
+        var date =  new Date()
+        date.setTime(timestamp);
+        return date.toUTCString();
+    }
+
+
+
 
     calendar.today();
     calendar.events = data;
-
-
-
-
-
-
     /*console.log('Vår json sin date:');
     console.log(calendar.events[2].startDate);*/
 

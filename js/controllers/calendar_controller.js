@@ -5,11 +5,25 @@ var CalendarCtrl = function () {
         calendar.dt = new Date();
     };
 
+    var events = [
+        {
+            "title": "Norsk kommunesektor i EU/EØS teorien",
+            "description": "Kort om arrangementet. Fastsatt tegn. ",
+            "startDate": "",
+            "endDate": "",
+            "region": "Nord-Norge"
+        }
+    ]
+
+
+
 
     calendar.today();
 
 
-    console.log(calendar.dt);
+
+
+    /*console.log(calendar.dt);
 
 
      // Disable weekend selection
@@ -36,7 +50,7 @@ var CalendarCtrl = function () {
 
     calendar.initDate = new Date('2016-15-20');
     calendar.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    calendar.format = calendar.formats[0];
+    calendar.format = calendar.formats[0];*/
 };
 
 

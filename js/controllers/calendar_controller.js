@@ -1,9 +1,9 @@
-var CalendarCtrl = function () {
+app.controller('CalendarCtrl', function() {
+
     var calendar = this;
 
     calendar.startDate;
     calendar.endDate;
-
 
     // date string format: YYYY-MM-DD hh:mm:ss
     // initielt fylt med 3 måneder events:
@@ -30,9 +30,16 @@ var CalendarCtrl = function () {
             "region": "Nord-Norge"
         },
         {
+            "title": "Fagsamling for FoU",
+            "description": "Kort om arrangementet. Fastsatt tegn. Mer tekst hvor mye tekst skal det kunne være her Heidi?",
+            "startDate": new Date("2014-05-10 08:37:00"),
+            "endDate": new Date("2014-05-15 10:06:00"),
+            "region": "Nord-Norge"
+        },
+        {
             "title": "Finnmark: Fylkesmøte",
             "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-10 13:37:00"),
+            "startDate": new Date("2014-06-4 13:37:00"),
             "endDate": new Date("2014-06-11 13:37:00"),
             "region": "Nord-Norge"
         },{
@@ -79,6 +86,7 @@ var CalendarCtrl = function () {
 
     calendar.today = function()  {
         /* Initialize the date object to today */
+
         calendar.dt = new Date();
 
         /* Get timestamp version of the dateobject */
@@ -105,91 +113,7 @@ var CalendarCtrl = function () {
         return date.toUTCString();
     }
 
-
-
-
     calendar.today();
     calendar.events = data;
-    /*console.log('Vår json sin date:');
-    console.log(calendar.events[2].startDate);*/
 
-
-
-
-
-
-
-
-
-    /*
-    calendar.dateOptions = {
-        formatYear: 'yy',
-        startingDay: 1
-    };
-
-    calendar.initDate = new Date('2016-15-20');
-    calendar.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    calendar.format = calendar.formats[0];*/
-};
-
-
-
-
-
-
-
-/*
-var data = [
-    {
-        "title": "Norsk kommunesektor i EU/EØS teorien",
-        "description": "Kort om arrangementet. Fastsatt tegn. ",
-        "startDate": new Date("2014-05-07 09:00:00"),
-        "endDate": new Date("2014-05-09 16:00:00"),
-        "region": "Nord-Norge"
-    },
-    {
-        "title": "Svensk kommunesektor i EU/EØS teorien",
-        "description": "Kort om arrangementet. Fastsatt tegn. ",
-        "startDate": new Date("2014-05-15 08:35:00"),
-        "endDate": new Date("2014-05-15 10:15:00"),
-        "region": "Østlandet"
-    },
-    {
-        "title": "Fagsamling for FoU",
-        "description": "Kort om arrangementet. Fastsatt tegn. Mer tekst hvor mye tekst skal det kunne være her Heidi?",
-        "startDate": new Date("2014-05-10 08:37:00"),
-        "endDate": new Date("2014-05-15 10:06:00"),
-        "region": "Nord-Norge"
-    },
-    {
-        "title": "Finnmark: Fylkesmøte",
-        "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-        "startDate": new Date("2014-06-10 13:37:00"),
-        "endDate": new Date("2014-06-11 13:37:00"),
-        "region": "Nord-Norge"
-    },{
-        "title": "Finnmark: Fylkesmøte",
-        "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-        "startDate": new Date("2014-06-10 13:37:00"),
-        "endDate": new Date("2014-06-11 13:37:00"),
-        "region": "Nord-Norge"
-    },{
-        "title": "Finnmark: Fylkesmøte",
-        "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-        "startDate": new Date("2014-06-10 13:37:00"),
-        "endDate": new Date("2014-06-11 13:37:00"),
-        "region": "Nord-Norge"
-    },{
-        "title": "Finnmark: Fylkesmøte",
-        "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-        "startDate": new Date("2014-06-10 13:37:00"),
-        "endDate": new Date("2014-06-11 13:37:00"),
-        "region": "Nord-Norge"
-    },{
-        "title": "Finnmark: Fylkesmøte",
-        "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-        "startDate": new Date("2014-06-10 13:37:00"),
-        "endDate": new Date("2014-06-11 13:37:00"),
-        "region": "Nord-Norge"
-    }
-]*/
+});

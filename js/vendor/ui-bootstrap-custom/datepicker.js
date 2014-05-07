@@ -125,7 +125,11 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
         $scope.move = function( direction ) {
             var year = self.activeDate.getFullYear() + direction * (self.step.years || 0),
                 month = self.activeDate.getMonth() + direction * (self.step.months || 0);
-            self.activeDate.setFullYear(year, month, 1);
+            self.activeDate.setFullYear(year, month);
+
+            var dt = ngModelCtrl.$modelValue ? new Date( ngModelCtrl.$modelValue ) : new Date(0, 0, 0, 0, 0, 0, 0);
+            dt.setFullYear( self.activeDate.getFullYear(), self.activeDate.getMonth(), self.activeDate.getDate() );
+            ngModelCtrl.$setViewValue( dt );
             self.refreshView();
         };
 

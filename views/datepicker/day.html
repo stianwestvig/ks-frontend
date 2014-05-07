@@ -16,8 +16,10 @@
             <td ng-show="showWeeks" class="text-center h6">{{ weekNumbers[$index] }}</td>
             <td ng-repeat="dt in row track by dt.date" class="text-center" role="gridcell" id="{{dt.uid}}" aria-disabled="{{!!dt.disabled}}">
                 <a ng-class="{'selected': dt.selected, 'inactive': dt.secondary, 'current': dt.current}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1">{{dt.label}}</a>
+
             </td>
         </tr>
         </tbody>
     </table>
 </div>
+

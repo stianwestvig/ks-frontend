@@ -4344,6 +4344,9 @@ Other
   .events ul.list h2 {
     font-size: 1.75rem; }
 
+.events span {
+  line-height: 1rem; }
+
 .calendar table {
   margin-bottom: 1rem; }
   .calendar table thead h5 {
@@ -4385,5 +4388,9 @@ Other
       background-color: #cc1b43; }
       .calendar table tr td.events-5 a {
         color: white; }
+        .calendar table tr td.events-5 a.events-5 {
+          background-color: #cc1b43;
+          color: white;
+          padding: 0.25rem 0.375rem; }
     .calendar table tr td a {
       color: black; }

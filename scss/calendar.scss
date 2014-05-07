@@ -1,4 +1,14 @@
+.events {
+  span {
+    line-height: 1rem;
+    // margin-bottom: 1rem;
+  }
+
+}
+
 .calendar {
+
+
 
   table {
     margin-bottom: rem-calc(16);
@@ -65,6 +75,11 @@
           background-color: $KSCalendarEvents5;
           a {
             color: $KSWhite;
+            &.events-5 {
+              background-color: $KSCalendarEvents5;
+              color: $KSWhite;
+              padding: rem-calc(4 6);
+            }
           }
         }
 

@@ -46,8 +46,6 @@
         <!-- row for top with heading -->
         <div class="small-12 medium-12 large-10 large-offset-1 columns">
             <hr />
-            <h2>{{calendar.dt | date:'fullDate' }}</h2>
-            <hr />
         </div>
     </div>
 
@@ -59,28 +57,18 @@
                 <!-- right col pushed for medium -->
                 <div class="small-12 medium-4 medium-push-8 columns">
 
-                    <datepicker ng-model="calendar.dt" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
+                    <datepicker ng-model="calendar.dt" events="calendar.events" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
 
                 </div>
 
                 <!-- main col pulled for medium -->
                 <div class="small-12 medium-8 medium-pull-4 columns">
-                    <p>Events</p>
                     <ul class="list">
-                        <li>
-                            <h2>11. Mars</h2>
-                            <h2>Event</h2>
-                            <p>Kort om arrangementet. Fastsatt tegn</p>
-                        </li>
-                        <li>
-                            <h2>11. Mars</h2>
-                            <h2>Event</h2>
-                            <p>Kort om arrangementet. Fastsatt tegn</p>
-                        </li>
-                        <li>
-                            <h2>11. Mars</h2>
-                            <h2>Event</h2>
-                            <p>Kort om arrangementet. Fastsatt tegn</p>
+                        <li ng-repeat="event in calendar.events | dateFilter: calendar.startDate:calendar.endDate">
+                            <span>{{event.startDate | date:'MMM'}}</span>
+                            <h2>{{event.startDate | date:'d'}}</h2>
+                            <h2>{{event.title}}</h2>
+                            <p>{{event.description}}</p>
                         </li>
                     </ul>
                 </div>
@@ -95,3 +83,11 @@
     </div>
 </section>
 <!-- end: main-section -->
+
+
+
+
+
+
+
+

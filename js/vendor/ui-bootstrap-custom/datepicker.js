@@ -257,6 +257,9 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                     scope.title = dateFilter(ctrl.activeDate, ctrl.formatDayTitle);
                     scope.rows = ctrl.split(days, 7);
 
+                    //console.log('datepicker directive happening');
+                    //console.log(scope.rows);
+
                     if ( scope.showWeeks ) {
                         scope.weekNumbers = [];
                         var weekNumber = getISO8601WeekNumber( scope.rows[0][0].date ),

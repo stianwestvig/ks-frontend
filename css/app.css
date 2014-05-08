@@ -4347,6 +4347,8 @@ Other
 .events span {
   line-height: 1rem; }
 
+.calendar:focus {
+  outline: none; }
 .calendar table {
   margin-bottom: 1rem; }
   .calendar table thead h5 {

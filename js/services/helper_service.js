@@ -1,9 +1,9 @@
 app.service('helperService', function () {
     var helperService = {
 
-        toSeconds : function(days){
-            var oneDay =  24 * 60 * 60 * 1000;
-            return days * oneDay;
+        toTimestamp : function(date){
+            var factor =  24 * 60 * 60 * 1000;
+            return date * factor;
         },
 
         dateToString : function(timestamp){
@@ -11,6 +11,11 @@ app.service('helperService', function () {
             var date =  new Date()
             date.setTime(timestamp);
             return date.toUTCString();
+        },
+        addDaysToDate: function(date, days){
+            var newDate = new Date(date.getTime());
+            newDate.setDate(newDate.getDate() + days);
+            return newDate;
         }
     };
 

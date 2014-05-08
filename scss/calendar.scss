@@ -8,7 +8,9 @@
 
 .calendar {
 
-
+  &:focus {
+    outline: none;
+  }
 
   table {
     margin-bottom: rem-calc(16);

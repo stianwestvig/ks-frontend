@@ -4,16 +4,18 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      *
      * TODO:
      *
-     * - inactive lenker til dager utenfor måned
      * - måned: sett dag til første
      * - og end dag til siste i måned
      * - lenke til eventside
+     * - filtrer på region
+     * - klikk på måned - viser hele måned
      *
      *
      * DONE:
      *
      * - markering av dager med events
      * - klokkeuavhengighet
+     * - inactive lenker til dager utenfor måned
      *
      * */
 
@@ -47,48 +49,56 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
     }
 
 
-    calendar.today = function()  {
+    calendar.init = function()  {
         /* Initialize the date object to today */
         calendar.dt = new Date();
 
-        /* Get timestamp version of the dateobject */
-        var timeStamp = calendar.dt.getTime();
-
         /* set the start date to display: */
-        calendar.setStartDate(timeStamp);
+        var newStartDate = helperService.addDaysToDate(calendar.dt, 0);
+        calendar.setStartDate(newStartDate);
 
         /* set the end date to display: */
-        calendar.setEndDate(calendar.getStartDate() + helperService.toSeconds(30));
+        var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
+        calendar.setEndDate(newEndDate);
+
+        console.log('init start: ' + calendar.getStartDate());
+        console.log('init end: ' + calendar.getEndDate());
     };
 
-    calendar.today();
+    calendar.init();
     calendar.events = calendar.data;
 
     /* watch stuff: */
     $scope.$watch('calendar.dt', function(newVal, oldVal){
 
-        calendar.setEndDate(oldVal);
-        var days = 1;
+        var newValTimestamp = helperService.toTimestamp(newVal);
+        var oldValTimestamp = helperService.toTimestamp(oldVal);
 
-        if (calendar.getMonthFromStartDate() !== newVal.getMonth()){
-            /* month changed: */
-            days = 30;
+        console.log('new: ' + newValTimestamp);
+        console.log('old: ' + oldValTimestamp);
+
+        if(oldValTimestamp !== undefined){
+            if(oldValTimestamp !== newValTimestamp){
+                console.log('watch is allowed to do shit.');
+                calendar.setEndDate(oldVal);
+                var days = 1;
+
+                /* Test if new month or just within a month: */
+                if (calendar.getMonthFromStartDate() !== newVal.getMonth()){
+                    days = 30;
+                }
+                else {
+                    days = 1;
+                }
+
+                calendar.setStartDate(newVal);
+
+                /* add 1 or 30 days to copy of start date */
+                var newEndDate = helperService.addDaysToDate(calendar.getStartDate(), days);
+                calendar.setEndDate(newEndDate);
+
+            }
         }
-        else {
-            /* day changed */
-            days = 1;
-        }
-
-        calendar.setStartDate(newVal);
-
-        /* copy start date */
-        var newEndDate = new Date(calendar.getStartDate().getTime());
-
-        /* add 1/30 days to copy of start date */
-        newEndDate.setDate(newEndDate.getDate()+days);
-        calendar.setEndDate(newEndDate);
-
-        calendar.setStartDate(newVal);
 
     }, true);
 

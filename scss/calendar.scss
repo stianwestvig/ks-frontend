@@ -75,24 +75,11 @@
           background-color: $KSCalendarEvents5;
           a {
             color: $KSWhite;
-            &.events-5 {
-              background-color: $KSCalendarEvents5;
-              color: $KSWhite;
-              padding: rem-calc(4 6);
-            }
           }
         }
 
         a {
           color: $KSBlack;
-        }
-
-        a {
-          &.events-5 {
-            background-color: $KSCalendarEvents5;
-            color: $KSWhite;
-            padding: rem-calc(4 6);
-          }
         }
 
       }

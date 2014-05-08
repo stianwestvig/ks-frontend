@@ -1,0 +1,45 @@
+
+.left-off-canvas-menu {
+
+  -webkit-transform: none;
+  -moz-transform: none;
+   transform: none;
+
+  bottom: initial;
+
+  // cheat:
+  min-height: rem-calc(800);
+
+  ul {
+    @include transition_transform(transform, 250ms, ease);
+    li {
+      a {
+        &:hover {
+          background: none!important;
+        }
+      }
+
+      ul {
+        position: absolute;
+        left: 80%;
+        top: 73px;
+      }
+    }
+
+  }
+
+}
+
+
+
+/*
+-webkit-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
+-moz-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
+-ms-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
+-o-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
+transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-ms-backface-visibility: hidden;
+-o-backface-visibility: hidden;
+backface-visibility: hidden;*/

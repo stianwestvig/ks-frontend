@@ -110,16 +110,25 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
             return arrays;
         };
 
-        $scope.select = function( date ) {
-            if ( $scope.datepickerMode === self.minMode ) {
-                var dt = ngModelCtrl.$modelValue ? new Date( ngModelCtrl.$modelValue ) : new Date(0, 0, 0, 0, 0, 0, 0);
-                dt.setFullYear( date.getFullYear(), date.getMonth(), date.getDate() );
-                ngModelCtrl.$setViewValue( dt );
-                ngModelCtrl.$render();
-            } else {
-                self.activeDate = date;
-                $scope.datepickerMode = self.modes[ self.modes.indexOf( $scope.datepickerMode ) - 1 ];
+        $scope.select = function( clickeddate, event ) {
+            var date = clickeddate.date;
+
+            if(clickeddate.secondary) {
+                event.preventDefault();
             }
+            else {
+
+                if ( $scope.datepickerMode === self.minMode ) {
+                    var dt = ngModelCtrl.$modelValue ? new Date( ngModelCtrl.$modelValue ) : new Date(0, 0, 0, 0, 0, 0, 0);
+                    dt.setFullYear( date.getFullYear(), date.getMonth(), date.getDate() );
+                    ngModelCtrl.$setViewValue( dt );
+                    ngModelCtrl.$render();
+                } else {
+                    self.activeDate = date;
+                    $scope.datepickerMode = self.modes[ self.modes.indexOf( $scope.datepickerMode ) - 1 ];
+                }
+            }
+
         };
 
         $scope.move = function( direction ) {
@@ -610,17 +619,24 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                         }
                     });
 
-                    scope.select = function( date ) {
-                        if (date === 'today') {
-                            var today = new Date();
-                            if (angular.isDate(ngModel.$modelValue)) {
-                                date = new Date(ngModel.$modelValue);
-                                date.setFullYear(today.getFullYear(), today.getMonth(), today.getDate());
-                            } else {
-                                date = new Date(today.setHours(0, 0, 0, 0));
-                            }
+                    scope.select = function( clickeddate, event ) {
+                        var date = clickeddate.date;
+
+                        if(clickeddate.secondary) {
+                            event.preventDefault();
                         }
-                        scope.dateSelection( date );
+                        else {
+                            if (date === 'today') {
+                                var today = new Date();
+                                if (angular.isDate(ngModel.$modelValue)) {
+                                    date = new Date(ngModel.$modelValue);
+                                    date.setFullYear(today.getFullYear(), today.getMonth(), today.getDate());
+                                } else {
+                                    date = new Date(today.setHours(0, 0, 0, 0));
+                                }
+                            }
+                            scope.dateSelection( date );
+                        }
                     };
 
                     scope.close = function() {

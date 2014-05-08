@@ -17,9 +17,17 @@
       h5 {
         text-transform: uppercase;
         font-size: rem-calc(16);
+
+        &:focus {
+          outline: none;
+        }
       }
       a {
         color: $KSBlack;
+
+        &:focus {
+          outline: none;
+        }
 
         .icon-arrow-left {margin-left: rem-calc(14);}
         .icon-arrow-right {margin-right: rem-calc(14);}
@@ -44,12 +52,16 @@
         a {
           &.inactive {
             color: $KSGreyInactiveCalendar;
+            cursor: default;
           }
           &.current {
             color: $KSRed;
           }
           &.selected {
             font-weight: bold;
+          }
+          &:focus {
+            outline: none;
           }
         }
 
@@ -75,6 +87,10 @@
           background-color: $KSCalendarEvents5;
           a {
             color: $KSWhite;
+          }
+
+          &.inactive {
+            background-color: $KSCalendarEvents4;
           }
         }
 

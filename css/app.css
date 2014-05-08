@@ -4352,8 +4352,12 @@ Other
   .calendar table thead h5 {
     text-transform: uppercase;
     font-size: 1rem; }
+    .calendar table thead h5:focus {
+      outline: none; }
   .calendar table thead a {
     color: black; }
+    .calendar table thead a:focus {
+      outline: none; }
     .calendar table thead a .icon-arrow-left {
       margin-left: 0.875rem; }
     .calendar table thead a .icon-arrow-right {
@@ -4367,11 +4371,14 @@ Other
     line-height: 1rem;
     padding: 0.25rem 0.375rem; }
     .calendar table tr td a.inactive {
-      color: #b2b2b2; }
+      color: #b2b2b2;
+      cursor: default; }
     .calendar table tr td a.current {
       color: #cd2346; }
     .calendar table tr td a.selected {
       font-weight: bold; }
+    .calendar table tr td a:focus {
+      outline: none; }
     .calendar table tr td.events-1 {
       background-color: #fdf5f3; }
     .calendar table tr td.events-2 {
@@ -4388,5 +4395,7 @@ Other
       background-color: #cc1b43; }
       .calendar table tr td.events-5 a {
         color: white; }
+      .calendar table tr td.events-5.inactive {
+        background-color: #db7376; }
     .calendar table tr td a {
       color: black; }

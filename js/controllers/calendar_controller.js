@@ -1,5 +1,22 @@
 app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
+    /*
+     *
+     * TODO:
+     *
+     * - inactive lenker til dager utenfor måned
+     * - måned: sett dag til første
+     * - og end dag til siste i måned
+     * - lenke til eventside
+     *
+     *
+     * DONE:
+     *
+     * - markering av dager med events
+     * - klokkeuavhengighet
+     *
+     * */
+
     var calendar = this;
 
     calendar.data = dataService.data;
@@ -72,22 +89,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         calendar.setEndDate(newEndDate);
 
         calendar.setStartDate(newVal);
-
-
-
-
-        /*
-        *
-        * markering av dager med events
-        *
-        * - klokkeuavhengighet
-        *
-        * - måned: sett dag til første
-        * - og end dag til siste i måned
-        *
-        *
-        * - lenke til eventside
-        * */
 
     }, true);
 

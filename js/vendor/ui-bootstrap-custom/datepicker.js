@@ -188,7 +188,8 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
             templateUrl: 'views/datepicker/datepicker.html',
             scope: {
                 datepickerMode: '=?',
-                dateDisabled: '&'
+                dateDisabled: '&',
+                events: '='
             },
             require: ['datepicker', '?^ngModel'],
             controller: 'DatepickerController',
@@ -213,6 +214,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
 
                 ctrl.step = { months: 1 };
                 ctrl.element = element;
+                scope.events = ctrl.events;
 
                 var DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
                 function getDaysInMonth( year, month ) {
@@ -229,6 +231,14 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                     return dates;
                 }
 
+                /* Check if two dates are the same day */
+                function isSameDay(date1, date2) {
+                    var result = (date1.getDate() == date2.getDate()
+                        && date1.getMonth() == date2.getMonth()
+                        && date1.getFullYear() == date2.getFullYear());
+                    return result;
+                }
+
                 ctrl._refreshView = function() {
                     var year = ctrl.activeDate.getFullYear(),
                         month = ctrl.activeDate.getMonth(),
@@ -241,13 +251,34 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                         firstDate.setDate( - numDisplayedFromPreviousMonth + 1 );
                     }
 
-                    // 42 is the number of days on a six-month calendar
+                    /* 42 is the number of days on a six-month calendar */
                     var days = getDates(firstDate, 42);
+
+                    /* For each day */
                     for (var i = 0; i < 42; i ++) {
+                        var hasEvents = false;
+
+                        /* Extend the object with extra properties */
                         days[i] = angular.extend(ctrl.createDateObject(days[i], ctrl.formatDay), {
                             secondary: days[i].getMonth() !== month,
                             uid: scope.uniqueId + '-' + i
                         });
+
+                        /* For each event */
+                        for (var j = 0; j < scope.$parent.events.length; j ++) {
+                            hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate)
+                            if(hasEvents){
+                                break;
+                            }
+                        }
+
+                        /* Extend the date object with a property hasEvents (true or false)  */
+                        days[i] = angular.extend(days[i], {
+                            hasEvents: hasEvents
+                        });
+
+                        /* False up the flag, for next day in loop */
+                        hasEvents = false;
                     }
 
                     scope.labels = new Array(7);
@@ -261,8 +292,6 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                     scope.title = dateFilter(ctrl.activeDate, ctrl.formatDayTitle);
                     scope.rows = ctrl.split(days, 7);
 
-                    //console.log('datepicker directive happening');
-                    //console.log(scope.rows);
 
                     if ( scope.showWeeks ) {
                         scope.weekNumbers = [];

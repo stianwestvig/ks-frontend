@@ -49,6 +49,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
     /* watch stuff: */
     $scope.$watch('calendar.dt', function(newVal, oldVal){
+
         calendar.setEndDate(oldVal);
         var days = 1;
 
@@ -78,6 +79,8 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         /*
         *
         * markering av dager med events
+        *
+        * - klokkeuavhengighet
         *
         * - måned: sett dag til første
         * - og end dag til siste i måned

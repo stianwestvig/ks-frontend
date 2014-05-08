@@ -50,16 +50,12 @@
 
     <div class="row">
         <div class="small-12 columns">
-            <aside class="left-off-canvas-menu" ng-hide="navigation.hideNavigation">
-                <ul class="off-canvas-list">
-                    <li><a ng-click="navigation.clicked()" href="#/article">Artikkelside</a></li>
-                    <li><a ng-click="navigation.clicked()" href="#/persons">Finn kollega</a></li>
-                    <li><a ng-click="navigation.clicked()" href="#/events">Events</a></li>
-                    <li><a ng-click="navigation.clicked()" href="#/profile">Profilside</a></li>
-                    <li><a ng-click="navigation.clicked()" href="#/list">Listeside</a></li>
-                    <li><a ng-click="navigation.clicked()" href="#/search">Søkeresultat</a></li>
-                </ul>
-            </aside>
+
+            <div ng-hide="navigation.hideNavigation">
+
+                <multimenu menuitems="navigation.menuItems" ></multimenu>
+
+            </div>
         </div>
     </div>
 </div>

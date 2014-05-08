@@ -1,4 +1,15 @@
+
 var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap.datepicker']);
+
+var app = angular.module('app', [
+    'mm.foundation',
+    'ngRoute',
+    'ngAnimate',
+    'ngSanitize',
+    'ui.bootstrap.datepicker',
+    'agh.multimenu'
+]);
+
 
 app.config(function($routeProvider, $locationProvider){
 
@@ -24,6 +35,5 @@ app.config(function($routeProvider, $locationProvider){
         .when('/events', {
             templateUrl: 'views/events.html'
         });
-
 
 });

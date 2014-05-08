@@ -65,7 +65,7 @@
                     <h1>{{calendar.dt.getMonth()}}</h1>
 
                     <ul class="list">
-                        <li ng-repeat="event in calendar.events | dateFilter: calendar.startDate:calendar.endDate">
+                        <li ng-repeat="event in calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate()">
                             <span>{{event.startDate | date:'MMM'}}</span>
                             <h2>{{event.startDate | date:'d'}}</h2>
                             <h2>{{event.title}}</h2>

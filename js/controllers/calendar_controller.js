@@ -1,73 +1,10 @@
-app.controller('CalendarCtrl', function() {
+app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
     var calendar = this;
 
+    calendar.data = dataService.data;
     calendar.startDate;
     calendar.endDate;
-
-    // date string format: YYYY-MM-DD hh:mm:ss
-    // initielt fylt med 3 måneder events:
-    var data = [
-        {
-            "title": "Norsk kommunesektor i EU/EØS teorien",
-            "description": "Kort om arrangementet. Fastsatt tegn. ",
-            "startDate": new Date(),
-            "endDate": new Date(),
-            "region": "Nord-Norge"
-        },
-        {
-            "title": "Svensk kommunesektor i EU/EØS teorien",
-            "description": "Kort om arrangementet. Fastsatt tegn. ",
-            "startDate": new Date(),
-            "endDate": new Date(),
-            "region": "Østlandet"
-        },
-        {
-            "title": "Fagsamling for FoU",
-            "description": "Kort om arrangementet. Fastsatt tegn. Mer tekst hvor mye tekst skal det kunne være her Heidi?",
-            "startDate": new Date("2014-05-10 08:37:00"),
-            "endDate": new Date("2014-05-15 10:06:00"),
-            "region": "Nord-Norge"
-        },
-        {
-            "title": "Fagsamling for FoU",
-            "description": "Kort om arrangementet. Fastsatt tegn. Mer tekst hvor mye tekst skal det kunne være her Heidi?",
-            "startDate": new Date("2014-05-10 08:37:00"),
-            "endDate": new Date("2014-05-15 10:06:00"),
-            "region": "Nord-Norge"
-        },
-        {
-            "title": "Finnmark: Fylkesmøte",
-            "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-4 13:37:00"),
-            "endDate": new Date("2014-06-11 13:37:00"),
-            "region": "Nord-Norge"
-        },{
-            "title": "Finnmark: Fylkesmøte",
-            "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-10 13:37:00"),
-            "endDate": new Date("2014-06-11 13:37:00"),
-            "region": "Nord-Norge"
-        },{
-            "title": "Finnmark: Fylkesmøte",
-            "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-10 13:37:00"),
-            "endDate": new Date("2014-06-11 13:37:00"),
-            "region": "Nord-Norge"
-        },{
-            "title": "Finnmark: Fylkesmøte",
-            "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-10 13:37:00"),
-            "endDate": new Date("2014-06-11 13:37:00"),
-            "region": "Nord-Norge"
-        },{
-            "title": "Finnmark: Fylkesmøte",
-            "description": "Kort om arrangementet. Fastsatt tegn. Finnmark rulz btw.",
-            "startDate": new Date("2014-06-10 13:37:00"),
-            "endDate": new Date("2014-06-11 13:37:00"),
-            "region": "Nord-Norge"
-        }
-    ]
 
     calendar.setStartDate = function(date){
         calendar.startDate = date;
@@ -83,10 +20,18 @@ app.controller('CalendarCtrl', function() {
         return calendar.endDate;
     }
 
+    calendar.getMonthFromStartDate = function(){
+        var mydate = new Date(calendar.getStartDate());
+        return mydate.getMonth();
+    }
+
+    calendar.setMonthInStartDate = function(month){
+        calendar.setStartDate(calendar.getStartDate().setMonth(month));
+    }
+
 
     calendar.today = function()  {
         /* Initialize the date object to today */
-
         calendar.dt = new Date();
 
         /* Get timestamp version of the dateobject */
@@ -96,24 +41,53 @@ app.controller('CalendarCtrl', function() {
         calendar.setStartDate(timeStamp);
 
         /* set the end date to display: */
-        calendar.setEndDate(calendar.getStartDate() + calendar.toSeconds(30));
+        calendar.setEndDate(calendar.getStartDate() + helperService.toSeconds(30));
     };
 
-
-    calendar.toSeconds = function(days){
-        var oneDay =  1 * 24 * 60 * 60 * 1000;
-        return days * oneDay;
-    }
-
-
-    calendar.dateToString = function(timestamp){
-        /* Take a timestamp, convert to string */
-        var date =  new Date()
-        date.setTime(timestamp);
-        return date.toUTCString();
-    }
-
     calendar.today();
-    calendar.events = data;
+    calendar.events = calendar.data;
+
+    /* watch stuff: */
+    $scope.$watch('calendar.dt', function(newVal, oldVal){
+        calendar.setEndDate(oldVal);
+        var days = 1;
+
+        if (calendar.getMonthFromStartDate() !== newVal.getMonth()){
+            /* month changed: */
+            days = 30;
+        }
+        else {
+            /* day changed */
+            days = 1;
+        }
+
+        calendar.setStartDate(newVal);
+
+        /* copy start date */
+        var newEndDate = new Date(calendar.getStartDate().getTime());
+
+        /* add 1/30 days to copy of start date */
+        newEndDate.setDate(newEndDate.getDate()+days);
+        calendar.setEndDate(newEndDate);
+
+        calendar.setStartDate(newVal);
+
+
+
+
+        /*
+        *
+        * markering av dager med events
+        *
+        * - måned: sett dag til første
+        * - og end dag til siste i måned
+        *
+        *
+        * - lenke til eventside
+        * */
+
+    }, true);
+
+
 
 });

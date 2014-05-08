@@ -12,10 +12,14 @@
         </tr>
         </thead>
         <tbody>
+
+        <ul>
+            <li ng-repeat="event in events">{{event.title}}</li>
+        </ul>
         <tr ng-repeat="row in rows track by $index">
             <td ng-show="showWeeks" class="text-center h6">{{ weekNumbers[$index] }}</td>
             <td ng-repeat="dt in row track by dt.date" class="text-center" role="gridcell" id="{{dt.uid}}" aria-disabled="{{!!dt.disabled}}">
-                <a ng-class="{'selected': dt.selected, 'inactive': dt.secondary, 'current': dt.current}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1">{{dt.label}}</a>
+                <a ng-class="{'selected': dt.selected, 'inactive': dt.secondary, 'current': dt.current, 'events-5': true}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1">{{dt.label}}</a>
 
             </td>
         </tr>

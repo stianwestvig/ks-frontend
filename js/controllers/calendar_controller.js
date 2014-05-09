@@ -3,9 +3,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
     /*
      *
      * TODO:
-     *
-     * - klikk på måned - viser hele måned
-     *
+     * - css
      *
      * DONE:
      *
@@ -16,6 +14,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      * - og end dag til siste i måned
      * - lenke til eventside
      * - filtrer på region
+     * - klikk på måned - viser hele måned
      *
      * */
 
@@ -62,8 +61,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
 
-        /*console.log('init start: ' + calendar.getStartDate());
-        console.log('init end: ' + calendar.getEndDate());*/
     };
 
     calendar.init();
@@ -82,6 +79,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
             if(oldValTimestamp !== newValTimestamp){
 
                 /*console.log('watcher on the wall reporting');
+                console.log(calendar.dt.refreshMonth);
                 console.log('start: '+$scope.calendar.startDate);
                 console.log('end:   '+$scope.calendar.endDate);
                 console.log('dt:    '+$scope.calendar.dt);
@@ -92,7 +90,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
 
                 /* Test if new month or just within a month: */
-                if (calendar.getMonthFromStartDate() !== newVal.getMonth()){
+                if (calendar.dt.refreshMonth || calendar.getMonthFromStartDate() !== newVal.getMonth()){
 
                     var newDate = new Date(newVal);
 

@@ -15,27 +15,10 @@
                     <div class="small-12 medium-4 columns"><label for="region">Velg region</label></div>
                 </div>
                 <div class="row">
-
-                    <!--
-                    <div class="small-12 medium-6 columns">
-                        <select name="month" id="month">
-                            <option value="1">Januar</option>
-                            <option value="2">Februar</option>
-                            <option value="3">Mars</option>
-                            <option value="4">April</option>
-                            <option value="5">Mai</option>
-                        </select>
-                    </div>
-                    -->
-
                     <div class="small-12 medium-4 columns">
                         <select name="region" id="region" ng-model="limit.region">
                             <option value="">Nullstill</option>
                             <option ng-repeat="region in calendar.regions" value="{{region.name}}">{{region.name}}</option>
-                            <!--<option value="Nord-Norge">Nord-Norge</option>
-                            <option value="Vestlandet">Vestlandet</option>
-                            <option value="Sørlandet">Sørlandet</option>
-                            <option value="Østlandet">Østlandet</option>-->
                         </select>
                     </div>
                 </div>
@@ -64,16 +47,15 @@
                 <!-- main col pulled for medium -->
                 <div class="small-12 medium-8  columns">
 
-                    <h1>filter: {{region}}</h1>
-
                     <ul class="list">
-                        <li ng-repeat="event in calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit">
+                        <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
                             <span>{{event.startDate | date:'MMM'}}</span>
                             <h2>{{event.startDate | date:'d'}}</h2>
                             <h2><a href="{{event.url}}">{{event.title}}</a></h2>
                             <p>{{event.region}}</p>
                             <p>{{event.description}}</p>
                         </li>
+                        <li ng-show="filtered.length === 0"><h2>Ingen hendeklser for valgt periode og region</h2></li>
                     </ul>
                 </div>
             </div>

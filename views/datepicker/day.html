@@ -3,7 +3,7 @@
         <thead>
         <tr>
             <th><a class="left" ng-click="move(-1)" tabindex="-1"><i class="icon-arrow-left"></i></a></th>
-            <th colspan="{{5 + showWeeks}}"><h5 id="{{uniqueId}}-title" role="heading" aria-live="assertive" aria-atomic="true" tabindex="-1">{{title}}</h5></th>
+            <th colspan="{{5 + showWeeks}}"><h5 id="{{uniqueId}}-title" role="heading" aria-live="assertive" aria-atomic="true" tabindex="-1"><a ng-click="selectMonth()">{{title}}</a></h5></th>
             <th><a class="right" ng-click="move(1)" tabindex="-1"><i class="icon-arrow-right"></i></a></th>
         </tr>
         <tr>

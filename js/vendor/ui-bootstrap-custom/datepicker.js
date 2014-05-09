@@ -142,6 +142,20 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
             self.refreshView();
         };
 
+        $scope.selectMonth = function(){
+            var year = self.activeDate.getFullYear(),
+                month = self.activeDate.getMonth();
+
+            self.activeDate.setFullYear(year, month, 1);
+            var dt = ngModelCtrl.$modelValue ? new Date( ngModelCtrl.$modelValue ) : new Date(0, 0, 0, 0, 0, 0, 0);
+            dt.setFullYear( self.activeDate.getFullYear(), self.activeDate.getMonth(), self.activeDate.getDate() );
+
+            /* This function is just like .move, and it sets one flag on the dt object. This is used in calendarController $watch to view entire month */
+            dt.refreshMonth = true;
+            ngModelCtrl.$setViewValue( dt );
+            self.refreshView();
+        };
+
         $scope.toggleMode = function( direction ) {
             direction = direction || 1;
 

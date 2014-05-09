@@ -1,17 +1,26 @@
 
-.left-off-canvas-menu {
+.main-menu {
 
-  -webkit-transform: none;
-  -moz-transform: none;
-   transform: none;
 
-  bottom: initial;
-
-  // cheat:
+  -webkit-backface-visibility: hidden;
+  width: 15.625rem;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  overflow-y: auto;
+  background: #edf6fd;
+  z-index: 1001;
+  box-sizing: content-box;
   min-height: rem-calc(800);
+  /*display: block;*/
 
-  ul {
+
+  /*-webkit-transition: -webkit-transform 250ms ease;*/
+
+  ul.off-canvas-list {
     @include transition_transform(transform, 250ms, ease);
+    /*-webkit-transition: -webkit-transform 500ms ease;*/
+
     li {
       a {
         &:hover {
@@ -21,25 +30,11 @@
 
       ul {
         position: absolute;
-        left: 80%;
-        top: 73px;
+        left: 92%;
+        top: 0px;
+        list-style: none;
+        width: 100%;
       }
     }
-
   }
-
 }
-
-
-
-/*
--webkit-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
--moz-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
--ms-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
--o-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
-transform: translate3d(-110%, 0, 0) scale3d(1, 1, 1);
--webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
--ms-backface-visibility: hidden;
--o-backface-visibility: hidden;
-backface-visibility: hidden;*/

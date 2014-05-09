@@ -1,12 +1,12 @@
 @mixin clearfix() {
-&:before,
-&:after {
-  content: " ";
-  display: table;
-}
-&:after {
-  clear: both;
-}
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 //==== Example: @include css-triangle ("up", 10px, #fff);
@@ -32,18 +32,23 @@
 
 }
 
-/*@mixin transition($transition-property, $transition-time, $method) {
-  -webkit-transition: $transition-property $transition-time $method;
-  -moz-transition: $transition-property $transition-time $method;
-  -ms-transition: $transition-property $transition-time $method;
-  -o-transition: $transition-property $transition-time $method;
-  transition: $transition-property $transition-time $method;
-}*/
-
-
 @mixin transition_transform ($transition, $transition-time, $method) {
-  -webkit-transition:  -webkit-transform, $transition-time, $method;
-  -moz-transition: -moz-transform, $transition-time, $method;
-  -o-transition:  -o-transform, $transition-time, $method;
-  transition: transform, $transition-time, $method;
+  -webkit-transition:  -webkit-transform $transition-time $method;
+  -moz-transition: -moz-transform $transition-time $method;
+  -o-transition:  -o-transform $transition-time $method;
+  transition: transform $transition-time $method;
+}
+
+
+@mixin translate3d($percent) {
+  -webkit-transform: translate3d($percent, 0, 0) scale3d(1, 1, 1);
+  -moz-transform: translate3d($percent, 0, 0) scale3d(1, 1, 1);
+  -ms-transform: translate3d($percent, 0, 0) scale3d(1, 1, 1);
+  -o-transform: translate3d($percent, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d($percent, 0, 0) scale3d(1, 1, 1);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

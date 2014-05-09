@@ -32,39 +32,95 @@ app.controller('navigationController', function($scope){
             'categories' : [
                 {
                     'href' : '#/article',
-                    'linkText' : 'secondLevelItem',
+                    'linkText' : ' Artikkelside 2',
                     'categories' : [
                         {
                             'href' : '#/article',
-                            'linkText' : 'thirdLevelItem'
+                            'linkText' : 'Artikkelside 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'thirdLevelItem'
+                            'linkText' : 'Artikkelside 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'thirdLevelItem'
+                            'linkText' : 'Artikkelside 3'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'secondLevelItem'
+                    'linkText' : 'Artikkelside 2'
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'secondLevelItem'
+                    'linkText' : 'Artikkelside 2'
                 }
             ]
         },
         {
             'href' : '#/persons',
-            'linkText' : 'Finn kollega'
+            'linkText' : 'Finn kollega',
+            'categories' : [
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Finn kollega 2',
+                    'categories' : [
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Finn kollega 3'
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Finn kollega 3'
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Finn kollega 3'
+                        }
+                    ]
+                },
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Finn kollega 2'
+                },
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Finn kollega 2'
+                }
+            ]
         },
         {
             'href' : '#/events',
-            'linkText' : 'Events'
+            'linkText' : 'Events',
+            'categories' : [
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Events 2',
+                    'categories' : [
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Events 3'
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Events 3'
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Events 3'
+                        }
+                    ]
+                },
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Events 2'
+                },
+                {
+                    'href' : '#/article',
+                    'linkText' : 'Events 2'
+                }
+            ]
         },
         {
             'href' : '#/profile',

@@ -68,7 +68,7 @@
                         <li ng-repeat="event in calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate()">
                             <span>{{event.startDate | date:'MMM'}}</span>
                             <h2>{{event.startDate | date:'d'}}</h2>
-                            <h2>{{event.title}}</h2>
+                            <h2><a href="{{event.url}}">{{event.title}}</a></h2>
                             <p>{{event.description}}</p>
                         </li>
                     </ul>

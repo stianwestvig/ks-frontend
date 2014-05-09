@@ -5,8 +5,8 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      * TODO:
      *
      *
-     * - og end dag til siste i måned
-     * - lenke til eventside
+     *
+     *
      * - filtrer på region
      * - klikk på måned - viser hele måned
      *
@@ -17,6 +17,8 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      * - klokkeuavhengighet
      * - inactive lenker til dager utenfor måned
      * - måned: sett dag til første
+     * - og end dag til siste i måned
+     * - lenke til eventside
      *
      * */
 
@@ -93,28 +95,26 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
                 /* Test if new month or just within a month: */
                 if (calendar.getMonthFromStartDate() !== newVal.getMonth()){
-                    days = 30;
+
                     var newDate = new Date(newVal);
+
+                    /* Set day to the first in the month */
                     newDate.setDate(1);
                     calendar.setStartDate(newDate);
-                    //calendar.dt = newDate;
 
-
-
-
+                    /* Find number of days in the selected month to use as End Date */
+                    var monthIndex = newDate.getMonth() +1;
+                    days = helperService.daysInMonth(monthIndex,newDate.getFullYear());
 
                 }
                 else {
-                    //days = 1;
+                    days = 1;
                     calendar.setStartDate(newVal);
                 }
 
                 /* add 1 or 30 days to copy of start date */
                 var newEndDate = helperService.addDaysToDate(calendar.getStartDate(), days);
                 calendar.setEndDate(newEndDate);
-
-
-
 
             }
         }

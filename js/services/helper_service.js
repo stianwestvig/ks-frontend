@@ -16,6 +16,10 @@ app.service('helperService', function () {
             var newDate = new Date(date.getTime());
             newDate.setDate(newDate.getDate() + days);
             return newDate;
+        },
+        daysInMonth: function (month,year) {
+            // month is not 0, but 1-based.
+            return new Date(year, month, 0).getDate();
         }
     };
 

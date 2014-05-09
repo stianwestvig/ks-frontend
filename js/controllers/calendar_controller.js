@@ -22,6 +22,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
     var calendar = this;
 
     calendar.data = dataService.data;
+    calendar.regions = dataService.regions;
     calendar.startDate;
     calendar.endDate;
 

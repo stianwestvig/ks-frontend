@@ -31,10 +31,11 @@
                     <div class="small-12 medium-4 columns">
                         <select name="region" id="region" ng-model="limit.region">
                             <option value="">Nullstill</option>
-                            <option value="Nord-Norge">Nord-Norge</option>
+                            <option ng-repeat="region in calendar.regions" value="{{region.name}}">{{region.name}}</option>
+                            <!--<option value="Nord-Norge">Nord-Norge</option>
                             <option value="Vestlandet">Vestlandet</option>
                             <option value="Sørlandet">Sørlandet</option>
-                            <option value="Østlandet">Østlandet</option>
+                            <option value="Østlandet">Østlandet</option>-->
                         </select>
                     </div>
                 </div>

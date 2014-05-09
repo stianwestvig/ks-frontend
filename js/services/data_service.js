@@ -2,8 +2,14 @@ app.service('dataService', function () {
     // date string format: YYYY-MM-DD hh:mm:ss
     // initielt fylt med 3 måneder events:
 
-    var dataService = {
-        data: [
+    return {
+        "regions": [
+            { "name": "Nord-Norge" },
+            { "name": "Østlandet" },
+            { "name": "Vestlandet" },
+            { "name": "Sørlandet" }
+        ],
+        "data": [
             {
                 "title": "Norsk kommunesektor i EU/EØS teorien",
                 "description": "Kort om arrangementet. Fastsatt tegn. ",
@@ -88,9 +94,5 @@ app.service('dataService', function () {
                 "url": "http://localhost:8888/#/article"
             }
         ]
-    }
-
-
-    return dataService;
-
+    };
 });

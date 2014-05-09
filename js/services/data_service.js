@@ -13,7 +13,7 @@ app.service('dataService', function () {
                 "url": "http://localhost:8888/#/article"
             },
             {
-                "title": "Svensk kommunesektor i EU/EØS teorien",
+                "title": "Svensk kommunesektor i EU/EØS teorien, hva om vi sier ordet: Nord-Norge",
                 "description": "Kort om arrangementet. Fastsatt tegn. ",
                 "startDate": new Date("2014-05-09 08:37:00"),
                 "endDate": new Date("2014-05-10 08:37:00"),

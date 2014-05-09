@@ -4,10 +4,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      *
      * TODO:
      *
-     *
-     *
-     *
-     * - filtrer på region
      * - klikk på måned - viser hele måned
      *
      *
@@ -19,6 +15,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
      * - måned: sett dag til første
      * - og end dag til siste i måned
      * - lenke til eventside
+     * - filtrer på region
      *
      * */
 

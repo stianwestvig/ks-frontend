@@ -28,8 +28,7 @@ body {
   }
 }
 
-
-@media ($medium-up) {
+@media #{$medium-up} {
   .text-center-medium-up {
     text-align: center!important;
   }

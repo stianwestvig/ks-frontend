@@ -7,6 +7,11 @@
       border-right: 1px solid $KSGreyBorderDarker;
     }
 
+    .region-column {
+      height: rem-calc(40);
+      line-height: rem-calc(40);
+    }
+
     li {
       border-bottom: 1px solid $KSGreyBorder;
       margin-bottom: rem-calc(10);
@@ -39,6 +44,18 @@
           display: inline-block;
           margin-top: rem-calc(5);
         }
+      }
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .events {
+    ul.events-list {
+      .region-column {
+        border-left: 1px solid $KSGreyBorderDarker;
+        height: rem-calc(40);
+        line-height: rem-calc(40);
       }
     }
   }

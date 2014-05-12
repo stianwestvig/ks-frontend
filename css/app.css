@@ -4075,7 +4075,7 @@ body {
   .left-off-canvas-menu li a:hover {
     background: none !important; }
 
-@media ("only screen and (min-width:40.063em)") {
+@media only screen and (min-width:40.063em) {
   .text-center-medium-up {
     text-align: center !important; } }
 
@@ -4409,6 +4409,9 @@ Header and navigation
   margin-left: 0; }
   .events ul.events-list .date-column {
     border-right: 1px solid #c8c8c8; }
+  .events ul.events-list .region-column {
+    height: 2.5rem;
+    line-height: 2.5rem; }
   .events ul.events-list li {
     border-bottom: 1px solid #e7e7e7;
     margin-bottom: 0.625rem; }
@@ -4430,6 +4433,12 @@ Header and navigation
         font-size: 2.5rem;
         display: inline-block;
         margin-top: 0.3125rem; }
+
+@media only screen and (min-width:40.063em) {
+  .events ul.events-list .region-column {
+    border-left: 1px solid #c8c8c8;
+    height: 2.5rem;
+    line-height: 2.5rem; } }
 
 .calendar:focus {
   outline: none; }

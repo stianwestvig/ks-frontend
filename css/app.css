@@ -4360,10 +4360,6 @@ Other
     color: black; }
     .calendar table thead a:focus {
       outline: none; }
-    .calendar table thead a .icon-arrow-left {
-      margin-left: 0.875rem; }
-    .calendar table thead a .icon-arrow-right {
-      margin-right: 0.875rem; }
   .calendar table thead tr.h6 th {
     line-height: 1rem;
     padding: 0 0.125rem;

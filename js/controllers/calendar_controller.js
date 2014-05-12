@@ -51,7 +51,9 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
     calendar.init = function()  {
         /* Initialize the date object to today */
-        calendar.dt = new Date();
+        var firstOfTheMonth = new Date();
+        firstOfTheMonth.setDate(1);
+        calendar.dt = firstOfTheMonth;
 
         /* set the start date to display: */
         var newStartDate = helperService.addDaysToDate(calendar.dt, 0);
@@ -60,6 +62,8 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         /* set the end date to display: */
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
+
+        console.log(newStartDate);
 
     };
 

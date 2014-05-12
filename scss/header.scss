@@ -64,8 +64,19 @@ Header and navigation
         }
       }
       .search {
+        .icon-search2 {
+          &:before {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            color: $KSGreyIcon;
+          }
+        }
+
         .searchfield {
           height: rem-calc(30);
+          padding-right: rem-calc(40);
+
         }
         .ks-button-small {
           height: rem-calc(30);

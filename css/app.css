@@ -4312,8 +4312,14 @@ Header and navigation
           min-width: 2.5rem;
           text-transform: none;
           margin-bottom: 0; }
+      .tab-bar section.search-container .search .icon-search2:before {
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        color: #4f4f4f; }
       .tab-bar section.search-container .search .searchfield {
-        height: 1.875rem; }
+        height: 1.875rem;
+        padding-right: 2.5rem; }
       .tab-bar section.search-container .search .ks-button-small {
         height: 1.875rem;
         text-transform: uppercase;

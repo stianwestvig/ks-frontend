@@ -49,13 +49,21 @@
 
                     <ul class="list">
                         <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
-                            <span>{{event.startDate | date:'MMM'}}</span>
-                            <h2>{{event.startDate | date:'d'}}</h2>
-                            <h2><a href="{{event.url}}">{{event.title}}</a></h2>
-                            <p>{{event.region}}</p>
-                            <p>{{event.description}}</p>
+                            <div class="row">
+                                <div class="small-2 columns">
+                                    <div class="row">
+                                        <div class="small-12 columns">{{event.startDate | date:'MMM'}}</div>
+                                        <div class="small-12 columns">{{event.startDate | date:'d'}}</div>
+                                    </div>
+                                </div>
+                                <div class="small-7 columns">
+                                    <h4><a href="{{event.url}}">{{event.title}}</a></h4>
+                                    <p>{{event.description}}</p>
+                                </div>
+                                <div class="small-3 columns">{{event.region}}</div>
+                            </div>
                         </li>
-                        <li ng-show="filtered.length === 0"><h2>Ingen hendeklser for valgt periode og region</h2></li>
+                        <li ng-show="filtered.length === 0"><h3>Ingen hendelser for valgt periode og region</h3></li>
                     </ul>
                 </div>
             </div>

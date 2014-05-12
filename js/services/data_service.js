@@ -1,7 +1,4 @@
 app.service('dataService', function () {
-    // date string format: YYYY-MM-DD hh:mm:ss
-    // initielt fylt med 3 måneder events:
-
     return {
         "regions": [
             { "name": "Nord-Norge" },
@@ -16,14 +13,6 @@ app.service('dataService', function () {
                 "startDate": new Date("2014-05-08 08:37:00"),
                 "endDate": new Date("2014-05-10 08:37:00"),
                 "region": "Nord-Norge",
-                "url": "http://localhost:8888/#/article"
-            },
-            {
-                "title": "Svensk kommunesektor i EU/EØS teorien, hva om vi sier ordet: Nord-Norge",
-                "description": "Kort om arrangementet. Fastsatt tegn. ",
-                "startDate": new Date("2014-05-09 08:37:00"),
-                "endDate": new Date("2014-05-10 08:37:00"),
-                "region": "Østlandet",
                 "url": "http://localhost:8888/#/article"
             },
             {

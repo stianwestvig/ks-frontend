@@ -29,6 +29,13 @@ body {
 }
 
 
+@media ($medium-up) {
+  .text-center-medium-up {
+    text-align: center!important;
+  }
+}
+
+
 
 /********************************
 Panels

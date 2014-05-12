@@ -3,24 +3,42 @@
     list-style: none;
     margin-left: 0;
 
+    .date-column {
+      border-right: 1px solid $KSGreyBorderDarker;
+    }
+
     li {
       border-bottom: 1px solid $KSGreyBorder;
       margin-bottom: rem-calc(10);
-    }
 
-    span {
-      line-height: 1rem;
+      .header5 {
+        margin-top: rem-calc(10);
+        margin-bottom: 0;
 
-      &.month {
-        text-transform: uppercase;
-        font-size: rem-calc(16);
+        a {
+          color: $KSBlack;
+        }
       }
 
-      &.date {
-        color: $KSRed;
-        font-size: rem-calc(40);
-        display: inline-block;
-        margin-top: rem-calc(5);
+      p {
+        margin-bottom: rem-calc(5);
+        color: $KSGreyEventDescription;
+      }
+
+      span {
+        line-height: 1rem;
+
+        &.month {
+          text-transform: uppercase;
+          font-size: rem-calc(16);
+        }
+
+        &.date {
+          color: $KSRed;
+          font-size: rem-calc(40);
+          display: inline-block;
+          margin-top: rem-calc(5);
+        }
       }
     }
   }

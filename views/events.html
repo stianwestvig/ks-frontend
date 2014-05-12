@@ -50,17 +50,18 @@
                     <ul class="events-list">
                         <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
                             <div class="row">
-                                <div class="small-2 columns">
+                                <div class="small-6 medium-2 columns date-column">
                                     <div class="row">
-                                        <div class="small-12 columns text-center"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
-                                        <div class="small-12 columns text-center"><span class="date">{{event.startDate | date:'d'}}</span></div>
+                                        <div class="small-12 columns text-center-medium-up"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
+                                        <div class="small-12 columns text-center-medium-up"><span class="date">{{event.startDate | date:'d'}}</span></div>
                                     </div>
                                 </div>
-                                <div class="small-7 columns">
-                                    <h2 class="header4"><a href="{{event.url}}">{{event.title}}</a></h2>
-                                    <p>{{event.description}}</p>
+                                <div class="small-6 medium-3 medium-push-7 columns">{{event.region}}</div>
+                                <div class="small-12 medium-7 medium-pull-3 columns">
+                                    <h2 class="header5"><a href="{{event.url}}">{{event.title}}</a></h2>
+                                    <p>{{event.description | limitTo: 40 }}</p>
                                 </div>
-                                <div class="small-3 columns">{{event.region}}</div>
+
                             </div>
                         </li>
                         <li ng-show="filtered.length === 0"><h3>Ingen hendelser for valgt periode og region</h3></li>
@@ -75,7 +76,20 @@
 
 
 
-
+<!--
+<div class="row">
+                                <div class="small-2 medium-2 columns date-column">
+                                    <div class="row">
+                                        <div class="small-12 columns text-center"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
+                                        <div class="small-12 columns text-center"><span class="date">{{event.startDate | date:'d'}}</span></div>
+                                    </div>
+                                </div>
+                                <div class="small-10 medium-7 columns">
+                                    <h2 class="header5"><a href="{{event.url}}">{{event.title}}</a></h2>
+                                    <p>{{event.description | limitTo: 40 }}</p>
+                                </div>
+                                <div class="small-12 medium-3 columns">{{event.region}}</div>
+                            </div>-->
 
 
 

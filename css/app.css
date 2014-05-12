@@ -4075,6 +4075,10 @@ body {
   .left-off-canvas-menu li a:hover {
     background: none !important; }
 
+@media ("only screen and (min-width:40.063em)") {
+  .text-center-medium-up {
+    text-align: center !important; } }
+
 /********************************
 Panels
 ********************************/
@@ -4403,19 +4407,29 @@ Header and navigation
 .events ul.events-list {
   list-style: none;
   margin-left: 0; }
+  .events ul.events-list .date-column {
+    border-right: 1px solid #c8c8c8; }
   .events ul.events-list li {
     border-bottom: 1px solid #e7e7e7;
     margin-bottom: 0.625rem; }
-  .events ul.events-list span {
-    line-height: 1rem; }
-    .events ul.events-list span.month {
-      text-transform: uppercase;
-      font-size: 1rem; }
-    .events ul.events-list span.date {
-      color: #cd2346;
-      font-size: 2.5rem;
-      display: inline-block;
-      margin-top: 0.3125rem; }
+    .events ul.events-list li .header5 {
+      margin-top: 0.625rem;
+      margin-bottom: 0; }
+      .events ul.events-list li .header5 a {
+        color: black; }
+    .events ul.events-list li p {
+      margin-bottom: 0.3125rem;
+      color: #aaa7a7; }
+    .events ul.events-list li span {
+      line-height: 1rem; }
+      .events ul.events-list li span.month {
+        text-transform: uppercase;
+        font-size: 1rem; }
+      .events ul.events-list li span.date {
+        color: #cd2346;
+        font-size: 2.5rem;
+        display: inline-block;
+        margin-top: 0.3125rem; }
 
 .calendar:focus {
   outline: none; }

@@ -4312,7 +4312,10 @@ Header and navigation
           min-width: 2.5rem;
           text-transform: none;
           margin-bottom: 0; }
+      .tab-bar section.search-container .search .searchfield {
+        height: 1.875rem; }
       .tab-bar section.search-container .search .ks-button-small {
+        height: 1.875rem;
         text-transform: uppercase;
         background-color: #1c4072; }
 

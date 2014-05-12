@@ -64,7 +64,11 @@ Header and navigation
         }
       }
       .search {
+        .searchfield {
+          height: rem-calc(30);
+        }
         .ks-button-small {
+          height: rem-calc(30);
           text-transform: uppercase;
           background-color: $KSBluePrimary;
         }

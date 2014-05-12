@@ -47,6 +47,22 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1, .header1 {
+  font-size: rem-calc(44);
+}
+h2, .header2 {
+  font-size: rem-calc(37);
+}
+h3, .header3 {
+  font-size: rem-calc(27);
+}
+h4, .header4 {
+  font-size: rem-calc(23);
+}
+h5, .header5 {
+  font-size: rem-calc(18);
+}
+
 p, li {
   max-width: rem-calc(550);
   font-size: rem-calc(14);

@@ -47,17 +47,17 @@
                 <!-- main col pulled for medium -->
                 <div class="small-12 medium-8  columns">
 
-                    <ul class="list">
+                    <ul class="events-list">
                         <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
                             <div class="row">
                                 <div class="small-2 columns">
                                     <div class="row">
-                                        <div class="small-12 columns"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
-                                        <div class="small-12 columns"><span class="date">{{event.startDate | date:'d'}}</span></div>
+                                        <div class="small-12 columns text-center"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
+                                        <div class="small-12 columns text-center"><span class="date">{{event.startDate | date:'d'}}</span></div>
                                     </div>
                                 </div>
                                 <div class="small-7 columns">
-                                    <h4><a href="{{event.url}}">{{event.title}}</a></h4>
+                                    <h2 class="header4"><a href="{{event.url}}">{{event.title}}</a></h2>
                                     <p>{{event.description}}</p>
                                 </div>
                                 <div class="small-3 columns">{{event.region}}</div>

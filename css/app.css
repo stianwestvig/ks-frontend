@@ -7,6 +7,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
+h1, .header1 {
+  font-size: 2.75rem; }
+
+h2, .header2 {
+  font-size: 2.3125rem; }
+
+h3, .header3 {
+  font-size: 1.6875rem; }
+
+h4, .header4 {
+  font-size: 1.4375rem; }
+
+h5, .header5 {
+  font-size: 1.125rem; }
+
 p, li {
   max-width: 34.375rem;
   font-size: 0.875rem; }
@@ -3814,6 +3829,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
+h1, .header1 {
+  font-size: 2.75rem; }
+
+h2, .header2 {
+  font-size: 2.3125rem; }
+
+h3, .header3 {
+  font-size: 1.6875rem; }
+
+h4, .header4 {
+  font-size: 1.4375rem; }
+
+h5, .header5 {
+  font-size: 1.125rem; }
+
 p, li {
   max-width: 34.375rem;
   font-size: 0.875rem; }
@@ -3834,6 +3864,21 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
+
+h1, .header1 {
+  font-size: 2.75rem; }
+
+h2, .header2 {
+  font-size: 2.3125rem; }
+
+h3, .header3 {
+  font-size: 1.6875rem; }
+
+h4, .header4 {
+  font-size: 1.4375rem; }
+
+h5, .header5 {
+  font-size: 1.125rem; }
 
 p, li {
   max-width: 34.375rem;
@@ -4355,13 +4400,22 @@ Header and navigation
     color: #cd2346;
     font-size: 1.75rem; }
 
-.events span {
-  line-height: 1rem; }
-.events ul.list {
+.events ul.events-list {
   list-style: none;
   margin-left: 0; }
-  .events ul.list h2 {
-    font-size: 1.75rem; }
+  .events ul.events-list li {
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 0.625rem; }
+  .events ul.events-list span {
+    line-height: 1rem; }
+    .events ul.events-list span.month {
+      text-transform: uppercase;
+      font-size: 1rem; }
+    .events ul.events-list span.date {
+      color: #cd2346;
+      font-size: 2.5rem;
+      display: inline-block;
+      margin-top: 0.3125rem; }
 
 .calendar:focus {
   outline: none; }

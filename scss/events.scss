@@ -1,26 +1,29 @@
 .events {
-
-  span {
-    line-height: 1rem;
-    // margin-bottom: 1rem;
-  }
-
-  h1 {}
-
-  form {
-
-  }
-
-
-  ul.list {
+  ul.events-list {
     list-style: none;
     margin-left: 0;
 
-    h2 {
-      font-size: rem-calc(28);
+    li {
+      border-bottom: 1px solid $KSGreyBorder;
+      margin-bottom: rem-calc(10);
+    }
+
+    span {
+      line-height: 1rem;
+
+      &.month {
+        text-transform: uppercase;
+        font-size: rem-calc(16);
+      }
+
+      &.date {
+        color: $KSRed;
+        font-size: rem-calc(40);
+        display: inline-block;
+        margin-top: rem-calc(5);
+      }
     }
   }
-
 }
 
 

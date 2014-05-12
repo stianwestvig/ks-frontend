@@ -46,7 +46,7 @@ Header and navigation
   section {
     text-align: left;
 
-    &.right {
+    &.search-container {
       left: inherit;
 
       .mytime, .user {
@@ -66,16 +66,21 @@ Header and navigation
       .search {
         .ks-button-small {
           text-transform: uppercase;
-          margin-bottom: 0;
           background-color: $KSBluePrimary;
+        }
 
-          padding: 4px 20px; // adjust to input:
-        }
-        .searchfield {
-          width: rem-calc(250);
-        }
       }
 
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .tab-bar {
+    section {
+      &.search-container {
+        min-width: rem-calc(300);
+      }
     }
   }
 }

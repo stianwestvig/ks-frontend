@@ -18,6 +18,11 @@ Buttons and forms
   &.min-width {
     min-width: 100px;
   }
+
+  &.postfix {
+    display: block;
+    padding: 0;
+  }
 }
 
 select {

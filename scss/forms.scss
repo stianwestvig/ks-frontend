@@ -1,0 +1,27 @@
+
+/********************************
+Buttons and forms
+********************************/
+.ks-button {
+  @include button($padding:rem-calc(12), $bg:$KSRed, $full-width:false);
+}
+
+.ks-button-small {
+  @include button($padding:rem-calc(2), $bg:$KSRed, $full-width:false);
+  margin: 0;
+
+
+  &.false { background-color: $KSRed;}
+  &.true { background-color: $KSGreen;}
+
+
+  &.min-width {
+    min-width: 100px;
+  }
+}
+
+select {
+  line-height: normal;
+  background-image: url("../img/select_arrow.png");
+  background-position: 98% center;
+}

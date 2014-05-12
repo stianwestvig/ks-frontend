@@ -8,88 +8,6 @@ body {
    line-height: 0;
 }
 
-/********************************
-Header and navigation
-********************************/
-
-.tab-bar {
-  overflow: hidden;
-  height: auto;
-  margin-bottom: rem-calc(20);
-
-  .menu-icon {
-    color: $KSBluePrimary;
-
-    p {
-      position: relative;
-      top: 30px;
-      left: -26px;
-      font-size: rem-calc(11);
-      text-transform: uppercase;
-    }
-  }
-
-  .logo-container {
-    margin-top: rem-calc(10);
-
-    .logo {
-      float: left;
-      height: rem-calc(35);
-      margin-right: rem-calc(10);
-    }
-
-    h1 {
-      text-transform: uppercase;
-      font-weight: normal;
-      float: left;
-
-      &:first-letter {
-        font-size: rem-calc(26);
-      }
-
-      a {
-        color: $KSBluePrimary;
-      }
-    }
-  }
-
-  section {
-    text-align: left;
-
-    &.right {
-      left: inherit;
-
-      .mytime, .user {
-        line-height: normal;
-        margin-top: rem-calc(5);
-      }
-
-      .mytime {
-        text-transform: uppercase;
-
-        .ks-button-small {
-          min-width: rem-calc(40);
-          text-transform: none;
-          margin-bottom: 0;
-        }
-      }
-      .search {
-        .ks-button-small {
-          text-transform: uppercase;
-          margin-bottom: 0;
-          background-color: $KSBluePrimary;
-
-          padding: 4px 20px; // adjust to input:
-        }
-        .searchfield {
-          width: rem-calc(250);
-        }
-      }
-
-    }
-  }
-}
-
 .left-off-canvas-menu {
   -webkit-transform: none;
   -moz-transform: none;
@@ -107,30 +25,6 @@ Header and navigation
         background: none!important;
       }
     }
-  }
-}
-
-
-
-
-/********************************
-Buttons
-********************************/
-.ks-button {
-  @include button($padding:rem-calc(12), $bg:$KSRed, $full-width:false);
-}
-
-.ks-button-small {
-  @include button($padding:rem-calc(2), $bg:$KSRed, $full-width:false);
-  margin: 0;
-
-
-  &.false { background-color: $KSRed;}
-  &.true { background-color: $KSGreen;}
-
-
-  &.min-width {
-    min-width: 100px;
   }
 }
 

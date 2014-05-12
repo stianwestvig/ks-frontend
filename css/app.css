@@ -4355,14 +4355,13 @@ Header and navigation
     color: #cd2346;
     font-size: 1.75rem; }
 
+.events span {
+  line-height: 1rem; }
 .events ul.list {
   list-style: none;
   margin-left: 0; }
   .events ul.list h2 {
     font-size: 1.75rem; }
-
-.events span {
-  line-height: 1rem; }
 
 .calendar:focus {
   outline: none; }

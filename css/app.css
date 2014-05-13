@@ -4729,3 +4729,7 @@ Header and navigation
       content: "@"; }
 .profile hr {
   border: 1px solid #c8c8c8; }
+
+@media only screen and (min-width:40.063em) {
+  .profile img {
+    padding: 0.625rem; } }

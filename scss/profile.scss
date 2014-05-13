@@ -30,3 +30,11 @@
     border: 1px solid $KSGreyBorderDarker;
   }
 }
+
+@media #{$medium-up}{
+  .profile {
+    img {
+      padding: rem-calc(10);
+    }
+  }
+}

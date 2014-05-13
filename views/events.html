@@ -42,12 +42,12 @@
 
             <div class="row">
                 <!-- right col pushed for medium -->
-                <div class="small-12 medium-4  columns">
+                <div class="small-12 medium-4 columns contains-calendar">
                     <datepicker ng-model="calendar.dt" events="calendar.events" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
                 </div>
 
                 <!-- main col pulled for medium -->
-                <div class="small-12 medium-8  columns">
+                <div class="small-12 medium-8 columns">
 
                     <ul class="events-list">
                         <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">

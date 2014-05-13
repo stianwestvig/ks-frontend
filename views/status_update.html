@@ -1,4 +1,4 @@
-<div class="small-12 large-8 large-pull-4 columns status-update" ng-controller="statusUpdateCtrl as statusUpdate">
+<div class="small-12 large-8 columns status-update" ng-controller="statusUpdateCtrl as statusUpdate">
     <div class="panel">
         <h5 class="update">Del oppdatering</h5>
         <div class="text-container">
@@ -10,8 +10,8 @@
             <div ng-repeat="update in statusUpdate.updates">
             <div class="update-item">
                 <div class="row">
-                <img ng-src="{{update.image}}" class="small-2 columns" />
-                <div class="small-10 columns">
+                <img ng-src="{{update.image}}" class="medium-2 columns hide-for-small-only" />
+                <div class="small-12 medium-10 columns">
                     <h2>{{ update.name }}</h2>
                     <p ng-bind-html="update.body" ></p>
                     <ul class="update-buttons">

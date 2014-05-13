@@ -12,12 +12,22 @@
   min-height: rem-calc(800);
 
   ul.off-canvas-list {
+
+    margin: 40px 0 0 0;
+
     @include transition_transform(transform, 250ms, ease);
     li {
       a {
-        &:hover {
+        &:hover, &:focus, &:focus  {
           background: none !important;
+          font-weight: bold;
         }
+
+        span {
+          float: right;
+          margin-top: 4px;
+        }
+
       }
 
       ul {
@@ -27,14 +37,39 @@
         list-style: none;
         width: 100%;
         z-index: 1002;
-        opacity: 0;
         display: none;
       }
     }
   }
+
+  a.active + ul {
+    display: block !important;
+  }
+
+
+  .nav-button {
+    float: right;
+  }
+
+a.back-button {
+  float: left;
+  padding: 5px;
+  &:before {
+    @extend  .icomoon;
+    content:'\e608';
+    font-size: rem-calc(30);
+    color:black;
+  }
 }
 
-a.active + ul {
-  opacity: 1 !important;
-  display: block!important;
+  a.close-button {
+    float: right;
+    padding: 5px;
+    &:before {
+      @extend .icomoon;
+      content:'\e607';
+      font-size: rem-calc(30);
+      color:black;
+    }
+  }
 }

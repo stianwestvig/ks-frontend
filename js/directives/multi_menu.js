@@ -65,9 +65,9 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
 
 angular.module("views/multimenu.html", []).run(["$templateCache", function($templateCache) {
     $templateCache.put("menu_item.html",
-            "<a ng-if=\"item.categories.length\" menuitem>{{ item.linkText }}</a>" +
+            "<a ng-if=\"item.categories.length\" menuitem>{{ item.linkText }}<span class=\"icon-arrow-right\"></span></a>" +
             "<a ng-if=\"!item.categories.length\" href=\"{{item.href}}\">{{ item.linkText }}</a>" +
-                "<ul>" +
+                "<ul ng-if=\"item.categories.length\">" +
                     "<li ng-repeat=\"item in item.categories\" ng-include=\"'menu_item.html'\"></li>" +
                 "</ul>"
     );

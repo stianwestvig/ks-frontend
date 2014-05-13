@@ -30,7 +30,8 @@ app.controller('navigationController', function($scope){
     }
 
 
-    navigation.menuItems = [
+    navigation.menuItems =
+        [
         {
             'href' : '#/article',
             'linkText' : 'Artikkelside',
@@ -60,6 +61,28 @@ app.controller('navigationController', function($scope){
                 },
                 {
                     'href' : '#/article',
+                    'linkText' : ' Artikkelside 2 childs',
+                    'active' : false,
+                    'categories' : [
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Artikkelside 32',
+                            'active' : false
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Artikkelside 32',
+                            'active' : false
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Artikkelside 32',
+                            'active' : false
+                        }
+                    ]
+                },
+                {
+                    'href' : '#/article',
                     'linkText' : 'Artikkelside 2',
                     'active' : false
                 },
@@ -70,6 +93,7 @@ app.controller('navigationController', function($scope){
                 }
             ]
         },
+
         {
             'href' : '#/persons',
             'linkText' : 'Finn kollega',
@@ -109,7 +133,7 @@ app.controller('navigationController', function($scope){
                 }
             ]
         },
-        {
+            {
             'href' : '#/events',
             'linkText' : 'Events',
             'active' : false,
@@ -138,8 +162,42 @@ app.controller('navigationController', function($scope){
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Events 2',
-                    'active' : false
+                    'linkText' : 'Events stian',
+                    'active' : false,
+                    'categories' : [
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'stians partytelt',
+                            'active' : false,
+                            'categories' : [
+                                {
+                                    'href' : '#/article',
+                                    'linkText' : 'Streetdancers',
+                                    'active' : false
+                                },
+                                {
+                                    'href' : '#/article',
+                                    'linkText' : 'Pølsespisekonkurranse',
+                                    'active' : false
+                                },
+                                {
+                                    'href' : '#/article',
+                                    'linkText' : 'en millioooon gjester.',
+                                    'active' : false
+                                }
+                            ]
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Events stian 2',
+                            'active' : false
+                        },
+                        {
+                            'href' : '#/article',
+                            'linkText' : 'Events stian 3',
+                            'active' : false
+                        }
+                    ]
                 },
                 {
                     'href' : '#/article',

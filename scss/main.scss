@@ -2,6 +2,8 @@
 @import "mixins";
 @import "vendor/fonts/fonts";
 @import "components/status_update";
+@import "components/menu";
+
 
 
 body {
@@ -27,6 +29,7 @@ body {
     }
   }
 }
+
 
 @media #{$medium-up} {
   .text-center-medium-up {

@@ -12,15 +12,10 @@
   z-index: 1001;
   box-sizing: content-box;
   min-height: rem-calc(800);
-  /*display: block;*/
 
-
-  /*-webkit-transition: -webkit-transform 250ms ease;*/
 
   ul.off-canvas-list {
     @include transition_transform(transform, 250ms, ease);
-    /*-webkit-transition: -webkit-transform 500ms ease;*/
-
     li {
       a {
         &:hover {
@@ -34,28 +29,24 @@
         top: 0px;
         list-style: none;
         width: 100%;
-        opacity: 0;
-
         z-index: 1002;
+        opacity: 0;
+        display: none;
 
       }
-
     }
   }
 }
-
 
 a.active {
   color:red !important;
 }
 
-
 a.active + ul {
   opacity: 1 !important;
+  display: block!important;
 
-
-  ul {
+/*   ul {
     opacity: 1 !important;
-  }
-
+  }*/
 }

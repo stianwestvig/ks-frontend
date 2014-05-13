@@ -4,14 +4,34 @@ angular.module('agh.multimenu', [])
 
         var menu = this;
         $scope.activeLevel = 0;
-
-
         $scope.activeitem = 0;
+        $scope.subMenuCount = 0;
+        menu.menuItems = [];
 
         menu.init = function(menuItems, startlevel){
             $scope.menuItems = menuItems;
-
             menu.level = startlevel;
+
+        }
+
+        menu.addMenuItem = function(item){
+            item.active = false;
+            menu.menuItems.push(item);
+        }
+
+        menu.clearActive = function(){
+
+
+            /*console.log(menu.menuItems);*/
+
+            for(var i = 0; i < menu.menuItems.length; i++){
+
+                /*console.log(menu.menuItems[i][0]);*/
+
+                    $(menu.menuItems[i][0]).removeClass();
+            }
+
+/*            console.log(menu.menuItems);*/
 
         }
 
@@ -24,18 +44,20 @@ angular.module('agh.multimenu', [])
             $scope.$apply();
         }
 
-        menu.setActiveItem = function(index){
-
-            console.log("active index:");
-
-            console.log($scope.activeLevel);
-
-            $scope.activeitem = index;
+        menu.setActiveItem = function(element){
+            console.log(element);
+            menu.clearActive();
+            element.addClass('active');
             $scope.$apply();
 
-            console.log($scope.activeitem);
-
         }
+
+        menu.incrementSubmenus = function(){
+            $scope.subMenuCount++;
+            console.log("how many submenus?");
+            console.log($scope.subMenuCount);
+        }
+
 
     }])
 
@@ -56,22 +78,24 @@ angular.module('agh.multimenu', [])
             }
         };
     })
-
     .directive( 'menuitem', function () {
         return {
             restrict: 'EA',
             require: '^multimenu',
             scope : {
-                activeitem: "="
+                activeitem: "=",
+                activelevel: "=",
+                menuitemindex: "="
             },
             link: function(scope, element, attrs, ctrls) {
                 var menuCtrl = ctrls;
+                menuCtrl.addMenuItem(element);
+
                 element.bind('click', function(){
                     menuCtrl.incrementActiveLevel();
-                    menuCtrl.setActiveItem(scope.activeitem);
-                    console.log("directive");
-                    console.log(scope.activeitem);
-                })
+                    /*menuCtrl.setActiveItem(element);*/
+                    /*this.activeLevel = scope.activelevel;*/
+                });
             }
         };
     })
@@ -84,7 +108,6 @@ angular.module('agh.multimenu', [])
             link: function(scope, element, attrs, ctrls) {
                 element.bind('click', function(){
                     ctrls.decrementActiveLevel();
-
                 })
             }
         };

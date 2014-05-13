@@ -5,15 +5,15 @@
     <h1>{{ activeLevel }}</h1>
     <button backbutton ng-show="activeLevel > 0"></button>
 
-    <ul class="off-canvas-list"  ng-style="{
-            '-webkit-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
-            '-moz-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
-            '-ms-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
-            '-o-transformm': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
-            'transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' }" >
-        <li ng-repeat="item in menuitems" ng-include="'menu_item.html'"></li>
-    </ul>
-</aside>
+        <ul class="off-canvas-list"  ng-style="{
+                '-webkit-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
+                '-moz-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
+                '-ms-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
+                '-o-transformm': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,
+                'transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' }" >
+            <li ng-repeat="item in menuitems" ng-include="'menu_item.html'"></li>
+        </ul>
+    </aside>
 
     </div>
 </div>

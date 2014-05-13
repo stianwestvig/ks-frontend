@@ -34,7 +34,28 @@
         top: 0px;
         list-style: none;
         width: 100%;
+        opacity: 0;
+
+        z-index: 1002;
+
       }
+
     }
   }
+}
+
+
+a.active {
+  color:red !important;
+}
+
+
+a.active + ul {
+  opacity: 1 !important;
+
+
+  ul {
+    opacity: 1 !important;
+  }
+
 }

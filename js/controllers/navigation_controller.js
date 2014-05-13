@@ -35,61 +35,50 @@ app.controller('navigationController', function($scope){
         {
             'href' : '#/article',
             'linkText' : 'Artikkelside',
-            'active' : false,
             'categories' : [
                 {
                     'href' : '#/article',
                     'linkText' : ' Artikkelside 2',
-                    'active' : false,
                     'categories' : [
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 3',
-                            'active' : false
+                            'linkText' : 'Artikkelside 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 3',
-                            'active' : false
+                            'linkText' : 'Artikkelside 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 3',
-                            'active' : false
+                            'linkText' : 'Artikkelside 3'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
                     'linkText' : ' Artikkelside 2 childs',
-                    'active' : false,
                     'categories' : [
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 32',
-                            'active' : false
+                            'linkText' : 'Artikkelside 32'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 32',
-                            'active' : false
+                            'linkText' : 'Artikkelside 32'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Artikkelside 32',
-                            'active' : false
+                            'linkText' : 'Artikkelside 32'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Artikkelside 2',
-                    'active' : false
+                    'linkText' : 'Artikkelside 2'
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Artikkelside 2',
-                    'active' : false
+                    'linkText' : 'Artikkelside 2'
                 }
             ]
         },
@@ -97,133 +86,107 @@ app.controller('navigationController', function($scope){
         {
             'href' : '#/persons',
             'linkText' : 'Finn kollega',
-            'active' : false,
             'categories' : [
                 {
                     'href' : '#/article',
                     'linkText' : 'Finn kollega 2',
-                    'active' : false,
                     'categories' : [
                         {
                             'href' : '#/article',
-                            'linkText' : 'Finn kollega 3',
-                            'active' : false
+                            'linkText' : 'Finn kollega 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Finn kollega 3',
-                            'active' : false
+                            'linkText' : 'Finn kollega 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Finn kollega 3',
-                            'active' : false
+                            'linkText' : 'Finn kollega 3'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Finn kollega 2',
-                    'active' : false
+                    'linkText' : 'Finn kollega 2'
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Finn kollega 2',
-                    'active' : false
+                    'linkText' : 'Finn kollega 2'
                 }
             ]
         },
             {
             'href' : '#/events',
             'linkText' : 'Events',
-            'active' : false,
             'categories' : [
                 {
                     'href' : '#/article',
                     'linkText' : 'Events 2',
-                    'active' : false,
                     'categories' : [
                         {
                             'href' : '#/article',
-                            'linkText' : 'Events 3',
-                            'active' : false
+                            'linkText' : 'Events 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Events 3',
-                            'active' : false
+                            'linkText' : 'Events 3'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Events 3',
-                            'active' : false
+                            'linkText' : 'Events 3'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
                     'linkText' : 'Events stian',
-                    'active' : false,
                     'categories' : [
                         {
                             'href' : '#/article',
                             'linkText' : 'stians partytelt',
-                            'active' : false,
                             'categories' : [
                                 {
                                     'href' : '#/article',
-                                    'linkText' : 'Streetdancers',
-                                    'active' : false
+                                    'linkText' : 'Streetdancers'
                                 },
                                 {
                                     'href' : '#/article',
-                                    'linkText' : 'Pølsespisekonkurranse',
-                                    'active' : false
+                                    'linkText' : 'Pølsespisekonkurranse'
                                 },
                                 {
                                     'href' : '#/article',
-                                    'linkText' : 'en millioooon gjester.',
-                                    'active' : false
+                                    'linkText' : 'en millioooon gjester.'
                                 }
                             ]
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Events stian 2',
-                            'active' : false
+                            'linkText' : 'Events stian 2'
                         },
                         {
                             'href' : '#/article',
-                            'linkText' : 'Events stian 3',
-                            'active' : false
+                            'linkText' : 'Events stian 3'
                         }
                     ]
                 },
                 {
                     'href' : '#/article',
-                    'linkText' : 'Events 2',
-                    'active' : false
+                    'linkText' : 'Events 2'
                 }
             ]
         },
         {
             'href' : '#/profile',
-            'linkText' : 'Profilside',
-            'active' : false
+            'linkText' : 'Profilside'
         },
         {
             'href' : '#/list',
-            'linkText' : 'Listeside',
-            'active' : false
+            'linkText' : 'Listeside'
         },
         {
             'href' : '#/search',
-            'linkText' : 'Søkeresultat',
-            'active' : false
+            'linkText' : 'Søkeresultat'
         }
     ]
-
-
-
 });
 

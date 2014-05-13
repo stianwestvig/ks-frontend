@@ -1,13 +1,39 @@
-<section class="main-section">
+<section class="main-section persons" ng-controller="CalendarCtrl as calendar">
     <!-- main content -->
 
     <div class="row">
-        <div class="small-12 columns">
-            <div class="ks-panel-green">
-                <h1>Same as searchresult page.</h1>
-            </div>
-        </div>
+        <!-- row for page the page -->
+        <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
 
+            <h1>Finn kolleger</h1>
+            <p class="leadtext">Søk på fornavn eller etternavn for å finne din kollega. Søk på fornavn eller etternavn for å finne din kollega. </p>
+
+            <!-- person search -->
+            <form class="search persons" action="#/persons">
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <div class="row collapse">
+                            <div class="small-9 columns magnify-carrier">
+                                <input type="text" name="search" class="searchfield"/><span class="icon-search2"></span>
+                            </div>
+                            <div class="small-3 columns">
+                                <input class="ks-button-small postfix" type="submit" value="Søk"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+        </div>
     </div>
+
 </section>
 <!-- end: main-section -->
+
+
+
+

@@ -63,29 +63,6 @@ Header and navigation
           margin-bottom: 0;
         }
       }
-      .search {
-        .icon-search2 {
-          &:before {
-            position: absolute;
-            top: 7px;
-            right: 7px;
-            color: $KSGreyIcon;
-          }
-        }
-
-        .searchfield {
-          height: rem-calc(30);
-          padding-right: rem-calc(40);
-
-        }
-        .ks-button-small {
-          height: rem-calc(30);
-          text-transform: uppercase;
-          background-color: $KSBluePrimary;
-        }
-
-      }
-
     }
   }
 }
@@ -98,4 +75,29 @@ Header and navigation
       }
     }
   }
+}
+
+
+/* Searchfield styling is not nested, so it can be reused on persons page */
+.search {
+  .icon-search2 {
+    &:before {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      color: $KSGreyIcon;
+    }
+  }
+
+  .searchfield {
+    height: rem-calc(30);
+    padding-right: rem-calc(40);
+
+  }
+  .ks-button-small {
+    height: rem-calc(30);
+    text-transform: uppercase;
+    background-color: $KSBluePrimary;
+  }
+
 }

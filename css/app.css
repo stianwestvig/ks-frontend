@@ -4553,22 +4553,24 @@ Header and navigation
           min-width: 2.5rem;
           text-transform: none;
           margin-bottom: 0; }
-      .tab-bar section.search-container .search .icon-search2:before {
-        position: absolute;
-        top: 7px;
-        right: 7px;
-        color: #4f4f4f; }
-      .tab-bar section.search-container .search .searchfield {
-        height: 1.875rem;
-        padding-right: 2.5rem; }
-      .tab-bar section.search-container .search .ks-button-small {
-        height: 1.875rem;
-        text-transform: uppercase;
-        background-color: #1c4072; }
 
 @media only screen and (min-width:40.063em) {
   .tab-bar section.search-container {
     min-width: 18.75rem; } }
+
+/* Searchfield styling is not nested, so it can be reused on persons page */
+.search .icon-search2:before {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  color: #4f4f4f; }
+.search .searchfield {
+  height: 1.875rem;
+  padding-right: 2.5rem; }
+.search .ks-button-small {
+  height: 1.875rem;
+  text-transform: uppercase;
+  background-color: #1c4072; }
 
 .article .byline {
   margin-bottom: 1.25rem; }
@@ -4684,3 +4686,7 @@ Header and navigation
         background-color: #db7376; }
     .calendar table tr td a {
       color: black; }
+
+/* Persons search field is based on header searchfield, and overrides from it: */
+.search.persons .ks-button-small {
+  background-color: #cd2346; }

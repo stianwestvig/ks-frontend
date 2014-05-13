@@ -1,11 +1,12 @@
 .frontpage {
+
   ul.events-list {
     li {
       padding-bottom: rem-calc(10);
-    }
 
-    &:last-child {
-      border-bottom: none;
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 

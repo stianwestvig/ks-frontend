@@ -4551,8 +4551,8 @@ Articles
 ********************************/ }
   .frontpage ul.events-list li {
     padding-bottom: 0.625rem; }
-  .frontpage ul.events-list:last-child {
-    border-bottom: none; }
+    .frontpage ul.events-list li:last-child {
+      border-bottom: none; }
   .frontpage .slide {
     margin-bottom: 1.25rem; }
     .frontpage .slide.ng-hide-add {

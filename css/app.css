@@ -34,6 +34,9 @@ p.leadtext {
   line-height: 1.875rem;
   font-size: 0.875rem; }
 
+.upper {
+  text-transform: uppercase; }
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -4048,6 +4051,9 @@ p.leadtext {
   line-height: 1.875rem;
   font-size: 0.875rem; }
 
+.upper {
+  text-transform: uppercase; }
+
 /***** KS Colors *****/
 /***** KS Measurements *****/
 /***** KS Typography *****/
@@ -4083,6 +4089,9 @@ p.leadtext {
   color: #1c4072;
   line-height: 1.875rem;
   font-size: 0.875rem; }
+
+.upper {
+  text-transform: uppercase; }
 
 @font-face {
   font-family: 'icomoon';
@@ -4705,3 +4714,18 @@ Header and navigation
         margin-bottom: 0; }
       .persons ul.persons li a {
         color: black; }
+
+.profile .ks-panel-blue {
+  background-color: #edf6fd; }
+.profile ul.profile {
+  list-style: none;
+  margin-left: 0; }
+  .profile ul.profile li {
+    font-size: 1rem;
+    padding: 0.625rem; }
+    .profile ul.profile li.icon:before {
+      margin-right: 0.625rem; }
+    .profile ul.profile li.icon-mail:before {
+      content: "@"; }
+.profile hr {
+  border: 1px solid #c8c8c8; }

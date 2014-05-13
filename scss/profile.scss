@@ -1,0 +1,32 @@
+.profile {
+
+  .ks-panel-blue {
+    background-color: $KSBlueLighter;
+  }
+
+  ul.profile {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      font-size: rem-calc(16);
+      padding: rem-calc(10);
+
+      &.icon {
+        &:before {
+          margin-right: rem-calc(10);
+        }
+      }
+
+      &.icon-mail {
+        &:before {
+          content: "@";
+        }
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid $KSGreyBorderDarker;
+  }
+}

@@ -1,10 +1,37 @@
+.persons {
 
-/* Persons search field is based on header searchfield, and overrides from it: */
-.search.persons {
-  .searchfield {
-    // nothing
+  /* Persons search field is based on header searchfield, and overrides from it: */
+  .search.persons {
+    .searchfield {
+      // nothing
+    }
+    .ks-button-small {
+      background-color: $KSRed;
+    }
   }
-  .ks-button-small {
-    background-color: $KSRed;
+
+  ul.persons {
+    list-style: none;
+    margin-left: 0;
+    border-bottom: 1px solid $KSGreyBorder;
+
+    li {
+      padding: rem-calc(10);
+      max-width: none;
+      border-top: 1px solid $KSGreyBorder;
+
+      img {
+        max-width: 70px;
+      }
+
+      h3, p {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: $KSBlack;
+      }
+    }
   }
+
 }

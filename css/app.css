@@ -4687,6 +4687,21 @@ Header and navigation
     .calendar table tr td a {
       color: black; }
 
-/* Persons search field is based on header searchfield, and overrides from it: */
-.search.persons .ks-button-small {
-  background-color: #cd2346; }
+.persons {
+  /* Persons search field is based on header searchfield, and overrides from it: */ }
+  .persons .search.persons .ks-button-small {
+    background-color: #cd2346; }
+  .persons ul.persons {
+    list-style: none;
+    margin-left: 0;
+    border-bottom: 1px solid #e7e7e7; }
+    .persons ul.persons li {
+      padding: 0.625rem;
+      max-width: none;
+      border-top: 1px solid #e7e7e7; }
+      .persons ul.persons li img {
+        max-width: 70px; }
+      .persons ul.persons li h3, .persons ul.persons li p {
+        margin-bottom: 0; }
+      .persons ul.persons li a {
+        color: black; }

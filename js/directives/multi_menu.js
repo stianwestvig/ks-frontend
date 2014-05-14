@@ -6,6 +6,19 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
         $scope.activeLevel = 0;
         menu.clickPath = [];
 
+        $scope.isVisible;
+
+        menu.init = function(visible){
+            $scope.isVisible = visible;
+        }
+
+        menu.toggleVisible = function(){
+            console.log("call");
+            $scope.isVisible = !$scope.isVisible;
+            $scope.$apply();
+        }
+
+
         menu.incrementActiveLevel = function(){
             $scope.activeLevel = $scope.activeLevel + 1;
         }
@@ -30,9 +43,41 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
             replace: true,
             templateUrl: 'views/multimenu.html',
             scope: {
-                menuitems: '='
+                menuitems: '=',
+                visible: '='
             },
-            controller: 'MenuController'
+            controller: 'MenuController',
+            link: function(scope, element, attrs, ctrl){
+                ctrl.init(scope.visible)
+            }
+        };
+    })
+
+    .directive( 'backbutton', function () {
+        return {
+            restrict: 'EA',
+            scope: {},
+            require: '^multimenu',
+            link: function(scope, element, attrs, ctrl) {
+                element.bind('click', function(){
+                    ctrl.decrementActiveLevel();
+                })
+            }
+        };
+    })
+
+    .directive( 'closebutton', function () {
+        return {
+            restrict: 'EA',
+            scope: {},
+            require: '^multimenu',
+            link: function(scope, element, attrs, ctrl) {
+                element.bind('click', function(){
+                    console.log('click');
+
+                    ctrl.toggleVisible();
+                })
+            }
         };
     })
 
@@ -50,18 +95,7 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
         };
     })
 
-    .directive( 'backbutton', function () {
-        return {
-            restrict: 'EA',
-            scope: {},
-            require: '^multimenu',
-            link: function(scope, element, attrs, ctrls) {
-                element.bind('click', function(){
-                    ctrls.decrementActiveLevel();
-                })
-            }
-        };
-    })
+
 
 angular.module("views/multimenu.html", []).run(["$templateCache", function($templateCache) {
     $templateCache.put("menu_item.html",

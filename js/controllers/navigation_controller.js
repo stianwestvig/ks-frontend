@@ -34,7 +34,7 @@ app.controller('navigationController', function($scope){
         [
         {
             'href' : '#/article',
-            'linkText' : 'Artikkelside',
+            'linkText' : 'Kategori 1',
             'categories' : [
                 {
                     'href' : '#/article',
@@ -85,7 +85,7 @@ app.controller('navigationController', function($scope){
 
         {
             'href' : '#/persons',
-            'linkText' : 'Finn kollega',
+            'linkText' : 'Kategori 2',
             'categories' : [
                 {
                     'href' : '#/article',
@@ -117,7 +117,7 @@ app.controller('navigationController', function($scope){
         },
             {
             'href' : '#/events',
-            'linkText' : 'Events',
+            'linkText' : 'Kategori 3',
             'categories' : [
                 {
                     'href' : '#/article',
@@ -175,17 +175,21 @@ app.controller('navigationController', function($scope){
                 }
             ]
         },
-        {
-            'href' : '#/profile',
-            'linkText' : 'Profilside'
-        },
+            {
+                'href' : '#/persons',
+                'linkText' : 'Finn ansatte'
+            },
+            {
+                'href' : '#/profile',
+                'linkText' : 'Profilside'
+            },
         {
             'href' : '#/list',
             'linkText' : 'Listeside'
         },
         {
-            'href' : '#/search',
-            'linkText' : 'Søkeresultat'
+            'href' : '#/events',
+            'linkText' : 'Kalender'
         }
     ]
 });

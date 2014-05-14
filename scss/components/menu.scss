@@ -60,6 +60,13 @@ a.back-button {
     font-size: rem-calc(30);
     color:black;
   }
+
+  &:hover, &:focus, &:focus  {
+    &:before {
+      color: $KSCalendarEvents5;
+    }
+  }
+
 }
 
   a.close-button {
@@ -71,5 +78,13 @@ a.back-button {
       font-size: rem-calc(30);
       color:black;
     }
+
+    &:hover, &:focus, &:focus  {
+
+      &:before {
+        color: $KSCalendarEvents5;
+      }
+    }
+
   }
 }

@@ -4058,7 +4058,7 @@ p.leadtext {
     .main-menu a.back-button:before {
       content: '\e608';
       font-size: 1.875rem;
-      color: black; }
+      color: #1c4072; }
     .main-menu a.back-button:hover:before, .main-menu a.back-button:focus:before, .main-menu a.back-button:focus:before {
       color: #cc1b43; }
   .main-menu a.close-button {
@@ -4067,7 +4067,7 @@ p.leadtext {
     .main-menu a.close-button:before {
       content: '\e607';
       font-size: 1.875rem;
-      color: black; }
+      color: #1c4072; }
     .main-menu a.close-button:hover:before, .main-menu a.close-button:focus:before, .main-menu a.close-button:focus:before {
       color: #cc1b43; }
 

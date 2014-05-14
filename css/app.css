@@ -4463,7 +4463,8 @@ ul.events-list {
 .calendar:focus {
   outline: none; }
 .calendar table {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  width: 100%; }
   .calendar table thead h5 {
     text-transform: uppercase;
     font-size: 1rem; }
@@ -4480,7 +4481,7 @@ ul.events-list {
     color: #cd2346; }
   .calendar table tr td {
     line-height: 1rem;
-    padding: 0.25rem 0.375rem; }
+    padding: 1rem 0.375rem; }
     .calendar table tr td a.inactive {
       color: #b2b2b2;
       cursor: default; }
@@ -4510,6 +4511,10 @@ ul.events-list {
         background-color: #db7376; }
     .calendar table tr td a {
       color: black; }
+
+@media only screen and (min-width:40.063em) {
+  .calendar table tr td {
+    padding: 0.25rem 0.375rem; } }
 
 .persons {
   /* Persons search field is based on header searchfield, and overrides from it: */ }

@@ -4723,17 +4723,20 @@ ul.events-list {
     font-weight: normal;
     color: #cd2346; }
   .calendar table tr td {
-    line-height: 1rem;
-    padding: 1rem 0.375rem; }
-    .calendar table tr td a.inactive {
-      color: #b2b2b2;
-      cursor: default; }
-    .calendar table tr td a.current {
-      color: #cd2346; }
-    .calendar table tr td a.selected {
-      font-weight: bold; }
-    .calendar table tr td a:focus {
-      outline: none; }
+    line-height: 1rem; }
+    .calendar table tr td a {
+      display: block;
+      padding: 1rem 0.375rem; }
+      .calendar table tr td a.inactive {
+        color: #b2b2b2;
+        cursor: default; }
+      .calendar table tr td a.current {
+        color: white;
+        background-color: #cd2346; }
+      .calendar table tr td a.selected {
+        font-weight: bold; }
+      .calendar table tr td a:focus {
+        outline: none; }
     .calendar table tr td.events-1 {
       background-color: #fdf5f3; }
     .calendar table tr td.events-2 {
@@ -4756,7 +4759,7 @@ ul.events-list {
       color: black; }
 
 @media only screen and (min-width:40.063em) {
-  .calendar table tr td {
+  .calendar table tr td a {
     padding: 0.25rem 0.375rem; } }
 
 .persons {

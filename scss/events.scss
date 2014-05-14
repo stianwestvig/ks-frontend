@@ -110,15 +110,18 @@ ul.events-list {
 
       td {
         line-height: rem-calc(16);
-        padding: rem-calc(16 6);
 
         a {
+          display: block;
+          padding: rem-calc(16 6);
+
           &.inactive {
             color: $KSGreyInactiveCalendar;
             cursor: default;
           }
           &.current {
-            color: $KSRed;
+            color: $KSWhite;
+            background-color: $KSRed;
           }
           &.selected {
             font-weight: bold;
@@ -170,7 +173,9 @@ ul.events-list {
     table {
       tr {
         td {
-          padding: rem-calc(4 6);
+          a {
+            padding: rem-calc(4 6);
+          }
         }
       }
     }

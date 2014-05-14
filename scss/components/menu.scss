@@ -51,6 +51,7 @@
     float: right;
   }
 
+  
 a.back-button {
   float: left;
   padding: 5px;
@@ -58,7 +59,7 @@ a.back-button {
     @extend  .icomoon;
     content:'\e608';
     font-size: rem-calc(30);
-    color:black;
+    color:$KSBluePrimary;
   }
 
   &:hover, &:focus, &:focus  {
@@ -76,7 +77,7 @@ a.back-button {
       @extend .icomoon;
       content:'\e607';
       font-size: rem-calc(30);
-      color:black;
+      color:$KSBluePrimary;
     }
 
     &:hover, &:focus, &:focus  {

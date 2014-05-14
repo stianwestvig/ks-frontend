@@ -3143,6 +3143,28 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
+table {
+  background: white;
+  margin-bottom: 1.25rem;
+  border: solid 1px #dddddd; }
+  table thead, table tfoot {
+    background: whitesmoke; }
+    table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+      padding: 0.5rem 0.625rem 0.625rem;
+      font-size: 0.875rem;
+      font-weight: bold;
+      color: #222222;
+      text-align: left; }
+  table tr th, table tr td {
+    padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222; }
+  table tr.even, table tr.alt, table tr:nth-of-type(even) {
+    background: #f9f9f9; }
+  table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+    display: table-cell;
+    line-height: 1.125rem; }
+
 /* 
  * Foundation Icons v 3.0
  * Made by ZURB 2013 http://zurb.com/playground/foundation-icon-fonts-3
@@ -4637,24 +4659,33 @@ Header and navigation
       display: inline-block;
       margin-right: 0.3125rem; }
 
-.article .byline {
-  margin-bottom: 1.25rem; }
-.article .tips ul {
-  color: #27a0dd; }
-  .article .tips ul li a {
+.article {
+  /* Styles so table will get scroll inside article. Entire article contents gets scrolled. */
+  width: 100%;
+  margin-bottom: 15px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* End: table containing styles. */ }
+  .article .byline {
+    margin-bottom: 1.25rem; }
+  .article .tips ul {
     color: #27a0dd; }
-.article img.top-img {
-  margin-bottom: 1.25rem; }
-.article img.inline {
-  float: right;
-  width: 50%;
-  padding: 1.25rem 0;
-  margin: 0 1.25rem;
-  border-top: 2px solid #c8c8c8;
-  border-bottom: 2px solid #c8c8c8; }
-.article .contact ul {
-  list-style: none;
-  margin: 0; }
+    .article .tips ul li a {
+      color: #27a0dd; }
+  .article img.top-img {
+    margin-bottom: 1.25rem; }
+  .article img.inline {
+    float: right;
+    width: 50%;
+    padding: 1.25rem 0;
+    margin: 0 1.25rem;
+    border-top: 2px solid #c8c8c8;
+    border-bottom: 2px solid #c8c8c8; }
+  .article table {
+    width: 100%; }
+  .article .contact ul {
+    list-style: none;
+    margin: 0; }
 
 .listpage ul.list {
   list-style: none;

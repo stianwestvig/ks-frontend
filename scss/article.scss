@@ -1,5 +1,12 @@
 .article {
 
+  /* Styles so table will get scroll inside article. Entire article contents gets scrolled. */
+  width: 100%;
+  margin-bottom: 15px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* End: table containing styles. */
+
   .byline {
     margin-bottom: rem-calc(20);
   }
@@ -33,6 +40,10 @@
       border-bottom: 2px solid $KSGreyBorderDarker;
 
     }
+  }
+
+  table {
+    width: 100%;
   }
 
   .contact {

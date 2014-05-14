@@ -4030,10 +4030,10 @@ p.leadtext {
   min-height: 50rem; }
   .main-menu ul.off-canvas-list {
     margin: 40px 0 0 0;
-    -webkit-transition: -webkit-transform 250ms ease;
-    -moz-transition: -moz-transform 250ms ease;
-    -o-transition: -o-transform 250ms ease;
-    transition: transform 250ms ease; }
+    -webkit-transition: -webkit-transform 100ms ease;
+    -moz-transition: -moz-transform 100ms ease;
+    -o-transition: -o-transform 100ms ease;
+    transition: transform 100ms ease; }
     .main-menu ul.off-canvas-list li a:hover, .main-menu ul.off-canvas-list li a:focus, .main-menu ul.off-canvas-list li a:focus {
       background: none !important;
       font-weight: bold; }
@@ -4053,12 +4053,17 @@ p.leadtext {
   .main-menu .nav-button {
     float: right; }
   .main-menu a.back-button {
+    color: #cc1b43;
     float: left;
-    padding: 5px; }
+    padding: 5px;
+    position: relative;
+    top: -7px; }
     .main-menu a.back-button:before {
       content: '\e608';
       font-size: 1.875rem;
-      color: #1c4072; }
+      color: #1c4072;
+      position: relative;
+      top: 8px; }
     .main-menu a.back-button:hover:before, .main-menu a.back-button:focus:before, .main-menu a.back-button:focus:before {
       color: #cc1b43; }
   .main-menu a.close-button {

@@ -3,11 +3,10 @@
         <div class="small-12 columns">
             <!-- header -->
             <nav class="tab-bar">
-                <section class="left">
-                    <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
-                        <p>Meny</p>
-                    </a>
-                </section>
+
+                    <multimenu menuitems="navigation.menuItems"></multimenu>
+
+
 
                 <section class="left logo-container">
                     <a href="#/">
@@ -42,9 +41,5 @@
                 </section>
             </nav>
         </div>
-    </div>
-
-    <div ng-hide="navigation.hideNavigation">
-        <multimenu menuitems="navigation.menuItems"></multimenu>
     </div>
 </div>

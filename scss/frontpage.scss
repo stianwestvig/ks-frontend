@@ -10,84 +10,82 @@
     }
   }
 
+  /* slide carousel */
+  .slide {
+    // transition: opacity 0.1s;
+    margin-bottom: rem-calc(20);
 
-/********************************
-slide carousel
-********************************/
-
-.slide {
-  // transition: opacity 0.1s;
-  margin-bottom: rem-calc(20);
-
-  &.ng-hide-add{
-    display: inline !important;
-    //opacity: 1;
-  }
-
-  &.ng-hide-remove{
-    //background: blue;
-    //opacity: 0;
-  }
-
-  .teaser {
-    .ks-button-small {
-      padding: 5px 15px;
-      font-size: rem-calc(14);
+    &.ng-hide-add {
+      display: inline !important;
+      //opacity: 1;
     }
-  }
 
-  ul.pager {
-      li {
-      margin-left: rem-calc(2);
-      a {
-        padding: rem-calc(1 7);
+    &.ng-hide-remove {
+      //background: blue;
+      //opacity: 0;
+    }
 
-        &.active {
-          background-color: $KSRed;
-          color: $KSWhite;
-        }
+    .teaser {
+      .ks-button-small {
+        padding: 5px 15px;
+        font-size: rem-calc(14);
       }
     }
 
+    ul.pager {
+      li {
+        margin-left: rem-calc(2);
+        a {
+          padding: rem-calc(1 7);
 
+          &.active {
+            background-color: $KSRed;
+            color: $KSWhite;
+          }
+        }
+      }
+    }
   }
-}
 
-
-
-/********************************
-Articles
-********************************/
-
-// 4x articles on frontpage:
-.ks-panel-white {
-  .teaser {
-    img {
-      margin-bottom: 5px;
-}     }
+  /* Shortcuts */
+  .shortcuts {
+    a {
+      color: $KSWhite;
+    }
   }
-}
 
-.byline {
-  margin-bottom: rem-calc(10);
-
-  li {
-    font-size: rem-calc(12);
-    line-height: rem-calc(16);
+  /*4x articles on frontpage:*/
+  .ks-panel-white {
+    .teaser {
+      img {
+        margin-bottom: 5px;
+      }
+    }
   }
-  .date, .align-with-date {
-    &:before {
+
+  .byline {
+    margin-bottom: rem-calc(10);
+
+    li {
+      font-size: rem-calc(12);
+      line-height: rem-calc(16);
+    }
+    .date, .align-with-date {
+      &:before {
         content: " ";
         font-size: rem-calc(15);
         vertical-align: middle;
+      }
+    }
+    .date {
+      &:before {
+        content: "\e603";
+        font-family: "icomoon";
+        display: inline-block;
+        margin-right: rem-calc(5);
+      }
     }
   }
-  .date {
-    &:before {
-      content: "\e603";
-      font-family: "icomoon";
-      display: inline-block;
-      margin-right: rem-calc(5);
-    }
-  }
+
 }
+

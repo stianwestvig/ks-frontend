@@ -77,6 +77,7 @@ ul.events-list {
 
   table {
     margin-bottom: rem-calc(16);
+    width: 100%;
 
     thead {
       h5 {
@@ -109,7 +110,7 @@ ul.events-list {
 
       td {
         line-height: rem-calc(16);
-        padding: rem-calc(4 6);
+        padding: rem-calc(16 6);
 
         a {
           &.inactive {
@@ -159,11 +160,19 @@ ul.events-list {
         a {
           color: $KSBlack;
         }
-
       }
-
     }
-
   }
+}
 
+@media #{$medium-up} {
+  .calendar{
+    table {
+      tr {
+        td {
+          padding: rem-calc(4 6);
+        }
+      }
+    }
+  }
 }

@@ -4020,7 +4020,8 @@ p.leadtext {
 .main-menu {
   -webkit-backface-visibility: hidden;
   width: 15.625rem;
-  top: 0;
+  top: 33px;
+  left: -31px;
   bottom: 0;
   position: absolute;
   overflow-y: auto;
@@ -4299,7 +4300,6 @@ select {
 Header and navigation
 ********************************/
 .tab-bar {
-  overflow: hidden;
   height: auto;
   margin-bottom: 1.25rem; }
   .tab-bar .menu-icon {

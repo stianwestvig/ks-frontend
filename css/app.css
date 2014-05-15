@@ -3143,28 +3143,6 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
-table {
-  background: white;
-  margin-bottom: 1.25rem;
-  border: solid 1px #dddddd; }
-  table thead, table tfoot {
-    background: whitesmoke; }
-    table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
-      padding: 0.5rem 0.625rem 0.625rem;
-      font-size: 0.875rem;
-      font-weight: bold;
-      color: #222222;
-      text-align: left; }
-  table tr th, table tr td {
-    padding: 0.5625rem 0.625rem;
-    font-size: 0.875rem;
-    color: #222222; }
-  table tr.even, table tr.alt, table tr:nth-of-type(even) {
-    background: #f9f9f9; }
-  table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-    display: table-cell;
-    line-height: 1.125rem; }
-
 /* 
  * Foundation Icons v 3.0
  * Made by ZURB 2013 http://zurb.com/playground/foundation-icon-fonts-3
@@ -4036,6 +4014,29 @@ table {
 
 .fi-zoom-out:before {
   content: "\f21a"; }
+
+/* Foundation table styles is only for contents of articles */
+.article table {
+  background: white;
+  margin-bottom: 1.25rem;
+  border: solid 1px #dddddd; }
+  .article table thead, .article table tfoot {
+    background: whitesmoke; }
+    .article table thead tr th, .article table thead tr td, .article table tfoot tr th, .article table tfoot tr td {
+      padding: 0.5rem 0.625rem 0.625rem;
+      font-size: 0.875rem;
+      font-weight: bold;
+      color: #222222;
+      text-align: left; }
+  .article table tr th, .article table tr td {
+    padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222; }
+  .article table tr.even, .article table tr.alt, .article table tr:nth-of-type(even) {
+    background: #f9f9f9; }
+  .article table thead tr th, .article table tfoot tr th, .article table tbody tr td, .article table tr td, .article table tfoot tr td {
+    display: table-cell;
+    line-height: 1.125rem; }
 
 /***** KS Colors *****/
 /***** KS Measurements *****/

@@ -1,53 +1,42 @@
 app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
-    /*
-     *
-     * TODO:
-     * - css
-     *
-     * DONE:
-     *
-     * - markering av dager med events
-     * - klokkeuavhengighet
-     * - inactive lenker til dager utenfor måned
-     * - måned: sett dag til første
-     * - og end dag til siste i måned
-     * - lenke til eventside
-     * - filtrer på region
-     * - klikk på måned - viser hele måned
-     *
-     * */
-
     var calendar = this;
 
     calendar.data = dataService.data;
     calendar.regions = dataService.regions;
     calendar.startDate;
     calendar.endDate;
+    calendar.refreshMonth = false;
 
     calendar.setStartDate = function(date){
         calendar.startDate = date;
-    }
+    };
+
     calendar.getStartDate = function(){
         return calendar.startDate;
-    }
+    };
 
     calendar.setEndDate = function(date){
         calendar.endDate = date;
-    }
+    };
+
     calendar.getEndDate = function(){
         return calendar.endDate;
-    }
+    };
 
     calendar.getMonthFromStartDate = function(){
         var mydate = new Date(calendar.getStartDate());
         return mydate.getMonth();
-    }
+    };
 
     calendar.setMonthInStartDate = function(month){
         calendar.setStartDate(calendar.getStartDate().setMonth(month));
-    }
+    };
 
+    calendar.resetCalendar = function(){
+        calendar.refreshMonth = true;
+        calendar.init();
+    };
 
     calendar.init = function()  {
         /* Initialize the date object to today */
@@ -62,9 +51,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         /* set the end date to display: */
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
-
-        console.log(newStartDate);
-
     };
 
     calendar.init();
@@ -76,25 +62,20 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         var newValTimestamp = helperService.toTimestamp(newVal);
         var oldValTimestamp = helperService.toTimestamp(oldVal);
 
-        /*console.log('new: ' + newValTimestamp);
-        console.log('old: ' + oldValTimestamp);*/
+        /* Check if entire month will be displayed, or just one day */
+        var entireMonth = calendar.dt.refreshMonth || calendar.refreshMonth;
+
+        /* Reset entire month flag, so it is ready for next iteration */
+        calendar.refreshMonth = false;
+
 
         if(oldValTimestamp !== undefined){
             if(oldValTimestamp !== newValTimestamp){
-
-                /*console.log('watcher on the wall reporting');
-                console.log(calendar.dt.refreshMonth);
-                console.log('start: '+$scope.calendar.startDate);
-                console.log('end:   '+$scope.calendar.endDate);
-                console.log('dt:    '+$scope.calendar.dt);
-                console.log('\n');*/
-
                 calendar.setEndDate(oldVal);
                 var days = 1;
 
-
                 /* Test if new month or just within a month: */
-                if (calendar.dt.refreshMonth || calendar.getMonthFromStartDate() !== newVal.getMonth()){
+                if (entireMonth || calendar.getMonthFromStartDate() !== newVal.getMonth()){
 
                     var newDate = new Date(newVal);
 
@@ -105,7 +86,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
                     /* Find number of days in the selected month to use as End Date */
                     var monthIndex = newDate.getMonth() +1;
                     days = helperService.daysInMonth(monthIndex,newDate.getFullYear());
-
                 }
                 else {
                     days = 1;
@@ -115,12 +95,10 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
                 /* add 1 or 30 days to copy of start date */
                 var newEndDate = helperService.addDaysToDate(calendar.getStartDate(), days);
                 calendar.setEndDate(newEndDate);
-
             }
         }
 
     }, true);
-
 
 
 });

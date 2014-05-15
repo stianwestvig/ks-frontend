@@ -79,6 +79,16 @@ ul.events-list {
     margin-bottom: rem-calc(16);
     width: 100%;
 
+    a {
+      font-size: rem-calc(22);
+    }
+
+    small {
+      display: block;
+      margin: rem-calc(16 0);
+      font-size: rem-calc(16);
+    }
+
     thead {
       h5 {
         text-transform: uppercase;
@@ -171,6 +181,15 @@ ul.events-list {
 @media #{$medium-up} {
   .calendar{
     table {
+      a {
+        font-size: rem-calc(16);
+      }
+
+      small {
+        margin: rem-calc(8 0);
+        font-size: rem-calc(10);
+      }
+
       tr {
         td {
           a {

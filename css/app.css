@@ -4743,6 +4743,12 @@ ul.events-list {
 .calendar table {
   margin-bottom: 1rem;
   width: 100%; }
+  .calendar table a {
+    font-size: 1.375rem; }
+  .calendar table small {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1rem; }
   .calendar table thead h5 {
     text-transform: uppercase;
     font-size: 1rem; }
@@ -4794,6 +4800,11 @@ ul.events-list {
       color: black; }
 
 @media only screen and (min-width:40.063em) {
+  .calendar table a {
+    font-size: 1rem; }
+  .calendar table small {
+    margin: 0.5rem 0;
+    font-size: 0.625rem; }
   .calendar table tr td a {
     padding: 0.25rem 0.375rem; } }
 

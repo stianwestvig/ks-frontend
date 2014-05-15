@@ -23,30 +23,28 @@
       }
     }
   }
+  figure {
+    margin: rem-calc(0 0 20 0);
 
-  img {
-
-    &.top-img {
-      margin-bottom: rem-calc(20);
-
-      &.vertical {
-        float: left;
-        width: 50%;
-        margin-right: rem-calc(20);
-      }
+    img {
+      // margin-bottom: rem-calc(2);
     }
 
-    &.inline {
-
-      float: right;
+    &.vertical {
+      float: left;
       width: 50%;
-      padding: rem-calc(20 0);
-      margin: rem-calc(0 20);
-      border-top: 2px solid $KSGreyBorderDarker;
-      border-bottom: 2px solid $KSGreyBorderDarker;
-
+      margin-right: rem-calc(20);
     }
+
+    figcaption {
+      color: $KSGreyCaption;
+      line-height: rem-calc(20);
+      font-size: rem-calc(13);
+    }
+
   }
+
+
 
   ul, ol {
     clear: left;

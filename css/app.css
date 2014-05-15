@@ -4672,19 +4672,16 @@ Header and navigation
     color: #27a0dd; }
     .article .tips ul li a {
       color: #27a0dd; }
-  .article img.top-img {
-    margin-bottom: 1.25rem; }
-    .article img.top-img.vertical {
+  .article figure {
+    margin: 0 0 1.25rem 0; }
+    .article figure.vertical {
       float: left;
       width: 50%;
       margin-right: 1.25rem; }
-  .article img.inline {
-    float: right;
-    width: 50%;
-    padding: 1.25rem 0;
-    margin: 0 1.25rem;
-    border-top: 2px solid #c8c8c8;
-    border-bottom: 2px solid #c8c8c8; }
+    .article figure figcaption {
+      color: grey;
+      line-height: 1.25rem;
+      font-size: 0.8125rem; }
   .article ul, .article ol {
     clear: left; }
   .article table {

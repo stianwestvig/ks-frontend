@@ -28,6 +28,12 @@
 
     &.top-img {
       margin-bottom: rem-calc(20);
+
+      &.vertical {
+        float: left;
+        width: 50%;
+        margin-right: rem-calc(20);
+      }
     }
 
     &.inline {
@@ -40,6 +46,10 @@
       border-bottom: 2px solid $KSGreyBorderDarker;
 
     }
+  }
+
+  ul, ol {
+    clear: left;
   }
 
   table {

@@ -1,5 +1,5 @@
 
-var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap.datepicker']);
+/*var app = angular.module('app', ['mm.foundation', 'ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap.datepicker']);*/
 
 var app = angular.module('app', [
     'mm.foundation',
@@ -19,6 +19,9 @@ app.config(function($routeProvider, $locationProvider){
         })
         .when('/article', {
             templateUrl: 'views/article.html'
+        })
+        .when('/article2', {
+            templateUrl: 'views/article2.html'
         })
         .when('/persons', {
             templateUrl: 'views/persons.html'

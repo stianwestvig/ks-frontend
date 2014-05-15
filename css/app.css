@@ -4012,6 +4012,22 @@ p.leadtext {
       content: "\f08a";
       position: relative;
       top: 1px; }
+.status-update .comments .comment {
+  /*display: inline-block;*/
+  margin-bottom: 1.25rem; }
+  .status-update .comments .comment .comment-row {
+    position: relative;
+    left: -26px; }
+  .status-update .comments .comment h3 {
+    color: #27a0dd;
+    font-size: 0.875rem;
+    margin-bottom: 0; }
+  .status-update .comments .comment p {
+    display: inline; }
+.status-update textarea {
+  line-height: 1rem;
+  padding-top: 13px;
+  max-width: 100%; }
 
 @media only screen and (min-width:40.063em) {
   .status-update .text-container:before {

@@ -88,6 +88,55 @@
       }
     }
   }
+
+
+  .comments {
+
+
+    .comment {
+
+      /*display: inline-block;*/
+      margin-bottom: rem-calc(20);
+
+
+      .columns {
+        // padding-left: 0;
+      }
+
+      .comment-row {
+        position: relative;
+        left: -26px;
+      }
+
+      h3 {
+
+        color:$KSBlueMedium;
+        font-size: rem-calc(14);
+        margin-bottom: 0;
+      }
+
+      p {
+        display: inline;
+      }
+
+      img {
+        /*padding: rem-calc(0 0 0 40);*/
+        /*width: 60%;*/
+      }
+
+
+    }
+    }
+
+
+  textarea {
+    line-height: 1rem;
+    padding-top: 13px;
+    max-width: 100%;
+  }
+
+
+
 }
 
 @media #{$medium} {

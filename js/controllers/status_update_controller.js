@@ -11,7 +11,7 @@ app.controller('statusUpdateCtrl', function(){
                 'body' : "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
                 'comments' : [
                     {
-                        'name' : "Stain Westvig",
+                        'name' : "Stian Westvig",
                         'comment': "Jeg vil være med på klima konferanse!"
                     },
                     {
@@ -53,7 +53,7 @@ app.controller('statusUpdateCtrl', function(){
     }
 
     statusUpdate.addUpdate = function(update){
-        statusUpdate.updates.push(
+        statusUpdate.updates.unshift(
             {
                 'image' : 'img/statusimageplaceholder1.png',
                 'name' : statusUpdate.currentUser,
@@ -64,8 +64,41 @@ app.controller('statusUpdateCtrl', function(){
         )
     }
 
+    statusUpdate.toggleComments = function(update){
+        update.commentsVisible = !update.commentsVisible;
+    }
+
+
+    statusUpdate.addComment = function(update, comment){
+        update.comments.push(
+            {
+                'name' : statusUpdate.currentUser,
+                'comment' : comment
+            }
+        )
+    }
 
 });
+
+app.directive( 'comment', function () {
+    return {
+        restrict: 'A',
+        scope: {},
+        controller: 'statusUpdateCtrl',
+        link: function(scope, element, attrs, ctrl){
+
+
+            element.bind('keydown keypress', function(event){
+                if(event.which === 13){
+                    console.log(element[0].value);
+                    ctrl.addComment();
+                }
+            })
+            event.preventDefault();
+        }
+    };
+})
+
 
 app.filter('iif', function () {
     return function(input, trueValue, falseValue) {

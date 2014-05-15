@@ -4018,11 +4018,15 @@ p.leadtext {
     left: 88px; } }
 
 .main-menu {
+  -webkit-transition: left 100ms ease-in-out;
+  -moz-transition: left 100ms ease-in-out;
+  -ms-transition: left 100ms ease-in-out;
+  -o-transition: left 100ms ease-in-out;
+  transition: left 100ms ease-in-out;
   -webkit-backface-visibility: hidden;
-  width: 15.625rem;
-  top: 33px;
-  left: -31px;
-  bottom: 0;
+  width: 18.625rem;
+  top: 50px;
+  left: -18.625rem;
   position: absolute;
   overflow-y: auto;
   background: #edf6fd;
@@ -4043,7 +4047,8 @@ p.leadtext {
       margin-top: 4px; }
     .main-menu ul.off-canvas-list li ul {
       position: absolute;
-      left: 92%;
+      left: 100%;
+      margin-left: 0;
       top: 0px;
       list-style: none;
       width: 100%;
@@ -4076,6 +4081,8 @@ p.leadtext {
       color: #1c4072; }
     .main-menu a.close-button:hover:before, .main-menu a.close-button:focus:before, .main-menu a.close-button:focus:before {
       color: #cc1b43; }
+  .main-menu.visible {
+    left: 0 !important; }
 
 body {
   line-height: 0; }

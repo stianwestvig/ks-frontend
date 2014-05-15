@@ -1,23 +1,42 @@
-angular.module('agh.multimenu', ['views/multimenu.html'])
+angular.module('agh.multimenu', ['views/multimenu.html', 'menu_item.html'])
 
-    .controller('MenuController', ['$scope', '$attrs', function($scope) {
+    .service('menuService', ['$rootScope', function($rootScope) {
+
+        var visible;
+
+        this.setState = function(visible){
+            var visible = visible;
+        }
+
+        this.toggleVisible = function(){
+            visible = !visible;
+            $rootScope.$apply();
+        }
+
+        this.getVisible = function(){
+            return visible;
+        }
+
+    }])
+
+    .controller('MenuController', ['$scope', 'menuService', function($scope, menuService) {
 
         var menu = this;
         $scope.activeLevel = 0;
+        $scope.menuService = menuService;
         menu.clickPath = [];
-
         $scope.isVisible;
 
         menu.init = function(visible){
             $scope.isVisible = visible;
         }
 
-        menu.toggleVisible = function(){
-            console.log("call");
-            $scope.isVisible = !$scope.isVisible;
-            $scope.$apply();
-        }
-
+        $scope.$watch('menuService.getVisible()', function(newValue,  oldValue) {
+            if(newValue === oldValue){
+                return;
+            }
+            $scope.isVisible = newValue;
+        });
 
         menu.incrementActiveLevel = function(){
             $scope.activeLevel = $scope.activeLevel + 1;
@@ -71,12 +90,10 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
             restrict: 'EA',
             scope: {},
             require: '^multimenu',
-            link: function(scope, element, attrs, ctrl) {
-                element.bind('click', function(){
-                    console.log('click');
-
-                    ctrl.toggleVisible();
-                })
+            controller: function($element, menuService){
+                $element.bind('click', function(){
+                    menuService.toggleVisible();
+                });
             }
         };
     })
@@ -95,14 +112,31 @@ angular.module('agh.multimenu', ['views/multimenu.html'])
         };
     })
 
+  angular.module("views/multimenu.html", []).run(["$templateCache", function($templateCache) {
+      $templateCache.put("views/multimenu.html",
+              "<aside class=\"main-menu\" ng-class=\"{'visible' : isVisible}\">"+
+              "    <a backbutton ng-show=\"activeLevel > 0\" class=\"back-button\"><\/a>"+
+              "    <a closebutton class=\"close-button\"><\/a>"+
+              "    <ul class=\"off-canvas-list\"  ng-style=\"{"+
+              /* "'left' : '-' + (activeLevel * 100) + '%'" +*/
+              "                '-webkit-transform': 'translate(-' +  ( activeLevel * 100 ) + '%, 0)' ,"+
+              "                '-moz-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,"+
+              "                '-ms-transform': 'translate(-' +  ( activeLevel * 100 ) + '%, 0) ' ,"+
+              "                '-o-transformm': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,"+
+              "                'transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' " +
+                  "}\" >"+
+              "        <li ng-repeat=\"item in menuitems\" ng-include=\"'menu_item.html'\"><\/li>"+
+              "    <\/ul>"+
+              "<\/aside>"
+      );
+  }]);
 
-
-angular.module("views/multimenu.html", []).run(["$templateCache", function($templateCache) {
+angular.module("menu_item.html", []).run(["$templateCache", function($templateCache) {
     $templateCache.put("menu_item.html",
             "<a ng-if=\"item.categories.length\" menuitem>{{ item.linkText }}<span class=\"icon-arrow-right\"></span></a>" +
             "<a ng-if=\"!item.categories.length\" href=\"{{item.href}}\">{{ item.linkText }}</a>" +
-                "<ul ng-if=\"item.categories.length\">" +
-                    "<li ng-repeat=\"item in item.categories\" ng-include=\"'menu_item.html'\"></li>" +
-                "</ul>"
+            "<ul ng-if=\"item.categories.length\">" +
+            "<li ng-repeat=\"item in item.categories\" ng-include=\"'menu_item.html'\"></li>" +
+            "</ul>"
     );
 }]);

@@ -1,10 +1,12 @@
 
 .main-menu {
+
+  $width : 18.625rem;
+  @include transition(left, 100ms, ease-in-out);
   -webkit-backface-visibility: hidden;
-  width: 15.625rem;
-  top: 33px;
-  left: -31px;
-  bottom: 0;
+  width: $width;
+  top: 50px;
+  left: -$width;
   position: absolute;
   overflow-y: auto;
   background: #edf6fd;
@@ -13,10 +15,10 @@
   min-height: rem-calc(800);
 
   ul.off-canvas-list {
-
     margin: 40px 0 0 0;
 
     @include transition_transform(transform, 100ms, ease);
+
     li {
       a {
         &:hover, &:focus, &:focus  {
@@ -33,7 +35,8 @@
 
       ul {
         position: absolute;
-        left: 92%;
+        left: 100%;
+        margin-left: 0;
         top: 0px;
         list-style: none;
         width: 100%;
@@ -93,4 +96,9 @@ a.back-button {
     }
 
   }
+
+  &.visible {
+    left:0 !important;
+  }
+
 }

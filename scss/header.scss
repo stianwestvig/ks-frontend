@@ -77,6 +77,13 @@ Header and navigation
   }
 }
 
+.breadcrumbs > * a {
+  &:hover {
+    text-decoration: underline;
+    color: $KSRed;
+  }
+}
+
 
 /* Searchfield styling is not nested, so it can be reused on persons page */
 .search {

@@ -1204,6 +1204,54 @@ select {
     right: 91.66667%;
     left: auto; } }
 
+.breadcrumbs {
+  display: block;
+  padding: 0.125rem 0;
+  overflow: hidden;
+  margin-left: 0;
+  list-style: none;
+  border-style: none;
+  border-width: 0;
+  background-color: white;
+  border-color: white;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+  .breadcrumbs > * {
+    margin: 0;
+    float: left;
+    font-size: 0.8125rem;
+    text-transform: none; }
+    .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
+      text-decoration: underline; }
+    .breadcrumbs > * a, .breadcrumbs > * span {
+      text-transform: none;
+      color: #cd2346; }
+    .breadcrumbs > *.current {
+      cursor: default;
+      color: #333333; }
+      .breadcrumbs > *.current a {
+        cursor: default;
+        color: #333333; }
+      .breadcrumbs > *.current:hover, .breadcrumbs > *.current:hover a, .breadcrumbs > *.current:focus, .breadcrumbs > *.current:focus a {
+        text-decoration: none; }
+    .breadcrumbs > *.unavailable {
+      color: #999999; }
+      .breadcrumbs > *.unavailable a {
+        color: #999999; }
+      .breadcrumbs > *.unavailable:hover, .breadcrumbs > *.unavailable:hover a, .breadcrumbs > *.unavailable:focus, .breadcrumbs > *.unavailable a:focus {
+        text-decoration: none;
+        color: #999999;
+        cursor: default; }
+    .breadcrumbs > *:before {
+      content: "\e60b";
+      color: #cd2346;
+      margin: 0 0.75rem;
+      position: relative;
+      top: 1px; }
+    .breadcrumbs > *:first-child:before {
+      content: " ";
+      margin: 0; }
+
 button, .button {
   border-style: solid;
   border-width: 0px;
@@ -4604,6 +4652,10 @@ Header and navigation
 @media only screen and (min-width:40.063em) {
   .tab-bar section.search-container {
     min-width: 18.75rem; } }
+
+.breadcrumbs > * a:hover {
+  text-decoration: underline;
+  color: #cd2346; }
 
 /* Searchfield styling is not nested, so it can be reused on persons page */
 .search .icon-search2:before {

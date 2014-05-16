@@ -46,6 +46,10 @@ Header and navigation
   section {
     text-align: left;
 
+    &.margin-correction {
+      margin-left: rem-calc(-10);
+    }
+
     &.search-container {
       left: inherit;
 
@@ -77,12 +81,35 @@ Header and navigation
   }
 }
 
-.breadcrumbs > * a {
-  &:hover {
-    text-decoration: underline;
-    color: $KSRed;
+.breadcrumbs {
+  margin-bottom: 0;
+
+  li {
+    line-height: rem-calc(20);
+    vertical-align: top;
+
+    &:before {
+      font-size: rem-calc(20);
+    }
+  }
+  a {
+    vertical-align: top;
+
+    &:hover {
+      text-decoration: underline;
+      color: $KSRed;
+    }
+  }
+
+  .home {
+    font-size: rem-calc(16);
+    &:before {
+      content: "\f015";
+      vertical-align: top;
+    }
   }
 }
+
 
 
 /* Searchfield styling is not nested, so it can be reused on persons page */

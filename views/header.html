@@ -3,17 +3,41 @@
         <div class="small-12 columns">
             <!-- header -->
             <nav class="tab-bar">
-                <section class="left">
-                    <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
-                        <p>Meny</p>
-                    </a>
-                </section>
 
-                <section class="left logo-container">
-                    <a href="#/">
-                        <img src="img/logo.png" alt="" class="logo" />
-                        <h1 class="title"><a href="#/">Fiks</h1>
-                    </a>
+                <section class="left">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <section class="left margin-correction">
+                                <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
+                                    <p>Meny</p>
+                                </a>
+                            </section>
+
+                            <section class="left logo-container">
+                                <a href="#/">
+                                    <img src="img/logo.png" alt="" class="logo" />
+                                    <h1 class="title"><a href="#/">Fiks</h1>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 medium-6 large-4 columns">
+                            <section class="left">
+                                <ul class="breadcrumbs icomoon">
+                                    <li><a class="home" href="#"></a></li>
+                                    <!--<li class="unavailable">Gene Splicing</li>-->
+                                    <li><a href="#">Støtte og tjenester</a></li>
+                                    <li><a href="#">Kommunikasjon</a></li>
+                                    <li><a href="#">Støtte og tjenester</a></li>
+                                    <li><a href="#">Kommunikasjon</a></li>
+                                    <li><a href="#">Støtte og tjenester</a></li>
+                                    <li><a href="#">Kommunikasjon</a></li>
+                                    <li class="current">Skrivetips</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="right search-container">
@@ -22,7 +46,7 @@
                             <div class="mytime left">
                                 <span class="meta">Min tid: </span>
                                 <a class="ks-button-small center {{navigation.myTimeStatus.status}}"
-                                    ng-click="navigation.toggleMyTime()">{{navigation.myTimeStatus.label}}</a>
+                                   ng-click="navigation.toggleMyTime()">{{navigation.myTimeStatus.label}}</a>
                             </div>
                             <div class="user right">
                                 <span class="meta">Stian Westvig</span>
@@ -40,15 +64,7 @@
                         </div>
                     </form>
                 </section>
-                <div class="row">
-                    <div class="small-12 columns">
-                        <ul class="breadcrumbs icomoon">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <!--<li class="unavailable">Gene Splicing</li>-->
-                            <li class="current">Cloning</li>
-                        </ul>
-                </div>
+
             </nav>
         </div>
     </div>

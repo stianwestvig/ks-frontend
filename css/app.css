@@ -1219,7 +1219,7 @@ select {
   .breadcrumbs > * {
     margin: 0;
     float: left;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     text-transform: none; }
     .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
       text-decoration: underline; }
@@ -1245,7 +1245,7 @@ select {
     .breadcrumbs > *:before {
       content: "\e60b";
       color: #cd2346;
-      margin: 0 0.75rem;
+      margin: 0 0;
       position: relative;
       top: 1px; }
     .breadcrumbs > *:first-child:before {
@@ -4637,6 +4637,8 @@ Header and navigation
         color: #1c4072; }
   .tab-bar section {
     text-align: left; }
+    .tab-bar section.margin-correction {
+      margin-left: -0.625rem; }
     .tab-bar section.search-container {
       left: inherit; }
       .tab-bar section.search-container .mytime, .tab-bar section.search-container .user {
@@ -4653,9 +4655,23 @@ Header and navigation
   .tab-bar section.search-container {
     min-width: 18.75rem; } }
 
-.breadcrumbs > * a:hover {
-  text-decoration: underline;
-  color: #cd2346; }
+.breadcrumbs {
+  margin-bottom: 0; }
+  .breadcrumbs li {
+    line-height: 1.25rem;
+    vertical-align: top; }
+    .breadcrumbs li:before {
+      font-size: 1.25rem; }
+  .breadcrumbs a {
+    vertical-align: top; }
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+      color: #cd2346; }
+  .breadcrumbs .home {
+    font-size: 1rem; }
+    .breadcrumbs .home:before {
+      content: "\f015";
+      vertical-align: top; }
 
 /* Searchfield styling is not nested, so it can be reused on persons page */
 .search .icon-search2:before {

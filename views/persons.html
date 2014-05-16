@@ -11,17 +11,27 @@
             <!-- person search -->
             <form class="search persons" action="#/persons">
                 <div class="row">
-                    <div class="small-12 medium-7 large-6 columns">
+                    <div class="small-12 medium-8 large-7 columns">
                         <div class="row collapse">
                             <div class="small-9 columns magnify-carrier">
-                                <input type="text" name="search" class="searchfield"/><span class="icon-search2"></span>
+                                <input type="text" name="search" placeholder="Finn kollega" class="searchfield"/><span class="icon-search2"></span>
                             </div>
                             <div class="small-3 columns">
-                                <input class="ks-button-small postfix" type="submit" value="Søk"/>
+                                <input class="ks-button-small postfix" type="submit" value="Finn"/>
                             </div>
                         </div>
                     </div>
+                    <div class="small-12 medium-4 columns">
+                        <select name="avdeling" id="avdeling">
+                            <option value="">Begrens på avdeling</option>
+                            <option value="informasjon">Informasjon</option>
+                            <option value="ledelse">Ledelse</option>
+                            <option value="it-drift">IT-Drift</option>
+                            <option value="politisk">Politisk</option>
+                        </select>
+                    </div>
                 </div>
+
             </form>
 
             <h2 class="header4">Resultatliste</h2>

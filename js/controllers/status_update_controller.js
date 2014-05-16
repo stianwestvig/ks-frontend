@@ -80,14 +80,34 @@ app.controller('statusUpdateCtrl', function(){
 
 });
 
+app.directive( 'likeslist', function () {
+    return {
+        restrict: 'A',
+        scope: {
+            'likes' : '='
+        },
+        link: function(scope, element, attrs, ctrl){
+
+
+            element.bind('mouseover', function(event){
+                console.log('mousing');
+            })
+
+            element.bind('mouseout', function(event){
+                console.log('mousing out');
+            })
+
+        }
+    };
+})
+
+
 app.directive( 'comment', function () {
     return {
         restrict: 'A',
         scope: {},
         controller: 'statusUpdateCtrl',
         link: function(scope, element, attrs, ctrl){
-
-
             element.bind('keydown keypress', function(event){
                 if(event.which === 13){
                     console.log(element[0].value);

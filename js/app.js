@@ -6,9 +6,15 @@ var app = angular.module('app', [
     'ngRoute',
     'ngAnimate',
     'ngSanitize',
+    'ui.bootstrap.tooltip',
     'ui.bootstrap.datepicker',
     'agh.multimenu'
 ]);
+
+
+app.run(function(){
+    FastClick.attach(document.body);
+})
 
 
 app.config(function($routeProvider, $locationProvider){

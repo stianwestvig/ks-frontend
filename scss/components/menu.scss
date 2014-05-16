@@ -1,9 +1,12 @@
 
 .main-menu {
+
+  $width : 18.625rem;
+  @include transition(left, 100ms, ease-in-out);
   -webkit-backface-visibility: hidden;
-  width: 15.625rem;
-  top: 0;
-  bottom: 0;
+  width: $width;
+  top: 50px;
+  left: -$width;
   position: absolute;
   overflow-y: auto;
   background: #edf6fd;
@@ -12,10 +15,10 @@
   min-height: rem-calc(800);
 
   ul.off-canvas-list {
-
     margin: 40px 0 0 0;
 
-    @include transition_transform(transform, 250ms, ease);
+    @include transition_transform(transform, 100ms, ease);
+
     li {
       a {
         &:hover, &:focus, &:focus  {
@@ -32,7 +35,8 @@
 
       ul {
         position: absolute;
-        left: 92%;
+        left: 100%;
+        margin-left: 0;
         top: 0px;
         list-style: none;
         width: 100%;
@@ -51,15 +55,21 @@
     float: right;
   }
 
-  
+
 a.back-button {
+  color: $KSCalendarEvents5;
   float: left;
   padding: 5px;
+  position: relative;
+  top: -7px;
+
   &:before {
     @extend  .icomoon;
     content:'\e608';
     font-size: rem-calc(30);
     color:$KSBluePrimary;
+    position: relative;
+    top: 8px;
   }
 
   &:hover, &:focus, &:focus  {
@@ -67,7 +77,6 @@ a.back-button {
       color: $KSCalendarEvents5;
     }
   }
-
 }
 
   a.close-button {
@@ -81,11 +90,15 @@ a.back-button {
     }
 
     &:hover, &:focus, &:focus  {
-
       &:before {
         color: $KSCalendarEvents5;
       }
     }
 
   }
+
+  &.visible {
+    left:0 !important;
+  }
+
 }

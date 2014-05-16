@@ -4,7 +4,7 @@
             <!-- header -->
             <nav class="tab-bar">
                 <section class="left">
-                    <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
+                    <a closebutton class="left-off-canvas-toggle menu-icon"><span></span>
                         <p>Meny</p>
                     </a>
                 </section>
@@ -42,9 +42,5 @@
                 </section>
             </nav>
         </div>
-    </div>
-
-    <div ng-hide="navigation.hideNavigation">
-        <multimenu menuitems="navigation.menuItems"></multimenu>
-    </div>
+    </div> <multimenu menuitems="navigation.menuItems" visible="false"></multimenu>
 </div>

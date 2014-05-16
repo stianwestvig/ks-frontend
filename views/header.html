@@ -5,10 +5,14 @@
             <nav class="tab-bar">
 
                 <section class="left">
+
                     <div class="row">
                         <div class="small-12 columns">
                             <section class="left margin-correction">
-                                <a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
+                                <!--<a class="left-off-canvas-toggle menu-icon" ng-click="navigation.toggleNav()"><span></span>
+                                    <p>Meny</p>
+                                </a>-->
+                                <a closebutton class="left-off-canvas-toggle menu-icon"><span></span>
                                     <p>Meny</p>
                                 </a>
                             </section>
@@ -67,9 +71,5 @@
 
             </nav>
         </div>
-    </div>
-
-    <div ng-hide="navigation.hideNavigation">
-        <multimenu menuitems="navigation.menuItems"></multimenu>
-    </div>
+    </div> <multimenu menuitems="navigation.menuItems" visible="false"></multimenu>
 </div>

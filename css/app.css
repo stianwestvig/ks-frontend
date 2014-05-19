@@ -4668,7 +4668,7 @@ Header and navigation
     min-width: 18.75rem; } }
 
 .breadcrumbs {
-  margin-bottom: 0; }
+  margin-bottom: 1.25rem; }
   .breadcrumbs li {
     line-height: 1.25rem;
     vertical-align: top; }
@@ -4906,6 +4906,13 @@ ul.events-list {
         margin-bottom: 0; }
       .persons ul.persons li a {
         color: black; }
+
+.search ul.nav-tabs {
+  list-style: none; }
+.search .tab-content > .tab-pane {
+  display: none; }
+.search .tab-content > .active {
+  display: block; }
 
 .profile .ks-panel-blue {
   background-color: #edf6fd; }

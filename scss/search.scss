@@ -3,6 +3,12 @@
   ul.nav-tabs {
     list-style: none;
 
+    a {
+      text-transform: uppercase;
+      color: $KSBlack;
+
+    }
+
   }
 
   .tab-content>.tab-pane {

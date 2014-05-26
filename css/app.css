@@ -4909,6 +4909,9 @@ ul.events-list {
 
 .search ul.nav-tabs {
   list-style: none; }
+  .search ul.nav-tabs a {
+    text-transform: uppercase;
+    color: black; }
 .search .tab-content > .tab-pane {
   display: none; }
 .search .tab-content > .active {

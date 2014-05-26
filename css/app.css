@@ -4909,13 +4909,18 @@ ul.events-list {
 
 .search ul.nav-tabs {
   list-style: none; }
-  .search ul.nav-tabs a {
+  .search ul.nav-tabs li.active {
+    border-bottom: 3px solid #cd2346; }
+  .search ul.nav-tabs li a {
     text-transform: uppercase;
     color: black; }
 .search .tab-content > .tab-pane {
   display: none; }
 .search .tab-content > .active {
   display: block; }
+.search .tab-content ul {
+  list-style: none;
+  margin-left: 0; }
 
 .profile .ks-panel-blue {
   background-color: #edf6fd; }

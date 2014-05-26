@@ -3,20 +3,38 @@
   ul.nav-tabs {
     list-style: none;
 
-    a {
-      text-transform: uppercase;
-      color: $KSBlack;
+    li {
+      &.active {
+        border-bottom: 3px solid $KSRed;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $KSBlack;
+      }
+    }
+  }
+
+  .tab-content{
+    >.tab-pane {
+      display: none;
+    }
+    >.active {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+
+      li {
+
+
+      }
 
     }
 
-  }
 
-  .tab-content>.tab-pane {
-    display: none;
-  }
-
-  .tab-content>.active {
-    display: block;
   }
 
 }

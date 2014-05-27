@@ -4907,20 +4907,38 @@ ul.events-list {
       .persons ul.persons li a {
         color: black; }
 
-.search ul.nav-tabs {
-  list-style: none; }
-  .search ul.nav-tabs li.active {
-    border-bottom: 3px solid #cd2346; }
-  .search ul.nav-tabs li a {
-    text-transform: uppercase;
-    color: black; }
-.search .tab-content > .tab-pane {
-  display: none; }
-.search .tab-content > .active {
-  display: block; }
-.search .tab-content ul {
-  list-style: none;
-  margin-left: 0; }
+/* Search result page */
+.search {
+  /* search fields on the search result page */ }
+  .search .search input {
+    margin-bottom: 0.625rem; }
+  .search .search .ks-button-small {
+    background-color: #cd2346; }
+  .search .search .helper {
+    font-size: 0.875rem;
+    font-style: italic;
+    margin: 0; }
+  .search ul.nav-tabs {
+    list-style: none; }
+    .search ul.nav-tabs li.active {
+      border-bottom: 3px solid #cd2346; }
+    .search ul.nav-tabs li a {
+      text-transform: uppercase;
+      color: black; }
+  .search .tab-content > .tab-pane {
+    display: none; }
+  .search .tab-content > .active {
+    display: block; }
+  .search .tab-content h2.results {
+    padding: 1.25rem 0; }
+  .search .tab-content ul {
+    list-style: none;
+    margin-left: 0; }
+    .search .tab-content ul li {
+      border-top: 1px solid #e7e7e7;
+      padding: 0.625rem 0 0 0; }
+      .search .tab-content ul li a {
+        color: #cd2346; }
 
 .profile .ks-panel-blue {
   background-color: #edf6fd; }

@@ -4676,7 +4676,8 @@ Header and navigation
     .breadcrumbs li:before {
       font-size: 1.25rem; }
   .breadcrumbs a, .breadcrumbs span {
-    font-family: Calibri, Arial, sans-serif; }
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 0.8125rem; }
   .breadcrumbs a {
     vertical-align: top; }
     .breadcrumbs a:hover {
@@ -4684,7 +4685,8 @@ Header and navigation
       color: #cd2346; }
   .breadcrumbs span {
     line-height: inherit;
-    vertical-align: top; }
+    vertical-align: top;
+    color: black; }
   .breadcrumbs .home {
     font-family: icomoon;
     font-size: 1rem; }
@@ -4721,13 +4723,6 @@ Header and navigation
     .frontpage .slide .teaser .ks-button-small {
       padding: 5px 15px;
       font-size: 0.875rem; }
-    .frontpage .slide ul.pager li {
-      margin-left: 0.125rem; }
-      .frontpage .slide ul.pager li a {
-        padding: 0.0625rem 0.4375rem; }
-        .frontpage .slide ul.pager li a.active {
-          background-color: #cd2346;
-          color: white; }
   .frontpage .shortcuts a {
     color: white; }
   .frontpage .ks-panel-white .teaser img {
@@ -4746,6 +4741,15 @@ Header and navigation
       font-family: "icomoon";
       display: inline-block;
       margin-right: 0.3125rem; }
+
+/* pager is not nested so it can be reused on search result page */
+ul.pager li {
+  margin-left: 0.125rem; }
+  ul.pager li a {
+    padding: 0.0625rem 0.4375rem; }
+    ul.pager li a.active {
+      background-color: #cd2346;
+      color: white; }
 
 .article {
   /* Styles so table will get scroll inside article. Entire article contents gets scrolled. */
@@ -4938,13 +4942,13 @@ ul.events-list {
     display: block; }
   .search .tab-content h2.results {
     padding: 1.25rem 0; }
-  .search .tab-content ul {
+  .search .tab-content ul.list {
     list-style: none;
     margin-left: 0; }
-    .search .tab-content ul li {
+    .search .tab-content ul.list li {
       border-top: 1px solid #e7e7e7;
       padding: 0.625rem 0 0 0; }
-      .search .tab-content ul li a {
+      .search .tab-content ul.list li a {
         color: #cd2346; }
 
 .profile .ks-panel-blue {

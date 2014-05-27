@@ -31,20 +31,6 @@
         font-size: rem-calc(14);
       }
     }
-
-    ul.pager {
-      li {
-        margin-left: rem-calc(2);
-        a {
-          padding: rem-calc(1 7);
-
-          &.active {
-            background-color: $KSRed;
-            color: $KSWhite;
-          }
-        }
-      }
-    }
   }
 
   /* Shortcuts */
@@ -89,3 +75,18 @@
 
 }
 
+/* pager is not nested so it can be reused on search result page */
+
+ul.pager {
+  li {
+    margin-left: rem-calc(2);
+    a {
+      padding: rem-calc(1 7);
+
+      &.active {
+        background-color: $KSRed;
+        color: $KSWhite;
+      }
+    }
+  }
+}

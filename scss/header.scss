@@ -93,6 +93,7 @@ Header and navigation
   }
   a, span {
     font-family: Calibri, Arial, sans-serif;
+    font-size: rem-calc(13);
   }
 
   a {
@@ -107,6 +108,7 @@ Header and navigation
   span {
     line-height: inherit;
     vertical-align: top;
+    color: $KSBlack;
   }
 
   .home {

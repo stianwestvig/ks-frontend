@@ -4,8 +4,8 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
     calendar.data = dataService.data;
     calendar.regions = dataService.regions;
-    calendar.startDate;
-    calendar.endDate;
+    calendar.startDate = new Date();
+    calendar.endDate = new Date();
     calendar.refreshMonth = false;
 
     calendar.setStartDate = function(date){
@@ -67,7 +67,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
         /* Reset entire month flag, so it is ready for next iteration */
         calendar.refreshMonth = false;
-
 
         if(oldValTimestamp !== undefined){
             if(oldValTimestamp !== newValTimestamp){

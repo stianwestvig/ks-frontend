@@ -2,7 +2,23 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
     var calendar = this;
 
+
+
+
+
     calendar.data = dataService.data;
+
+
+    /*
+     *
+     *   $http.get('/someUrl').success(successCallback);
+     *   $http.post('/someUrl', data).success(successCallback);
+     *
+     * */
+
+
+
+
     calendar.regions = dataService.regions;
     calendar.startDate = new Date();
     calendar.endDate = new Date();

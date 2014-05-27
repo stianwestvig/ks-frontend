@@ -91,6 +91,10 @@ Header and navigation
       font-size: rem-calc(20);
     }
   }
+  a, span {
+    font-family: Calibri, Arial, sans-serif;
+  }
+
   a {
     vertical-align: top;
 
@@ -100,7 +104,13 @@ Header and navigation
     }
   }
 
+  span {
+    line-height: inherit;
+    vertical-align: top;
+  }
+
   .home {
+    font-family: icomoon;
     font-size: rem-calc(16);
     &:before {
       content: "\f015";

@@ -4675,12 +4675,18 @@ Header and navigation
     vertical-align: top; }
     .breadcrumbs li:before {
       font-size: 1.25rem; }
+  .breadcrumbs a, .breadcrumbs span {
+    font-family: Calibri, Arial, sans-serif; }
   .breadcrumbs a {
     vertical-align: top; }
     .breadcrumbs a:hover {
       text-decoration: underline;
       color: #cd2346; }
+  .breadcrumbs span {
+    line-height: inherit;
+    vertical-align: top; }
   .breadcrumbs .home {
+    font-family: icomoon;
     font-size: 1rem; }
     .breadcrumbs .home:before {
       content: "\f015";

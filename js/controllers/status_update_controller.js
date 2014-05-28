@@ -24,7 +24,16 @@ app.controller('statusUpdateCtrl', function(){
                     }
                 ],
                 'likes' : [
-                     "Stain Westvig", "Silje Sletteng", "Per Atle Holvik", "Adam Haeger"
+                    {
+                        name: "Stain Westvig"
+                    },
+                    {
+                        name: "Silje Sletteng"
+                    },
+                    {
+                        name: "Per Atle Holvik"
+                    }
+
                 ],
                 'hasLiked' : true
 
@@ -35,7 +44,16 @@ app.controller('statusUpdateCtrl', function(){
                 'body' : "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
                 'comments' : [],
                 'likes' : [
-                    "Goran Stene", "Tore Dal"
+                    {
+                        name: "Stain Westvig"
+                    },
+                    {
+                        name: "Silje Sletteng"
+                    },
+                    {
+                        name: "Per Atle Holvik"
+                    }
+
                 ],
                 'hasLiked' : false
             }
@@ -87,7 +105,6 @@ app.directive( 'likeslist', function () {
             'likes' : '='
         },
         link: function(scope, element, attrs, ctrl){
-
 
             element.bind('mouseover', function(event){
                 console.log('mousing');

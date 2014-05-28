@@ -7,7 +7,8 @@ var app = angular.module('app', [
     'ngAnimate',
     'ngSanitize',
     'ui.bootstrap.datepicker',
-    'agh.multimenu'
+    'agh.multimenu',
+    'agh.tooltip'
 ]);
 
 

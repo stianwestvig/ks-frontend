@@ -22,11 +22,7 @@
 
                                         <li><a ng-click="statusUpdate.toggleLike(update);">{{ update.hasLiked  | iif : "Fjern liker" : "Liker"}}</a></li>
 
-                                        <li class="likes">{{ update.likes.length }}
-                                            <!--<ul ng-repeat="like in update.likes">
-                                                <li>{{ like }}</li>
-                                            </ul>-->
-                                            <span likeslist likes="update.likes"></span></li>
+                                        <li class="likes" tooltip-hover items="update.likes" visible="update.visible">  <span>{{ update.likes.length }} </span></li>
                                     </ul>
                                 </div>
                             </div>

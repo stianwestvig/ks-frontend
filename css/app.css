@@ -4012,6 +4012,29 @@ p.leadtext {
       content: "\f08a";
       position: relative;
       top: 1px; }
+  .status-update .update-list ul.update-buttons div.likes-list {
+    display: inline; }
+    .status-update .update-list ul.update-buttons div.likes-list ul {
+      position: absolute;
+      top: 26px;
+      background-color: black;
+      color: white;
+      padding: 5px;
+      left: 239px; }
+      .status-update .update-list ul.update-buttons div.likes-list ul li {
+        font-size: 12px; }
+      .status-update .update-list ul.update-buttons div.likes-list ul:after {
+        width: 0;
+        height: 0;
+        border-left: 13px solid transparent;
+        border-right: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+        border-top: 13px solid #000000;
+        position: absolute;
+        content: "";
+        /*top: rem-calc(40);*/
+        top: 4rem;
+        left: 33%; }
 .status-update .comments .comment {
   /*display: inline-block;*/
   margin-bottom: 1.25rem; }

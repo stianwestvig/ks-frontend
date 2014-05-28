@@ -86,12 +86,43 @@
           }
         }
       }
+
+
+
+        div.likes-list {
+          display: inline;
+
+          ul {
+            position: absolute;
+            top: 26px;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            left: 239px;
+            li {
+              font-size: 12px;
+            }
+
+            &:after{
+              @include css-triangle ("down", 13px, black);
+              position: absolute;
+              content: "";
+              /*top: rem-calc(40);*/
+              top:4rem;
+              left: 33%;
+            }
+
+
+          }
+
+
+        }
+
+
     }
   }
 
-
   .comments {
-
 
     .comment {
 

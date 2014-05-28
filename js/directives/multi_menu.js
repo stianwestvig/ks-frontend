@@ -118,14 +118,13 @@ angular.module('agh.multimenu', ['views/multimenu.html', 'menu_item.html'])
               "    <a backbutton ng-show=\"activeLevel > 0\" class=\"back-button\"><\/a>"+
               "    <a closebutton class=\"close-button\"><\/a>"+
               "    <ul class=\"off-canvas-list\"  ng-style=\"{"+
-              /* "'left' : '-' + (activeLevel * 100) + '%'" +*/
               "                '-webkit-transform': 'translate(-' +  ( activeLevel * 100 ) + '%, 0)' ,"+
               "                '-moz-transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,"+
               "                '-ms-transform': 'translate(-' +  ( activeLevel * 100 ) + '%, 0) ' ,"+
               "                '-o-transformm': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' ,"+
               "                'transform': 'translate3d(-' +  ( activeLevel * 100 ) + '%, 0, 0) scale3d(1, 1, 1)' " +
                   "}\" >"+
-              "        <li ng-repeat=\"item in menuitems\" ng-include=\"'menu_item.html'\"><\/li>"+
+              "        <li ng-repeat=\"item in menuitems\" ng-include=\"'menu_item.html'\"></li>"+
               "    <\/ul>"+
               "<\/aside>"
       );

@@ -1,6 +1,5 @@
 angular.module('agh.tooltip', ['views/tooltip.html'])
 
-
     .directive( 'tooltipHover', function () {
         return {
             restrict: 'A',
@@ -19,7 +18,6 @@ angular.module('agh.tooltip', ['views/tooltip.html'])
                     scope.$apply();
 
                 })
-
             }
         };
     })

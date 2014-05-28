@@ -25,7 +25,7 @@ app.controller('statusUpdateCtrl', function(){
                 ],
                 'likes' : [
                     {
-                        name: "Stain Westvig"
+                        name: "Stian Westvig"
                     },
                     {
                         name: "Silje Sletteng"
@@ -45,7 +45,7 @@ app.controller('statusUpdateCtrl', function(){
                 'comments' : [],
                 'likes' : [
                     {
-                        name: "Stain Westvig"
+                        name: "Stian Westvig"
                     },
                     {
                         name: "Silje Sletteng"

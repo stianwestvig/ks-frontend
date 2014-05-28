@@ -3,56 +3,62 @@
         <h5 class="update">Del oppdatering</h5>
         <div class="text-container">
             <textarea ng-model='update' placeholder="Hva skjer?"></textarea>
-            <a ng-click="statusUpdate.addUpdate(update)" class="ks-button-small right min-width">Del</a>
+            <a ng-click="statusUpdate.addUpdate(update); update = '';" ng-model='update' class="ks-button-small right min-width">Del</a>
         </div>
         <hr/>
         <div class="update-list">
             <div ng-repeat="update in statusUpdate.updates | filter:update.timestamp">
-            <div class="update-item">
-                <div class="row">
-                <img ng-src="{{update.image}}" class="medium-2 columns hide-for-small-only" />
-                <div class="small-12 medium-10 columns">
+                <div class="update-item">
                     <div class="row">
-                        <div class="small-12 columns">
-                            <h2>{{ update.name }}</h2>
-                            <p ng-bind-html="update.body" ></p>
-                            <ul class="update-buttons">
-                                <li><a ng-click="statusUpdate.toggleComments(update)">{{ update.commentsVisible  | iif : "Skjul kommentarer" : "Vis kommentarer"}}</a></li>
-                                <li class="comments">{{ update.comments.length }}</li>
-                                <li><a ng-click="statusUpdate.toggleLike(update)">{{ update.hasLiked  | iif : "Fjern liker" : "Liker"}}</a></li>
-                                <li class="likes">{{ update.likes.length }}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row" ng-show="update.commentsVisible">
-                        <div class="small-12 columns">
-                            <div class="comments">
-                                <div class="row">
-                                    <div class="small-12 columns">
-                                        <hr/>
-                                    </div>
+                        <img ng-src="{{update.image}}" class="medium-2 columns hide-for-small-only" />
+                        <div class="small-12 medium-10 columns">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h2>{{ update.name }}</h2>
+                                    <p ng-bind-html="update.body | newlines" ></p>
+                                    <ul class="update-buttons">
+                                        <li><a ng-click="statusUpdate.toggleComments(update)">{{ update.commentsVisible  | iif : "Skjul kommentarer" : "Vis kommentarer"}}</a></li>
+                                        <li class="comments">{{ update.comments.length }}</li>
+
+                                        <li><a ng-click="statusUpdate.toggleLike(update);">{{ update.hasLiked  | iif : "Fjern liker" : "Liker"}}</a></li>
+
+                                        <li class="likes">{{ update.likes.length }}
+                                            <!--<ul ng-repeat="like in update.likes">
+                                                <li>{{ like }}</li>
+                                            </ul>-->
+                                            <span likeslist likes="update.likes"></span></li>
+                                    </ul>
                                 </div>
-                                <div ng-repeat="comment in update.comments" class="comment row collapse">
-                                    <div class="medium-1 columns hide-for-small-only ">
-                                        <img ng-src="{{update.image}}" />
-                                    </div>
-                                    <div class="small-11 medium-10 columns comment-row">
-                                        <h3>{{ comment.name }}</h3>
-                                        <p>{{ comment.comment }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="small-12 columns">
-                                        <textarea placeholder="Kommentar" ng-model="comment"></textarea>
-                                        <a ng-click="statusUpdate.addComment(update, comment)" class="ks-button-small right min-width">Del</a>
+                            </div>
+                            <div class="row" ng-show="update.commentsVisible">
+                                <div class="small-12 columns">
+                                    <div class="comments">
+                                        <div class="row">
+                                            <div class="small-12 columns">
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                        <div ng-repeat="comment in update.comments" class="comment row collapse">
+                                            <div class="medium-1 columns hide-for-small-only ">
+                                                <img ng-src="{{update.image}}" />
+                                            </div>
+                                            <div class="small-11 medium-10 columns comment-row">
+                                                <h3>{{ comment.name }}</h3>
+                                                <p ng-bind-html="comment.comment | newlines"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="small-12 columns">
+                                                <textarea ng-model="newComment" placeholder="Kommentar"></textarea>
+                                                <a ng-click ="statusUpdate.addComment(update, newComment);  newComment = '';" class="ks-button-small right min-width">Del</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
                 <hr/>
             </div>
         </div>

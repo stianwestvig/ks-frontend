@@ -11,7 +11,7 @@ app.controller('statusUpdateCtrl', function(){
                 'body' : "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
                 'comments' : [
                     {
-                        'name' : "Stain Westvig",
+                        'name' : "Stian Westvig",
                         'comment': "Jeg vil være med på klima konferanse!"
                     },
                     {
@@ -24,7 +24,16 @@ app.controller('statusUpdateCtrl', function(){
                     }
                 ],
                 'likes' : [
-                     "Stain Westvig", "Silje Sletteng", "Per Atle Holvik", "Adam Haeger"
+                    {
+                        name: "Stian Westvig"
+                    },
+                    {
+                        name: "Silje Sletteng"
+                    },
+                    {
+                        name: "Per Atle Holvik"
+                    }
+
                 ],
                 'hasLiked' : true
 
@@ -35,7 +44,16 @@ app.controller('statusUpdateCtrl', function(){
                 'body' : "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
                 'comments' : [],
                 'likes' : [
-                    "Goran Stene", "Tore Dal"
+                    {
+                        name: "Stian Westvig"
+                    },
+                    {
+                        name: "Silje Sletteng"
+                    },
+                    {
+                        name: "Per Atle Holvik"
+                    }
+
                 ],
                 'hasLiked' : false
             }
@@ -53,7 +71,7 @@ app.controller('statusUpdateCtrl', function(){
     }
 
     statusUpdate.addUpdate = function(update){
-        statusUpdate.updates.push(
+        statusUpdate.updates.unshift(
             {
                 'image' : 'img/statusimageplaceholder1.png',
                 'name' : statusUpdate.currentUser,
@@ -64,11 +82,69 @@ app.controller('statusUpdateCtrl', function(){
         )
     }
 
+    statusUpdate.toggleComments = function(update){
+        update.commentsVisible = !update.commentsVisible;
+    }
+
+
+    statusUpdate.addComment = function(update, comment){
+        update.comments.push(
+            {
+                'name' : statusUpdate.currentUser,
+                'comment' : comment
+            }
+        )
+    }
 
 });
+
+app.directive( 'likeslist', function () {
+    return {
+        restrict: 'A',
+        scope: {
+            'likes' : '='
+        },
+        link: function(scope, element, attrs, ctrl){
+
+            element.bind('mouseover', function(event){
+                console.log('mousing');
+            })
+
+            element.bind('mouseout', function(event){
+                console.log('mousing out');
+            })
+
+        }
+    };
+})
+
+
+app.directive( 'comment', function () {
+    return {
+        restrict: 'A',
+        scope: {},
+        controller: 'statusUpdateCtrl',
+        link: function(scope, element, attrs, ctrl){
+            element.bind('keydown keypress', function(event){
+                if(event.which === 13){
+                    console.log(element[0].value);
+                    ctrl.addComment();
+                }
+            })
+            event.preventDefault();
+        }
+    };
+})
+
 
 app.filter('iif', function () {
     return function(input, trueValue, falseValue) {
         return input ? trueValue : falseValue;
     };
 });
+
+app.filter('newlines', function () {
+    return function(text) {
+        return text.replace(/\n/g, '<br/>');
+    }
+})

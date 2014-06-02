@@ -1,11 +1,29 @@
-app.controller('CalendarCtrl', function($scope, helperService, dataService) {
+app.controller('CalendarCtrl', function($scope, $http, helperService, dataService, asyncDataService) {
 
     var calendar = this;
+    this.dataLoaded = false;
 
-    calendar.data = dataService.data;
+
+
+
+
+    /*calendar.data = dataService.data2;
+
+    calendar.data = dataService.data;*/
+
+
+    // api/CalendarEvent/2014-01-01/2016-01-01
+
+
+    /*
+     *
+     *   $http.get('/someUrl').success(successCallback);
+     *   $http.post('/someUrl', data).success(successCallback);
+     *
+     * */
+
+
     calendar.regions = dataService.regions;
-    calendar.startDate;
-    calendar.endDate;
     calendar.refreshMonth = false;
 
     calendar.setStartDate = function(date){
@@ -38,7 +56,7 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         calendar.init();
     };
 
-    calendar.init = function()  {
+    calendar.init = function($http)  {
         /* Initialize the date object to today */
         var firstOfTheMonth = new Date();
         firstOfTheMonth.setDate(1);
@@ -51,10 +69,35 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
         /* set the end date to display: */
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
+
+
+        /* get initial data from server */
+        calendar.data = [];
+        asyncDataService.getData().then(function(data){
+            calendar.data = data.data;
+            console.log(calendar.data);
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+        });
+
+
+
+        // must run on new data to create Date objects:
+        calendar.initDataDates();
+
     };
 
-    calendar.init();
-    calendar.events = calendar.data;
+
+
+    calendar.initDataDates = function(){
+        calendar.data.forEach(function(event){
+            event.startDate = new Date(event.startDate);
+            event.endDate = new Date(event.endDate);
+        });
+    };
+
+    calendar.init($http);
+
 
     /* watch stuff: */
     $scope.$watch('calendar.dt', function(newVal, oldVal){
@@ -67,7 +110,6 @@ app.controller('CalendarCtrl', function($scope, helperService, dataService) {
 
         /* Reset entire month flag, so it is ready for next iteration */
         calendar.refreshMonth = false;
-
 
         if(oldValTimestamp !== undefined){
             if(oldValTimestamp !== newValTimestamp){

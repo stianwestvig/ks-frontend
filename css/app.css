@@ -4656,7 +4656,8 @@ Buttons and forms
 select {
   line-height: normal;
   background-image: url("../img/select_arrow.png");
-  background-position: 98% center; }
+  background-position: 98% center;
+  background-repeat: no-repeat; }
 
 /********************************
 Header and navigation
@@ -4713,12 +4714,20 @@ Header and navigation
     vertical-align: top; }
     .breadcrumbs li:before {
       font-size: 1.25rem; }
+  .breadcrumbs a, .breadcrumbs span {
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 0.8125rem; }
   .breadcrumbs a {
     vertical-align: top; }
     .breadcrumbs a:hover {
       text-decoration: underline;
       color: #cd2346; }
+  .breadcrumbs span {
+    line-height: inherit;
+    vertical-align: top;
+    color: black; }
   .breadcrumbs .home {
+    font-family: icomoon;
     font-size: 1rem; }
     .breadcrumbs .home:before {
       content: "\f015";
@@ -4753,13 +4762,6 @@ Header and navigation
     .frontpage .slide .teaser .ks-button-small {
       padding: 5px 15px;
       font-size: 0.875rem; }
-    .frontpage .slide ul.pager li {
-      margin-left: 0.125rem; }
-      .frontpage .slide ul.pager li a {
-        padding: 0.0625rem 0.4375rem; }
-        .frontpage .slide ul.pager li a.active {
-          background-color: #cd2346;
-          color: white; }
   .frontpage .shortcuts a {
     color: white; }
   .frontpage .ks-panel-white .teaser img {
@@ -4778,6 +4780,15 @@ Header and navigation
       font-family: "icomoon";
       display: inline-block;
       margin-right: 0.3125rem; }
+
+/* pager is not nested so it can be reused on search result page */
+ul.pager li {
+  margin-left: 0.125rem; }
+  ul.pager li a {
+    padding: 0.0625rem 0.4375rem; }
+    ul.pager li a.active {
+      background-color: #cd2346;
+      color: white; }
 
 .article {
   /* Styles so table will get scroll inside article. Entire article contents gets scrolled. */
@@ -4946,12 +4957,38 @@ ul.events-list {
       .persons ul.persons li a {
         color: black; }
 
-.search ul.nav-tabs {
-  list-style: none; }
-.search .tab-content > .tab-pane {
-  display: none; }
-.search .tab-content > .active {
-  display: block; }
+/* Search result page */
+.search {
+  /* search fields on the search result page */ }
+  .search .search input {
+    margin-bottom: 0.625rem; }
+  .search .search .ks-button-small {
+    background-color: #cd2346; }
+  .search .search .helper {
+    font-size: 0.875rem;
+    font-style: italic;
+    margin: 0; }
+  .search ul.nav-tabs {
+    list-style: none; }
+    .search ul.nav-tabs li.active {
+      border-bottom: 3px solid #cd2346; }
+    .search ul.nav-tabs li a {
+      text-transform: uppercase;
+      color: black; }
+  .search .tab-content > .tab-pane {
+    display: none; }
+  .search .tab-content > .active {
+    display: block; }
+  .search .tab-content h2.results {
+    padding: 1.25rem 0; }
+  .search .tab-content ul.list {
+    list-style: none;
+    margin-left: 0; }
+    .search .tab-content ul.list li {
+      border-top: 1px solid #e7e7e7;
+      padding: 0.625rem 0 0 0; }
+      .search .tab-content ul.list li a {
+        color: #cd2346; }
 
 .profile .ks-panel-blue {
   background-color: #edf6fd; }

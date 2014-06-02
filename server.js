@@ -1,2 +1,2 @@
 var connect = require('connect');
-connect().use(connect.static(__dirname)).listen(8888);
+connect().use(connect.static(__dirname)).listen(1337);

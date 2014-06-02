@@ -1,6 +1,10 @@
 app.filter('dateFilter', function(){
-    return function(events, startDate, endDate) {
+    return function(events, startDateString, endDateString) {
+        var startDate, endDate;
         var filtered = [];
+
+        startDate = new Date(startDateString);
+        endDate = new Date(endDateString);
 
         startDate.setHours(0,0,0,0);
         endDate.setHours(0,0,0,0);

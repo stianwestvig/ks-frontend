@@ -1,4 +1,4 @@
-<section class="main-section events" ng-controller="CalendarCtrl as calendar">
+<section ng-show="calendar.dataLoaded" class="main-section events" ng-controller="CalendarCtrl as calendar">
     <!-- main content -->
 
     <div class="row">
@@ -50,6 +50,8 @@
                 <div class="small-12 medium-8 columns">
 
                     <ul class="events-list">
+
+                        <!--<li>start: {{calendar.getStartDate()}} end: {{calendar.getEndDate()}}</li>-->
                         <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
                             <div class="row">
                                 <div class="small-6 medium-2 columns date-column">

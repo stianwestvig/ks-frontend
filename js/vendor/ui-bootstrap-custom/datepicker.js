@@ -55,11 +55,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
         };
 
         this.init = function( ngModelCtrl_ ) {
-
-            console.log();
-
             ngModelCtrl = ngModelCtrl_;
-
             ngModelCtrl.$render = function() {
                 self.render();
             };

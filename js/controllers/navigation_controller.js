@@ -29,9 +29,98 @@ app.controller('navigationController', function($scope){
         item.active = true;
     }
 
+    var menudata = [
 
-    navigation.menuItems =
-        [
+        {
+            'href': '/en/profilside/',
+            'linkText': 'Profilside'
+        },
+
+
+
+        {
+            'href': '/en/listeside/',
+            'linkText': 'Listeside',
+            'categories': [
+                {
+                    'href': '/en/listeside/nyhet-3/',
+                    'linkText': 'Cognos',
+                    'categories': [
+                        {
+                            'href': '/en/listeside/nyhet-3/test/',
+                            'linkText': 'test'
+                        }]
+                },
+                {
+                    'href': '/en/listeside/nyhet-4/',
+                    'linkText': '360'
+                },
+                {
+                    'href': '/en/listeside/artikkelside/',
+                    'linkText': 'Fiks'
+                },
+                {
+                    'href': '/en/listeside/nyhet-1/',
+                    'linkText': 'EyeShare'
+                },
+                {
+                    'href': '/en/listeside/nyhet-2/',
+                    'linkText': 'Current - reiseregninger og utlegg'
+                }]
+        },
+
+
+
+        {
+            'href': '/en/artikkelside/',
+            'linkText': 'Nyheter',
+            'categories': [
+                {
+                    'href': '/en/artikkelside/nyhet-4/',
+                    'linkText': 'Nyhet 4'
+                },
+                {
+                    'href': '/en/artikkelside/nyhet-3/',
+                    'linkText': 'Nyhet 3'
+                },
+                {
+                    'href': '/en/artikkelside/nyhet-2/',
+                    'linkText': 'Nyhet 2'
+                },
+                {
+                    'href': '/en/artikkelside/nyhet-1/',
+                    'linkText': 'Nyhet 1'
+                }]
+        },
+
+
+
+        {
+            'href': '/en/kalender/',
+            'linkText': 'Kalender',
+            'categories': [
+                {
+                    'href': '/en/kalender/kalenderhendelse/',
+                    'linkText': 'Kalenderhendelse'
+                },
+                {
+                    'href': '/en/kalender/kalenderhendelse2/',
+                    'linkText': 'Kalenderhendelse2'
+                }]
+        },
+
+
+
+        {
+            'href': '/en/sok/',
+            'linkText': 'Søk'
+        }
+
+
+    ];
+
+    navigation.menuItems = menudata;
+        /*[
         {
             'href' : '#/article',
             'linkText' : 'Kategori 1',
@@ -191,6 +280,6 @@ app.controller('navigationController', function($scope){
             'href' : '#/events',
             'linkText' : 'Kalender'
         }
-    ]
+    ]*/
 });
 

@@ -51,7 +51,13 @@ Panels
   @include panel($bg:$KSGreen, $padding:$panel-padding, $adjust:true);
   border: none;
 
-  li { color: $KSWhite; }
+  li {
+    color: $KSWhite;
+
+    a {
+      color: $KSWhite;
+    }
+  }
 }
 
 .ks-panel-white {
@@ -83,6 +89,11 @@ Other
   height: rem-calc(80);
 }
 
+.list-unstyled {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
 
 /*
 .equal-column-container{

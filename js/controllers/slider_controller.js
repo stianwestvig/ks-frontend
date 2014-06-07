@@ -1,7 +1,7 @@
 app.controller('sliderController', function($window){
     var slider = this;
     slider.slides = [];
-    slider.slides = $window.slides;
+    slider.slides = $window.sliderData;
 
     slider.slides[0].active = true;
 

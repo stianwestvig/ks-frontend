@@ -1,6 +1,7 @@
 
+app.controller('navigationController', function($scope, $window){
 
-app.controller('navigationController', function($scope){
+    /*console.log("controller: menuData: ", $window.menuData);*/
 
     var navigation = this;
     navigation.hideNavigation = true;
@@ -12,7 +13,7 @@ app.controller('navigationController', function($scope){
 
     navigation.clicked = function(){
         navigation.hideNavigation = true;
-    }
+    };
 
     navigation.toggleMyTime = function() {
         navigation.myTimeStatus.status = !navigation.myTimeStatus.status;
@@ -28,7 +29,7 @@ app.controller('navigationController', function($scope){
         item.active = true;
     };
 
-    navigation.menuItems = menudata;
+    navigation.menuItems = $window.menuData;
 
 });
 

@@ -44,8 +44,10 @@
 
 
                             <span class="meta">Min tid: </span>
-                                <a class="ks-button-small center {{navigation.myTimeStatus.status}}"
-                                   ng-click="navigation.toggleMyTime()">{{navigation.myTimeStatus.label}}</a>
+                                <a class="ks-button-small center false"
+                                   ng-click="navigation.toggleMyTime()">Inn</a>
+                                <!--<a class="ks-button-small center {{navigation.myTimeStatus.status}}"
+                                   ng-click="navigation.toggleMyTime()">{{navigation.myTimeStatus.label}}</a>-->
                             </div>
                             <div class="user right">
                                 <span class="meta">Stian Westvig</span>
@@ -66,96 +68,8 @@
 
             </nav>
         </div>
-    </div> <multimenu menuitems="navigation.menuItems" visible="false"></multimenu>
-    <script>
-        var menudata = [
+    </div> <multimenu menuitems="navigation.menuItems" visible="false" ng-init=""></multimenu>
 
-            {
-                'href': '/en/profilside/',
-                'linkText': 'Stian side'
-            },
-
-
-
-            {
-                'href': '/en/listeside/',
-                'linkText': 'Listeside',
-                'categories': [
-                    {
-                        'href': '/en/listeside/nyhet-3/',
-                        'linkText': 'Cognos',
-                        'categories': [
-                            {
-                                'href': '/en/listeside/nyhet-3/test/',
-                                'linkText': 'test'
-                            }]
-                    },
-                    {
-                        'href': '/en/listeside/nyhet-4/',
-                        'linkText': '360'
-                    },
-                    {
-                        'href': '/en/listeside/artikkelside/',
-                        'linkText': 'Fiks'
-                    },
-                    {
-                        'href': '/en/listeside/nyhet-1/',
-                        'linkText': 'EyeShare'
-                    },
-                    {
-                        'href': '/en/listeside/nyhet-2/',
-                        'linkText': 'Current - reiseregninger og utlegg'
-                    }]
-            },
-
-
-
-            {
-                'href': '/en/artikkelside/',
-                'linkText': 'Nyheter',
-                'categories': [
-                    {
-                        'href': '/en/artikkelside/nyhet-4/',
-                        'linkText': 'Nyhet 4'
-                    },
-                    {
-                        'href': '/en/artikkelside/nyhet-3/',
-                        'linkText': 'Nyhet 3'
-                    },
-                    {
-                        'href': '/en/artikkelside/nyhet-2/',
-                        'linkText': 'Nyhet 2'
-                    },
-                    {
-                        'href': '/en/artikkelside/nyhet-1/',
-                        'linkText': 'Nyhet 1'
-                    }]
-            },
-
-
-
-            {
-                'href': '/en/kalender/',
-                'linkText': 'Kalender',
-                'categories': [
-                    {
-                        'href': '/en/kalender/kalenderhendelse/',
-                        'linkText': 'Kalenderhendelse'
-                    },
-                    {
-                        'href': '/en/kalender/kalenderhendelse2/',
-                        'linkText': 'Kalenderhendelse2'
-                    }]
-            },
-
-
-
-            {
-                'href': '/en/sok/',
-                'linkText': 'Søk'
-            }
-
-
-        ];
-    </script>
 </div>
+
+

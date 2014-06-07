@@ -8,7 +8,9 @@ app.controller('sliderController', function($window){
     console.log(slider);
 
 
-    slider.slides[0].active = true;
+    if(slider.slides){
+        slider.slides[0].active = true;
+    }
 
     slider.setActive = function (currentSlide){
 

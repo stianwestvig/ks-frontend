@@ -1,0 +1,41 @@
+.footer {
+  background-color: $KSGreyBorder;
+  padding: 30px;
+
+  .item {
+    /* also column, so no padding or margin left or right */
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    img {
+      height: 2.1875rem;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $KSBluePrimary;
+  }
+
+  a {
+    color: $KSBluePrimary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .social {
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      color: $KSWhite;
+      font-size: 30px;
+      margin-right: 15px;
+    }
+  }
+}

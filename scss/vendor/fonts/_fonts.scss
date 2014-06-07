@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:url('../scss/vendor/fonts/icomoon/icomoon.eot?3th9y2');
-  src:url('../scss/vendor/fonts/icomoon/icomoon.eot?#iefix3th9y2') format('embedded-opentype'),
-  /*url('../scss/vendor/fonts/icomoon/icomoon.woff?3th9y2') format('woff'),*/
-  url('../scss/vendor/fonts/icomoon/icomoon.ttf?3th9y2') format('truetype'),
-  url('../scss/vendor/fonts/icomoon/icomoon.svg?3th9y2#icomoon') format('svg');
+  src:url('fonts/icomoon.eot?-gz9c6d');
+  src:url('fonts/icomoon.eot?#iefix-gz9c6d') format('embedded-opentype'),
+  /*url('fonts/icomoon.woff?-gz9c6d') format('woff'),*/
+  url('fonts/icomoon.ttf?-gz9c6d') format('truetype'),
+  url('fonts/icomoon.svg?-gz9c6d#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +34,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 
 .icon-delete-outline:before {
@@ -96,3 +97,86 @@
 .icon-comment-o:before {
   content: "\f0e5";
 }
+
+.icon-flickr:before {
+  content: "\e611";
+}
+.icon-twitter:before {
+  content: "\e610";
+}
+.icon-youtube:before {
+  content: "\e60f";
+}
+.icon-facebook:before {
+  content: "\e60e";
+}
+
+
+
+/*
+.icon-uniE600:before {
+  content: "\e600";
+}
+.icon-uniE601:before {
+  content: "\e601";
+}
+.icon-uniE602:before {
+  content: "\e602";
+}
+.icon-uniE603:before {
+  content: "\e603";
+}
+.icon-uniE604:before {
+  content: "\e604";
+}
+.icon-uniE605:before {
+  content: "\e605";
+}
+.icon-uniE606:before {
+  content: "\e606";
+}
+.icon-uniE607:before {
+  content: "\e607";
+}
+.icon-uniE608:before {
+  content: "\e608";
+}
+.icon-uniE609:before {
+  content: "\e609";
+}
+.icon-uniE60A:before {
+  content: "\e60a";
+}
+.icon-uniE60B:before {
+  content: "\e60b";
+}
+.icon-uniE60C:before {
+  content: "\e60c";
+}
+.icon-uniE60D:before {
+  content: "\e60d";
+}
+.icon-uniF002:before {
+  content: "\f002";
+}
+.icon-uniF015:before {
+  content: "\f015";
+}
+.icon-uniF03E:before {
+  content: "\f03e";
+}
+.icon-uniF075:before {
+  content: "\f075";
+}
+.icon-uniF08A:before {
+  content: "\f08a";
+}
+.icon-uniF0E5:before {
+  content: "\f0e5";
+}*/
+
+
+
+
+
+

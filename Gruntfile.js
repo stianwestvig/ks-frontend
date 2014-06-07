@@ -47,31 +47,6 @@ module.exports = function(grunt) {
                   'js/services/data_service.js',
                   'js/services/async_data_service.js'
               ]
-              /*'dist/baked_server.js': [
-                  'bower_components/modernizr/modernizr.js',
-                  'bower_components/angular/angular.min.js',
-                  'bower_components/angular-animate/angular-animate.js',
-                  'bower_components/angular-foundation/mm-foundation.js',
-                  'bower_components/angular-sanitize/angular-sanitize.min.js',
-                  'bower_components/angular-route/angular-route.min.js',
-                  'bower_components/angular-bootstrap/ui-bootstrap.min.js',
-                  'bower_components/ngLocale/angular-locale_no.js',
-                  'bower_components/fastclick/lib/fastclick.js',
-                  'js/vendor/ui-bootstrap-custom/datepicker.js',
-                  'js/app.js',
-                  'js/controllers/navigation_controller.js',
-                  'js/controllers/slider_controller.js',
-                  'js/controllers/status_update_controller.js',
-                  'js/controllers/calendar_controller.js',
-                  'js/directives/slider.js',
-                  'js/directives/status_update.js',
-                  'js/directives/tooltip.js',
-                  'js/directives/multi_menu.js',
-                  'js/filters/date_filter.js',
-                  'js/services/helper_service.js',
-                  'js/services/data_service.js',
-                  'js/services/async_data_service.js'
-              ]*/
           }
       }
     },
@@ -91,6 +66,14 @@ module.exports = function(grunt) {
                 {
                     pattern: 'views/status_update.html',
                     replacement: 'frontend/views/status_update.html'
+                },
+                {
+                    pattern: 'img/statusimageplaceholder1.png',
+                    replacement: 'frontend/img/statusimageplaceholder1.png'
+                },
+                {
+                    pattern: 'img/statusimageplaceholder2.png',
+                    replacement: 'frontend/img/statusimageplaceholder2.png'
                 }
             ]
         }

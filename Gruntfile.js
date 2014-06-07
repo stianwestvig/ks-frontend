@@ -19,7 +19,8 @@ module.exports = function(grunt) {
       js: {
           options: {
               mangle: false,
-              compress: false
+              compress: false,
+              beautify: true
           },
           files: {
               'dist/baked.js': [

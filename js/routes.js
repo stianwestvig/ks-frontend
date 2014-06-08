@@ -22,6 +22,9 @@ app.config(function($routeProvider, $locationProvider){
         .when('/search', {
             templateUrl: 'views/search.html'
         })
+        .when('/unified-search', {
+            templateUrl: 'views/unified-search.html'
+        })
         .when('/events', {
             templateUrl: 'views/events.html'
         });

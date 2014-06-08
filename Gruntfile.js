@@ -69,6 +69,14 @@ module.exports = function(grunt) {
                     replacement: 'frontend/views/status_update.html'
                 },
                 {
+                    pattern: 'template/tabs/tab.html',
+                    replacement: 'frontend/template/tabs/tab.html'
+                },
+                {
+                    pattern: 'template/tabs/tabset.html',
+                    replacement: 'frontend/template/tabs/tabset.html'
+                },
+                {
                     pattern: 'img/statusimageplaceholder1.png',
                     replacement: 'frontend/img/statusimageplaceholder1.png'
                 },

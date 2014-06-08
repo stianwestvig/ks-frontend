@@ -70,11 +70,11 @@ module.exports = function(grunt) {
                 },
                 {
                     pattern: 'template/tabs/tab.html',
-                    replacement: 'frontend/template/tabs/tab.html'
+                    replacement: '/frontend/template/tabs/tab.html'
                 },
                 {
                     pattern: 'template/tabs/tabset.html',
-                    replacement: 'frontend/template/tabs/tabset.html'
+                    replacement: '/frontend/template/tabs/tabset.html'
                 },
                 {
                     pattern: 'img/statusimageplaceholder1.png',

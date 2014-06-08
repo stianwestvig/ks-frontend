@@ -7874,7 +7874,7 @@ angular.module("mm.foundation.tabs", []).controller("TabsetController", [ "$scop
         replace: true,
         scope: {},
         controller: "TabsetController",
-        templateUrl: "template/tabs/tabset.html",
+        templateUrl: "/frontend/template/tabs/tabset.html",
         link: function(scope, element, attrs) {
             scope.vertical = angular.isDefined(attrs.vertical) ? scope.$parent.$eval(attrs.vertical) : false;
             scope.justified = angular.isDefined(attrs.justified) ? scope.$parent.$eval(attrs.justified) : false;
@@ -7886,7 +7886,7 @@ angular.module("mm.foundation.tabs", []).controller("TabsetController", [ "$scop
         require: "^tabset",
         restrict: "EA",
         replace: true,
-        templateUrl: "template/tabs/tab.html",
+        templateUrl: "/frontend/template/tabs/tab.html",
         transclude: true,
         scope: {
             heading: "@",

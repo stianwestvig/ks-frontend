@@ -4839,9 +4839,14 @@ Header and navigation
     margin-bottom: 1.25rem; }
     .frontpage .slide.ng-hide-add {
       display: inline !important; }
+    .frontpage .slide .teaser a {
+      color: #cd2346; }
+      .frontpage .slide .teaser a:hover {
+        text-decoration: underline; }
     .frontpage .slide .teaser .ks-button-small {
       padding: 5px 15px;
-      font-size: 0.875rem; }
+      font-size: 0.875rem;
+      color: white; }
   .frontpage .shortcuts a {
     color: white; }
   .frontpage .ks-panel-white .teaser img {

@@ -26,9 +26,18 @@
     }
 
     .teaser {
+
+      a {
+        color: $KSRed;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
       .ks-button-small {
         padding: 5px 15px;
         font-size: rem-calc(14);
+        color: $KSWhite;
       }
     }
   }

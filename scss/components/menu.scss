@@ -21,9 +21,11 @@
 
     li {
       a {
+        text-transform: uppercase;
+
         &:hover, &:focus, &:focus  {
           background: none !important;
-          font-weight: bold;
+          color: $KSRed;
         }
 
         span {

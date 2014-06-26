@@ -23,6 +23,8 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
      * */
 
 
+    calendar.data = asyncDataService.getData;
+
     calendar.regions = dataService.regions;
     calendar.refreshMonth = false;
 

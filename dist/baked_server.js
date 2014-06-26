@@ -11683,6 +11683,7 @@ app.filter("newlines", function() {
 app.controller("CalendarCtrl", function($scope, $http, helperService, dataService, asyncDataService) {
     var calendar = this;
     this.dataLoaded = false;
+    calendar.data = asyncDataService.getData;
     calendar.regions = dataService.regions;
     calendar.refreshMonth = false;
     calendar.setStartDate = function(date) {
@@ -12057,7 +12058,7 @@ app.service("asyncDataService", function($http) {
     this.getData = function() {
         return $http({
             method: "GET",
-            url: "http://localhost:1337/js/services/pure_events_data_service.json"
+            url: "http://fiks7.peratle.dev.bouvet.no/api/CalendarEvent/2014-01-01/2016-01-01"
         });
     };
     this.doRequest = function() {

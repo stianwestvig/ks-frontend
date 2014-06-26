@@ -3,7 +3,7 @@ app.service('asyncDataService', function ($http) {
     this.getData = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:1337/js/services/pure_events_data_service.json'
+            url: 'http://fiks7.peratle.dev.bouvet.no/api/CalendarEvent/2014-01-01/2016-01-01'
             // url: '/js/services/data_service.js'
             //params: 'limit=10, sort_by=created:desc',
             //headers: {'Content-type': 'application/json'}

@@ -11725,24 +11725,25 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
         calendar.setEndDate(newEndDate);
         calendar.data = [];
         asyncDataService.getData().success(function(data, status, headers, config) {
+            console.log("--> ajax call success.");
             calendar.data = data.data;
-            console.log(calendar.data);
             calendar.events = calendar.data;
+            console.log(calendar);
             calendar.dataLoaded = true;
             calendar.initDataDates();
-            console.log("running initDates");
+            console.log("--> running initDates");
         }).error(function(data, status, headers, config) {
-            console.log("ajax call failed, getting local data.");
+            console.log("--> ajax call failed, getting local data.");
             calendar.data = dataService.data;
-            console.log(calendar.data);
             calendar.events = calendar.data;
+            console.log(calendar);
             calendar.dataLoaded = true;
             calendar.initDataDates();
-            console.log("running initDates");
+            console.log("--> running initDates");
         });
     };
     calendar.initDataDates = function() {
-        calendar.data.forEach(function(event) {
+        calendar.events.forEach(function(event) {
             event.startDate = new Date(event.startDate);
             event.endDate = new Date(event.endDate);
         });

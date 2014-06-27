@@ -76,6 +76,14 @@ module.exports = function(grunt) {
                     pattern: 'template/tabs/tabset.html',
                     replacement: '/frontend/template/tabs/tabset.html'
                 },
+
+                {
+                    pattern: 'views/datepicker/datepicker.html',
+                    replacement: '/frontend/views/datepicker/datepicker.html'
+                },
+
+
+
                 {
                     pattern: 'img/statusimageplaceholder1.png',
                     replacement: 'frontend/img/statusimageplaceholder1.png'

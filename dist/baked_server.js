@@ -11120,7 +11120,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/datepicker.html",
+        templateUrl: "/views/datepicker/datepicker.html",
         scope: {
             datepickerMode: "=?",
             dateDisabled: "&",
@@ -11139,7 +11139,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/day.html",
+        templateUrl: "/views/datepicker/day.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             scope.showWeeks = ctrl.showWeeks;
@@ -11162,6 +11162,13 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
                 return dates;
             }
             function isSameDay(date1, date2) {
+                var actualDate1 = date1.getDate();
+                var monthDate1 = date1.getMonth();
+                var yearDate1 = date1.getFullYear();
+                var date2 = new Date(date2);
+                var actualDate2 = date2.getDate();
+                var monthDate2 = date2.getMonth();
+                var yearDate2 = date2.getFullYear();
                 var result = date1.getDate() == date2.getDate() && date1.getMonth() == date2.getMonth() && date1.getFullYear() == date2.getFullYear();
                 return result;
             }
@@ -11242,7 +11249,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/month.html",
+        templateUrl: "/views/datepicker/month.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             ctrl.step = {
@@ -11289,7 +11296,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/year.html",
+        templateUrl: "/views/datepicker/year.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             var range = ctrl.yearRange;
@@ -11503,7 +11510,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
         restrict: "EA",
         replace: true,
         transclude: true,
-        templateUrl: "views/datepicker/popup.html",
+        templateUrl: "/views/datepicker/popup.html",
         link: function(scope, element, attrs) {
             element.bind("click", function(event) {
                 event.preventDefault();
@@ -11683,7 +11690,6 @@ app.filter("newlines", function() {
 app.controller("CalendarCtrl", function($scope, $http, helperService, dataService, asyncDataService) {
     var calendar = this;
     this.dataLoaded = false;
-    calendar.data = asyncDataService.getData;
     calendar.regions = dataService.regions;
     calendar.refreshMonth = false;
     calendar.setStartDate = function(date) {
@@ -11718,13 +11724,22 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
         calendar.data = [];
-        asyncDataService.getData().then(function(data) {
+        asyncDataService.getData().success(function(data, status, headers, config) {
             calendar.data = data.data;
             console.log(calendar.data);
             calendar.events = calendar.data;
             calendar.dataLoaded = true;
+            calendar.initDataDates();
+            console.log("running initDates");
+        }).error(function(data, status, headers, config) {
+            console.log("ajax call failed, getting local data.");
+            calendar.data = dataService.data;
+            console.log(calendar.data);
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+            calendar.initDataDates();
+            console.log("running initDates");
         });
-        calendar.initDataDates();
     };
     calendar.initDataDates = function() {
         calendar.data.forEach(function(event) {
@@ -11903,14 +11918,16 @@ app.filter("dateFilter", function() {
     return function(events, startDateString, endDateString) {
         var startDate, endDate;
         var filtered = [];
-        startDate = new Date(startDateString);
-        endDate = new Date(endDateString);
-        startDate.setHours(0, 0, 0, 0);
-        endDate.setHours(0, 0, 0, 0);
-        for (var i = 0; i < events.length; i++) {
-            var event = events[i];
-            if (event.startDate >= startDate && event.startDate < endDate) {
-                filtered.push(event);
+        if (events) {
+            startDate = new Date(startDateString);
+            endDate = new Date(endDateString);
+            startDate.setHours(0, 0, 0, 0);
+            endDate.setHours(0, 0, 0, 0);
+            for (var i = 0; i < events.length; i++) {
+                var event = events[i];
+                if (event.startDate >= startDate && event.startDate < endDate) {
+                    filtered.push(event);
+                }
             }
         }
         return filtered;

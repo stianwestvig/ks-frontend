@@ -6656,7 +6656,7 @@ angular.module("mm.foundation.accordion", []).constant("accordionConfig", {
         controller: "AccordionController",
         transclude: true,
         replace: false,
-        templateUrl: "/frontend/template/accordion/accordion.html"
+        templateUrl: "template/accordion/accordion.html"
     };
 }).directive("accordionGroup", [ "$parse", function($parse) {
     return {
@@ -7874,7 +7874,7 @@ angular.module("mm.foundation.tabs", []).controller("TabsetController", [ "$scop
         replace: true,
         scope: {},
         controller: "TabsetController",
-        templateUrl: "template/tabs/tabset.html",
+        templateUrl: "/frontend/template/tabs/tabset.html",
         link: function(scope, element, attrs) {
             scope.vertical = angular.isDefined(attrs.vertical) ? scope.$parent.$eval(attrs.vertical) : false;
             scope.justified = angular.isDefined(attrs.justified) ? scope.$parent.$eval(attrs.justified) : false;
@@ -7886,7 +7886,7 @@ angular.module("mm.foundation.tabs", []).controller("TabsetController", [ "$scop
         require: "^tabset",
         restrict: "EA",
         replace: true,
-        templateUrl: "template/tabs/tab.html",
+        templateUrl: "/frontend/template/tabs/tab.html",
         transclude: true,
         scope: {
             heading: "@",
@@ -11139,7 +11139,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/day.html",
+        templateUrl: "/frontend/views/datepicker/day.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             scope.showWeeks = ctrl.showWeeks;
@@ -11249,7 +11249,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/month.html",
+        templateUrl: "/frontend/views/datepicker/month.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             ctrl.step = {
@@ -11296,7 +11296,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
     return {
         restrict: "EA",
         replace: true,
-        templateUrl: "views/datepicker/year.html",
+        templateUrl: "/frontend/views/datepicker/year.html",
         require: "^datepicker",
         link: function(scope, element, attrs, ctrl) {
             var range = ctrl.yearRange;
@@ -11510,7 +11510,7 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
         restrict: "EA",
         replace: true,
         transclude: true,
-        templateUrl: "views/datepicker/popup.html",
+        templateUrl: "/frontend/views/datepicker/popup.html",
         link: function(scope, element, attrs) {
             element.bind("click", function(event) {
                 event.preventDefault();
@@ -11598,7 +11598,7 @@ app.controller("statusUpdateCtrl", function() {
         } ],
         hasLiked: true
     }, {
-        image: "img/statusimageplaceholder2.png",
+        image: "/frontend/img/statusimageplaceholder2.png",
         name: "Ole Jørgen Grann",
         body: "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
         comments: [],
@@ -11623,7 +11623,7 @@ app.controller("statusUpdateCtrl", function() {
     };
     statusUpdate.addUpdate = function(update) {
         statusUpdate.updates.unshift({
-            image: "img/statusimageplaceholder1.png",
+            image: "/frontend/img/statusimageplaceholder1.png",
             name: statusUpdate.currentUser,
             body: update,
             comments: [],
@@ -11778,7 +11778,7 @@ app.directive("slider", function() {
     return {
         restrict: "A",
         transclude: true,
-        templateUrl: "views/slider.html"
+        templateUrl: "/frontend/views/slider.html"
     };
 });
 
@@ -11786,7 +11786,7 @@ app.directive("statusupdate", function() {
     return {
         restrict: "A",
         transclude: true,
-        templateUrl: "views/status_update.html"
+        templateUrl: "/frontend/views/status_update.html"
     };
 });
 

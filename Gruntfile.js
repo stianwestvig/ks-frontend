@@ -55,23 +55,71 @@ module.exports = function(grunt) {
 
     'string-replace': {
         files: {
+            /*'dist/baked.js': 'dist/baked_server.js'*/
             src: 'dist/baked.js',
             dest: 'dist/baked_server.js'
         },
         options: {
             replacements: [
-                {
-                    pattern: 'views/',
+                /*{
+                    pattern: /views\*//*//*i,
                     replacement: '/frontend/views/'
                 },
                 {
-                    pattern: 'template/',
+                    pattern: /template\*//*//*i,
                     replacement: '/frontend/template/'
+                },*/
+
+
+                {
+                    pattern: 'views/datepicker/datepicker.html',
+                    replacement: '/frontend/views/datepicker/datepicker.html'
                 },
                 {
-                    pattern: 'img/',
-                    replacement: '/frontend/img/'
+                    pattern: 'views/datepicker/day.html',
+                    replacement: '/frontend/views/datepicker/day.html'
+                },
+                {
+                    pattern: 'views/datepicker/month.html',
+                    replacement: '/frontend/views/datepicker/month.html'
+                },
+                {
+                    pattern: 'views/datepicker/year.html',
+                    replacement: '/frontend/views/datepicker/year.html'
+                },
+                {
+                    pattern: 'views/datepicker/popup.html',
+                    replacement: '/frontend/views/datepicker/popup.html'
+                },
+                {
+                    pattern: 'template/tabs/tabset.html',
+                    replacement: '/frontend/template/tabs/tabset.html'
+                },
+                {
+                    pattern: 'template/tabs/tab.html',
+                    replacement: '/frontend/template/tabs/tab.html'
+                },
+                {
+                    pattern: 'views/slider.html',
+                    replacement: '/frontend/views/slider.html'
+                },
+                {
+                    pattern: 'views/status_update.html',
+                    replacement: '/frontend/views/status_update.html'
+                },
+                {
+                    pattern: 'img/statusimageplaceholder1.png',
+                    replacement: '/frontend/img/statusimageplaceholder1.png'
+                },
+                {
+                    pattern: 'img/statusimageplaceholder2.png',
+                    replacement: '/frontend/img/statusimageplaceholder2.png'
+                },
+                {
+                    pattern: 'image: "img/statusimageplaceholder1.png"',
+                    replacement: 'image: "/frontend/img/statusimageplaceholder1.png"'
                 }
+
             ]
         }
     },
@@ -97,5 +145,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.registerTask('build', ['sass', 'uglify', 'string-replace']);
-  grunt.registerTask('default', ['build','watch']);
-}
+  grunt.registerTask('default', ['build']);
+};

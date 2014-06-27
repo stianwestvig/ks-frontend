@@ -81,7 +81,22 @@ module.exports = function(grunt) {
                     pattern: 'views/datepicker/datepicker.html',
                     replacement: '/frontend/views/datepicker/datepicker.html'
                 },
-
+                {
+                    pattern: 'views/datepicker/day.html',
+                    replacement: '/frontend/views/datepicker/day.html'
+                },
+                {
+                    pattern: 'views/datepicker/month.html',
+                    replacement: '/frontend/views/datepicker/month.html'
+                },
+                {
+                    pattern: 'views/datepicker/year.html',
+                    replacement: '/frontend/views/datepicker/year.html'
+                },
+                {
+                    pattern: 'views/datepicker/popup.html',
+                    replacement: '/frontend/views/datepicker/popup.html'
+                },
 
 
                 {

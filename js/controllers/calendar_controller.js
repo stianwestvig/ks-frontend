@@ -57,7 +57,8 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
         asyncDataService.getData().
             success(function(data, status, headers, config) {
                 console.log('--> ajax call success.');
-                calendar.data = data.data;
+                console.log(data);
+                calendar.data = data;
                 calendar.events = calendar.data;
                 console.log(calendar);
 

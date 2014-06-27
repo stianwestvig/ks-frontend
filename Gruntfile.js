@@ -145,5 +145,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.registerTask('build', ['sass', 'uglify', 'string-replace']);
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['build', 'watch']);
 };

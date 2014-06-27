@@ -73,8 +73,6 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
                 console.log('running initDates');
             });
 
-
-
     };
 
 

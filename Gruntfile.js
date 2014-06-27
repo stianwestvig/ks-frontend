@@ -61,51 +61,16 @@ module.exports = function(grunt) {
         options: {
             replacements: [
                 {
-                    pattern: 'views/slider.html',
-                    replacement: 'frontend/views/slider.html'
+                    pattern: 'views/',
+                    replacement: '/frontend/views/'
                 },
                 {
-                    pattern: 'views/status_update.html',
-                    replacement: 'frontend/views/status_update.html'
+                    pattern: 'template/',
+                    replacement: '/frontend/template/'
                 },
                 {
-                    pattern: 'template/tabs/tab.html',
-                    replacement: '/frontend/template/tabs/tab.html'
-                },
-                {
-                    pattern: 'template/tabs/tabset.html',
-                    replacement: '/frontend/template/tabs/tabset.html'
-                },
-
-                {
-                    pattern: 'views/datepicker/datepicker.html',
-                    replacement: '/frontend/views/datepicker/datepicker.html'
-                },
-                {
-                    pattern: 'views/datepicker/day.html',
-                    replacement: '/frontend/views/datepicker/day.html'
-                },
-                {
-                    pattern: 'views/datepicker/month.html',
-                    replacement: '/frontend/views/datepicker/month.html'
-                },
-                {
-                    pattern: 'views/datepicker/year.html',
-                    replacement: '/frontend/views/datepicker/year.html'
-                },
-                {
-                    pattern: 'views/datepicker/popup.html',
-                    replacement: '/frontend/views/datepicker/popup.html'
-                },
-
-
-                {
-                    pattern: 'img/statusimageplaceholder1.png',
-                    replacement: 'frontend/img/statusimageplaceholder1.png'
-                },
-                {
-                    pattern: 'img/statusimageplaceholder2.png',
-                    replacement: 'frontend/img/statusimageplaceholder2.png'
+                    pattern: 'img/',
+                    replacement: '/frontend/img/'
                 }
             ]
         }

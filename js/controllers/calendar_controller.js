@@ -4,27 +4,6 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
     this.dataLoaded = false;
 
 
-
-
-
-    /*calendar.data = dataService.data2;
-
-    calendar.data = dataService.data;*/
-
-
-    // api/CalendarEvent/2014-01-01/2016-01-01
-
-
-    /*
-     *
-     *   $http.get('/someUrl').success(successCallback);
-     *   $http.post('/someUrl', data).success(successCallback);
-     *
-     * */
-
-
-    calendar.data = asyncDataService.getData;
-
     calendar.regions = dataService.regions;
     calendar.refreshMonth = false;
 
@@ -75,17 +54,26 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
 
         /* get initial data from server */
         calendar.data = [];
-        asyncDataService.getData().then(function(data){
-            calendar.data = data.data;
-            console.log(calendar.data);
-            calendar.events = calendar.data;
-            calendar.dataLoaded = true;
-        });
+        asyncDataService.getData().
+            success(function(data, status, headers, config) {
+                calendar.data = data.data;
+                console.log(calendar.data);
+                calendar.events = calendar.data;
+                calendar.dataLoaded = true;
+                calendar.initDataDates();
+                console.log('running initDates');
+            }).
+            error(function(data, status, headers, config) {
+                console.log('ajax call failed, getting local data.')
+                calendar.data = dataService.data;
+                console.log(calendar.data);
+                calendar.events = calendar.data;
+                calendar.dataLoaded = true;
+                calendar.initDataDates();
+                console.log('running initDates');
+            });
 
 
-
-        // must run on new data to create Date objects:
-        calendar.initDataDates();
 
     };
 

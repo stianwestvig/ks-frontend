@@ -1,6 +1,7 @@
 app.service('asyncDataService', function ($http) {
     // delete $http.defaults.headers.common['X-Requested-With'];
     this.getData = function() {
+
         return $http({
             method: 'GET',
             url: 'http://fiks7.peratle.dev.bouvet.no/api/CalendarEvent/2014-01-01/2016-01-01'
@@ -8,6 +9,7 @@ app.service('asyncDataService', function ($http) {
             //params: 'limit=10, sort_by=created:desc',
             //headers: {'Content-type': 'application/json'}
         });
+
     };
 
 

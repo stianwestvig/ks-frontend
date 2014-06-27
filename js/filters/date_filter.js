@@ -3,16 +3,18 @@ app.filter('dateFilter', function(){
         var startDate, endDate;
         var filtered = [];
 
-        startDate = new Date(startDateString);
-        endDate = new Date(endDateString);
+        if (events) {
+            startDate = new Date(startDateString);
+            endDate = new Date(endDateString);
 
-        startDate.setHours(0,0,0,0);
-        endDate.setHours(0,0,0,0);
+            startDate.setHours(0,0,0,0);
+            endDate.setHours(0,0,0,0);
 
-        for (var i = 0; i < events.length; i++) {
-            var event = events[i];
-            if(event.startDate >= startDate && event.startDate < endDate) {
-                filtered.push(event);
+            for (var i = 0; i < events.length; i++) {
+                var event = events[i];
+                if(event.startDate >= startDate && event.startDate < endDate) {
+                    filtered.push(event);
+                }
             }
         }
         return filtered;

@@ -52,31 +52,44 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
         calendar.setEndDate(newEndDate);
 
 
+
+
+
+
+
+
+
         /* get initial data from server */
         calendar.data = [];
-        asyncDataService.getData().
+        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60)).
             success(function(data, status, headers, config) {
                 console.log('--> ajax call success.');
-                console.log(data);
                 calendar.data = data;
                 calendar.events = calendar.data;
-                console.log(calendar);
-
                 calendar.dataLoaded = true;
                 calendar.initDataDates();
-                console.log('--> running initDates');
             }).
             error(function(data, status, headers, config) {
-                console.log('--> ajax call failed, getting local data.')
+                console.log('--> ajax call failed, getting backup data.');
                 calendar.data = dataService.data;
                 calendar.events = calendar.data;
-                console.log(calendar);
-
-
                 calendar.dataLoaded = true;
                 calendar.initDataDates();
-                console.log('--> running initDates');
             });
+
+
+
+
+
+
+        /* get more data from server: */
+        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60));
+
+
+
+
+
+
 
     };
 

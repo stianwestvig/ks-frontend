@@ -301,10 +301,13 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
                         });
 
                         /* For each event */
-                        for (var j = 0; j < scope.$parent.events.length; j ++) {
-                            hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate)
-                            if(hasEvents){
-                                break;
+
+                        if (scope.$parent.events) {
+                            for (var j = 0; j < scope.$parent.events.length; j ++) {
+                                hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate)
+                                if(hasEvents){
+                                    break;
+                                }
                             }
                         }
 

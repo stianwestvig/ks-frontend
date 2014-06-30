@@ -12074,7 +12074,7 @@ app.service("dataService", function() {
 app.service("asyncDataService", function($http) {
     this.getData = function(startDate, endDate) {
         if (startDate && endDate) {
-            var urlString = window.location.host + "/api/CalendarEvent";
+            var urlString = "/api/CalendarEvent";
             var intervalString = "/";
             var startYear = startDate.getFullYear();
             var startMonth = ("0" + (startDate.getMonth() + 1)).slice(-2);

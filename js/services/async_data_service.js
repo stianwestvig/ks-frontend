@@ -5,7 +5,7 @@ app.service('asyncDataService', function ($http) {
 
         if (startDate && endDate) {
             // var urlString = 'http://fiks7.peratle.dev.bouvet.no/api/CalendarEvent';
-            var urlString = window.location.host + '/api/CalendarEvent';
+            var urlString = '/api/CalendarEvent';
             var intervalString = '/';
 
             var startYear = startDate.getFullYear();

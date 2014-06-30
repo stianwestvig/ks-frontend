@@ -11,6 +11,13 @@
     margin-bottom: rem-calc(20);
   }
 
+  .details {
+    span.date {
+      padding-left: 50px;
+    }
+
+  }
+
   .tips {
     ul {
       color: $KSBlueMedium;

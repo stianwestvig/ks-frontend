@@ -37,6 +37,23 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
         calendar.init();
     };
 
+    calendar.getData = function(startDate) {
+        var result = asyncDataService.getData(startDate, helperService.addDaysToDate(calendar.getStartDate(), 40));
+
+        result.success(function(data, status, headers, config){
+            calendar.data = data;
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+            calendar.initDataDates();
+        }).error(function(data, status, headers, config){
+            console.log('KS Fiks: ajax call failed, getting backup data.');
+            calendar.data = dataService.data;
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+            calendar.initDataDates();
+        });
+    };
+
     calendar.init = function($http)  {
         /* Initialize the date object to today */
         var firstOfTheMonth = new Date();
@@ -51,49 +68,11 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
 
-
-
-
-
-
-
-
-
         /* get initial data from server */
         calendar.data = [];
-        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60)).
-            success(function(data, status, headers, config) {
-                console.log('--> ajax call success.');
-                calendar.data = data;
-                calendar.events = calendar.data;
-                calendar.dataLoaded = true;
-                calendar.initDataDates();
-            }).
-            error(function(data, status, headers, config) {
-                console.log('--> ajax call failed, getting backup data.');
-                calendar.data = dataService.data;
-                calendar.events = calendar.data;
-                calendar.dataLoaded = true;
-                calendar.initDataDates();
-            });
-
-
-
-
-
-
-        /* get more data from server: */
-        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60));
-
-
-
-
-
-
+        calendar.getData(calendar.getStartDate());
 
     };
-
-
 
     calendar.initDataDates = function(){
         calendar.events.forEach(function(event){
@@ -101,6 +80,8 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
             event.endDate = new Date(event.endDate);
         });
     };
+
+
 
     calendar.init($http);
 
@@ -134,6 +115,9 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
                     /* Find number of days in the selected month to use as End Date */
                     var monthIndex = newDate.getMonth() +1;
                     days = helperService.daysInMonth(monthIndex,newDate.getFullYear());
+
+                    /* Load data for new month */
+                    calendar.getData(newDate);
                 }
                 else {
                     days = 1;

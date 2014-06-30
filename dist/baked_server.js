@@ -11717,6 +11717,21 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
         calendar.refreshMonth = true;
         calendar.init();
     };
+    calendar.getData = function(startDate) {
+        var result = asyncDataService.getData(startDate, helperService.addDaysToDate(calendar.getStartDate(), 40));
+        result.success(function(data, status, headers, config) {
+            calendar.data = data;
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+            calendar.initDataDates();
+        }).error(function(data, status, headers, config) {
+            console.log("KS Fiks: ajax call failed, getting backup data.");
+            calendar.data = dataService.data;
+            calendar.events = calendar.data;
+            calendar.dataLoaded = true;
+            calendar.initDataDates();
+        });
+    };
     calendar.init = function($http) {
         var firstOfTheMonth = new Date();
         firstOfTheMonth.setDate(1);
@@ -11726,20 +11741,7 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
         calendar.data = [];
-        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60)).success(function(data, status, headers, config) {
-            console.log("--> ajax call success.");
-            calendar.data = data;
-            calendar.events = calendar.data;
-            calendar.dataLoaded = true;
-            calendar.initDataDates();
-        }).error(function(data, status, headers, config) {
-            console.log("--> ajax call failed, getting backup data.");
-            calendar.data = dataService.data;
-            calendar.events = calendar.data;
-            calendar.dataLoaded = true;
-            calendar.initDataDates();
-        });
-        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60));
+        calendar.getData(calendar.getStartDate());
     };
     calendar.initDataDates = function() {
         calendar.events.forEach(function(event) {
@@ -11763,6 +11765,7 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
                     calendar.setStartDate(newDate);
                     var monthIndex = newDate.getMonth() + 1;
                     days = helperService.daysInMonth(monthIndex, newDate.getFullYear());
+                    calendar.getData(newDate);
                 } else {
                     days = 1;
                     calendar.setStartDate(newVal);
@@ -12082,12 +12085,7 @@ app.service("asyncDataService", function($http) {
             var endYear = endDate.getFullYear();
             var endMonth = ("0" + (endDate.getMonth() + 1)).slice(-2);
             var endDay = ("0" + endDate.getDate()).slice(-2);
-            if (endDate > startDate) {
-                intervalString += startYear + "-" + startMonth + "-" + startDay + "/" + endYear + "-" + endMonth + "-" + endDay + "";
-            } else {
-                intervalString += endYear + "-" + endMonth + "-" + endDay + "/" + startYear + "-" + startMonth + "-" + startDay + "";
-            }
-            console.log("asyncDataService: getting data in interval: ", urlString + intervalString);
+            intervalString += startYear + "-" + startMonth + "-" + startDay + "/" + endYear + "-" + endMonth + "-" + endDay + "";
             return $http({
                 method: "GET",
                 url: urlString + intervalString

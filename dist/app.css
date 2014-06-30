@@ -5114,8 +5114,8 @@ ul.events-list {
   .footer .social a:hover {
     text-decoration: none; }
     .footer .social a:hover span {
-      color: #1c4072; }
+      color: white; }
   .footer .social span {
-    color: white;
+    color: #1c4072;
     font-size: 30px;
     margin-right: 15px; }

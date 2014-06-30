@@ -304,7 +304,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
 
                         if (scope.$parent.events) {
                             for (var j = 0; j < scope.$parent.events.length; j ++) {
-                                hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate)
+                                hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate);
                                 if(hasEvents){
                                     break;
                                 }

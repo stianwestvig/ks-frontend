@@ -11184,10 +11184,12 @@ angular.module("ui.bootstrap.datepicker", [ "ui.bootstrap.dateparser", "ui.boots
                         secondary: days[i].getMonth() !== month,
                         uid: scope.uniqueId + "-" + i
                     });
-                    for (var j = 0; j < scope.$parent.events.length; j++) {
-                        hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate);
-                        if (hasEvents) {
-                            break;
+                    if (scope.$parent.events) {
+                        for (var j = 0; j < scope.$parent.events.length; j++) {
+                            hasEvents = isSameDay(days[i].date, scope.$parent.events[j].startDate);
+                            if (hasEvents) {
+                                break;
+                            }
                         }
                     }
                     days[i] = angular.extend(days[i], {
@@ -11724,24 +11726,20 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
         var newEndDate = helperService.addDaysToDate(calendar.dt, 30);
         calendar.setEndDate(newEndDate);
         calendar.data = [];
-        asyncDataService.getData().success(function(data, status, headers, config) {
+        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60)).success(function(data, status, headers, config) {
             console.log("--> ajax call success.");
-            console.log(data);
             calendar.data = data;
             calendar.events = calendar.data;
-            console.log(calendar);
             calendar.dataLoaded = true;
             calendar.initDataDates();
-            console.log("--> running initDates");
         }).error(function(data, status, headers, config) {
-            console.log("--> ajax call failed, getting local data.");
+            console.log("--> ajax call failed, getting backup data.");
             calendar.data = dataService.data;
             calendar.events = calendar.data;
-            console.log(calendar);
             calendar.dataLoaded = true;
             calendar.initDataDates();
-            console.log("--> running initDates");
         });
+        asyncDataService.getData(calendar.getStartDate(), helperService.addDaysToDate(calendar.getStartDate(), 60));
     };
     calendar.initDataDates = function() {
         calendar.events.forEach(function(event) {
@@ -12074,17 +12072,26 @@ app.service("dataService", function() {
 });
 
 app.service("asyncDataService", function($http) {
-    this.getData = function() {
-        return $http({
-            method: "GET",
-            url: "http://fiks7.peratle.dev.bouvet.no/api/CalendarEvent/2014-01-01/2016-01-01"
-        });
-    };
-    this.doRequest = function() {
-        var url = "http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=JSON_CALLBACK";
-        var url = "/js/services/pure_events_data_service.json";
-        return $http.jsonp(url).success(function(data) {
-            console.log(data);
-        });
+    this.getData = function(startDate, endDate) {
+        if (startDate && endDate) {
+            var urlString = window.location.host + "/api/CalendarEvent";
+            var intervalString = "/";
+            var startYear = startDate.getFullYear();
+            var startMonth = ("0" + (startDate.getMonth() + 1)).slice(-2);
+            var startDay = ("0" + startDate.getDate()).slice(-2);
+            var endYear = endDate.getFullYear();
+            var endMonth = ("0" + (endDate.getMonth() + 1)).slice(-2);
+            var endDay = ("0" + endDate.getDate()).slice(-2);
+            if (endDate > startDate) {
+                intervalString += startYear + "-" + startMonth + "-" + startDay + "/" + endYear + "-" + endMonth + "-" + endDay + "";
+            } else {
+                intervalString += endYear + "-" + endMonth + "-" + endDay + "/" + startYear + "-" + startMonth + "-" + startDay + "";
+            }
+            console.log("asyncDataService: getting data in interval: ", urlString + intervalString);
+            return $http({
+                method: "GET",
+                url: urlString + intervalString
+            });
+        }
     };
 });

@@ -11574,10 +11574,12 @@ app.controller("sliderController", function($window) {
     };
 });
 
-app.controller("statusUpdateCtrl", function(asyncDataService, dataService) {
+app.controller("statusUpdateCtrl", function($window, asyncDataService, dataService) {
     var statusUpdate = this;
+    currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = "Adam Haeger";
-    var result = asyncDataService.getStatuses();
+    console.log("currentProfileLoginName", currentProfileLoginName);
+    var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
         statusUpdate.updates = data;
     }).error(function() {
@@ -11591,7 +11593,6 @@ app.controller("statusUpdateCtrl", function(asyncDataService, dataService) {
             update.hasLiked = false;
         } else {
             update.likes.push(statusUpdate.currentUser);
-            console.log("update.likes", update.likes);
             update.hasLiked = true;
         }
     };
@@ -11783,7 +11784,6 @@ angular.module("agh.tooltip", [ "views/tooltip.html" ]).directive("tooltipHover"
                     scope.visible = !scope.visible;
                 }
                 scope.$apply();
-                console.log("scope.items", scope.items);
             });
         }
     };
@@ -12103,10 +12103,23 @@ app.service("asyncDataService", function($http) {
             });
         }
     };
-    this.getStatuses = function() {
+    this.getStatuses = function(user) {
+        var serviceUrl = "/api/statuses";
+        if (user) {
+            serviceUrl += "/" + user;
+        }
         return $http({
             method: "GET",
-            url: "/api/statuses"
+            url: serviceUrl
+        });
+    };
+    this.postStatus = function(text) {
+        return $http({
+            method: "POST",
+            url: "/api/statuses/",
+            data: {
+                statusText: text
+            }
         });
     };
 });

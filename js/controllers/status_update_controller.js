@@ -1,11 +1,14 @@
-app.controller('statusUpdateCtrl', function(asyncDataService, dataService){
+app.controller('statusUpdateCtrl', function($window, asyncDataService, dataService){
 
     var statusUpdate = this;
 
+    currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = "Adam Haeger";
-    
-    var result = asyncDataService.getStatuses(); 
-    
+    console.log('currentProfileLoginName',currentProfileLoginName);
+
+
+    // get aync data:
+    var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data){
         statusUpdate.updates = data;
     }).error(function(){
@@ -20,17 +23,26 @@ app.controller('statusUpdateCtrl', function(asyncDataService, dataService){
     statusUpdate.toggleLike = function(update){
         var index = update.likes.indexOf(statusUpdate.currentUser);
         if (index > -1) {
+
+            // post to server:
+
             update.likes.splice(index, 1);
             update.hasLiked = false;
         } else {
-            update.likes.push(statusUpdate.currentUser);
 
-            console.log('update.likes',update.likes);
+            // post to server:
+
+            update.likes.push(statusUpdate.currentUser);
+            /*console.log('update.likes',update.likes);*/
             update.hasLiked = true;
         }
     };
 
     statusUpdate.addUpdate = function(update){
+
+        // post to server:
+
+
         statusUpdate.updates.unshift(
             {
                 'image' : 'img/statusimageplaceholder1.png',
@@ -39,7 +51,7 @@ app.controller('statusUpdateCtrl', function(asyncDataService, dataService){
                 'comments' : [],
                 likes : []
             }
-        )
+        );
     };
 
     statusUpdate.toggleComments = function(update){
@@ -48,6 +60,9 @@ app.controller('statusUpdateCtrl', function(asyncDataService, dataService){
 
 
     statusUpdate.addComment = function(update, comment){
+
+        // post to server:
+
         update.comments.push(
             {
                 'name' : statusUpdate.currentUser,

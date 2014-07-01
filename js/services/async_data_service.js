@@ -26,12 +26,26 @@ app.service('asyncDataService', function ($http) {
 
     };
 
-    this.getStatuses = function(){
+    this.getStatuses = function(user){
+        var serviceUrl = '/api/statuses';
+        if (user) {
+            serviceUrl += '/' + user;
+        }
         return $http({
             method: 'GET',
-            url: '/api/statuses'
+            url: serviceUrl
         });
 
+    };
+
+    this.postStatus = function(text){
+        return $http({
+            method: 'POST',
+            url: '/api/statuses/',
+            data: {
+                statusText: text
+            }
+        });
     }
 
 });

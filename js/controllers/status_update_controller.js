@@ -68,7 +68,7 @@ app.controller('statusUpdateCtrl', function(){
             update.likes.push(statusUpdate.currentUser);
             update.hasLiked = true;
         }
-    }
+    };
 
     statusUpdate.addUpdate = function(update){
         statusUpdate.updates.unshift(
@@ -80,11 +80,11 @@ app.controller('statusUpdateCtrl', function(){
                 likes : []
             }
         )
-    }
+    };
 
     statusUpdate.toggleComments = function(update){
         update.commentsVisible = !update.commentsVisible;
-    }
+    };
 
 
     statusUpdate.addComment = function(update, comment){
@@ -108,7 +108,7 @@ app.directive( 'likeslist', function () {
 
             element.bind('mouseover', function(event){
                 console.log('mousing');
-            })
+            });
 
             element.bind('mouseout', function(event){
                 console.log('mousing out');
@@ -116,7 +116,7 @@ app.directive( 'likeslist', function () {
 
         }
     };
-})
+});
 
 
 app.directive( 'comment', function () {
@@ -130,11 +130,11 @@ app.directive( 'comment', function () {
                     console.log(element[0].value);
                     ctrl.addComment();
                 }
-            })
+            });
             event.preventDefault();
         }
     };
-})
+});
 
 
 app.filter('iif', function () {
@@ -147,4 +147,4 @@ app.filter('newlines', function () {
     return function(text) {
         return text.replace(/\n/g, '<br/>');
     }
-})
+});

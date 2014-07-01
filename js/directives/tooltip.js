@@ -12,15 +12,16 @@ angular.module('agh.tooltip', ['views/tooltip.html'])
             },
             link: function(scope, element, attrs, ctrl){
                 element.bind('mouseover mouseout', function(){
-                    console.log("yooo");
-                    scope.visible = !scope.visible;
-                    console.log(scope.visible);
+                    /*console.log("tooltip: mouseover or out happened. ");*/
+                    if (scope.items && scope.items.length > 0) {
+                        scope.visible = !scope.visible;
+                        /*console.log('tooltip: scope.visible: ',scope.visible);*/
+                    }
                     scope.$apply();
-
                 })
             }
         };
-    })
+    });
 
 
 angular.module("views/tooltip.html", []).run(["$templateCache", function($templateCache) {

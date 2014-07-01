@@ -11805,9 +11805,9 @@ angular.module("agh.tooltip", [ "views/tooltip.html" ]).directive("tooltipHover"
         },
         link: function(scope, element, attrs, ctrl) {
             element.bind("mouseover mouseout", function() {
-                console.log("yooo");
-                scope.visible = !scope.visible;
-                console.log(scope.visible);
+                if (scope.items && scope.items.length > 0) {
+                    scope.visible = !scope.visible;
+                }
                 scope.$apply();
             });
         }

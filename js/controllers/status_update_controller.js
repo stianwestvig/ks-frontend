@@ -1,10 +1,9 @@
 app.controller('statusUpdateCtrl', function($window, asyncDataService, dataService){
 
     var statusUpdate = this;
-
     currentProfileLoginName = $window.currentProfileLoginName;
-    statusUpdate.currentUser = "Adam Haeger";
-    console.log('currentProfileLoginName',currentProfileLoginName);
+    statusUpdate.currentUser = $window.currentUser;
+
 
 
     // get aync data:
@@ -21,7 +20,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
 
     statusUpdate.toggleLike = function(update){
-        var index = update.likes.indexOf(statusUpdate.currentUser);
+        var index = update.likes.indexOf(statusUpdate.currentUser.name);
         if (index > -1) {
 
             // post to server:
@@ -32,7 +31,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
             // post to server:
 
-            update.likes.push(statusUpdate.currentUser);
+            update.likes.push(statusUpdate.currentUser.name);
             /*console.log('update.likes',update.likes);*/
             update.hasLiked = true;
         }
@@ -45,8 +44,8 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
         statusUpdate.updates.unshift(
             {
-                'image' : 'img/statusimageplaceholder1.png',
-                'name' : statusUpdate.currentUser,
+                'image' : statusUpdate.currentUser.imageUrl,
+                'name' : statusUpdate.currentUser.name,
                 'body' : update,
                 'comments' : [],
                 likes : []
@@ -65,7 +64,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
         update.comments.push(
             {
-                'name' : statusUpdate.currentUser,
+                'name' : statusUpdate.currentUser.name,
                 'comment' : comment
             }
         )

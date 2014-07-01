@@ -11577,8 +11577,7 @@ app.controller("sliderController", function($window) {
 app.controller("statusUpdateCtrl", function($window, asyncDataService, dataService) {
     var statusUpdate = this;
     currentProfileLoginName = $window.currentProfileLoginName;
-    statusUpdate.currentUser = "Adam Haeger";
-    console.log("currentProfileLoginName", currentProfileLoginName);
+    statusUpdate.currentUser = $window.currentUser;
     var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
         statusUpdate.updates = data;
@@ -11587,19 +11586,19 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         console.log("async status data failed - using local backup data");
     });
     statusUpdate.toggleLike = function(update) {
-        var index = update.likes.indexOf(statusUpdate.currentUser);
+        var index = update.likes.indexOf(statusUpdate.currentUser.name);
         if (index > -1) {
             update.likes.splice(index, 1);
             update.hasLiked = false;
         } else {
-            update.likes.push(statusUpdate.currentUser);
+            update.likes.push(statusUpdate.currentUser.name);
             update.hasLiked = true;
         }
     };
     statusUpdate.addUpdate = function(update) {
         statusUpdate.updates.unshift({
-            image: "/frontend/img/statusimageplaceholder1.png",
-            name: statusUpdate.currentUser,
+            image: statusUpdate.currentUser.imageUrl,
+            name: statusUpdate.currentUser.name,
             body: update,
             comments: [],
             likes: []
@@ -11610,7 +11609,7 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
     };
     statusUpdate.addComment = function(update, comment) {
         update.comments.push({
-            name: statusUpdate.currentUser,
+            name: statusUpdate.currentUser.name,
             comment: comment
         });
     };

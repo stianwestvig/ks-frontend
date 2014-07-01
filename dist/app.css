@@ -4889,8 +4889,8 @@ ul.pager li {
   /* Styles so table will get scroll inside article. Entire article contents gets scrolled. */
   width: 100%;
   margin-bottom: 15px;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  /*overflow-y: hidden;
+  overflow-x: scroll;*/
   /* End: table containing styles. */ }
   .article .byline {
     margin-bottom: 1.25rem; }

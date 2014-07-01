@@ -5081,6 +5081,8 @@ ul.events-list {
 
 .profile .ks-panel-blue {
   background-color: #edf6fd; }
+.profile .edit-container h1 {
+  display: inline-block; }
 .profile ul.profile {
   list-style: none;
   margin-left: 0; }

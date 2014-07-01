@@ -4850,7 +4850,12 @@ Header and navigation
       font-size: 0.875rem;
       color: white; }
   .frontpage .shortcuts a {
+    color: white;
+    margin-right: 10px; }
+  .frontpage .shortcuts label {
     color: white; }
+  .frontpage .shortcuts .ks-button-small {
+    background-color: #1c4072; }
   .frontpage .ks-panel-white .teaser img {
     margin-bottom: 5px; }
   .frontpage .byline {

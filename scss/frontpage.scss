@@ -46,6 +46,15 @@
   .shortcuts {
     a {
       color: $KSWhite;
+      margin-right: 10px;
+    }
+
+    label {
+      color: $KSWhite;
+    }
+
+    .ks-button-small {
+      background-color: $KSBluePrimary;
     }
   }
 

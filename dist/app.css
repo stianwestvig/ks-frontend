@@ -5093,6 +5093,8 @@ ul.events-list {
       margin-right: 0.625rem; }
     .profile ul.profile li.icon-mail:before {
       content: "@"; }
+    .profile ul.profile li a {
+      font-family: Calibri, Arial, Sans-Serif; }
 .profile hr {
   border: 1px solid #c8c8c8; }
 

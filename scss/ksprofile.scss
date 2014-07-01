@@ -41,9 +41,10 @@ $KSColumnHeight: 500px;
 
 
 /***** KS Typography *****/
+$KSFonts: Calibri, Arial, Sans-Serif;
 
 body {
-  font-family: Calibri, Arial, Sans-Serif;
+  font-family: $KSFonts;
 }
 
 h1, h2, h3, h4, h5, h6 {

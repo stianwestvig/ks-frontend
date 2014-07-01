@@ -11574,45 +11574,16 @@ app.controller("sliderController", function($window) {
     };
 });
 
-app.controller("statusUpdateCtrl", function() {
+app.controller("statusUpdateCtrl", function(asyncDataService, dataService) {
     var statusUpdate = this;
     statusUpdate.currentUser = "Adam Haeger";
-    statusUpdate.updates = [ {
-        image: "/frontend/img/statusimageplaceholder1.png",
-        name: "Ole Jørgen Grann",
-        body: "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
-        comments: [ {
-            name: "Stian Westvig",
-            comment: "Jeg vil være med på klima konferanse!"
-        }, {
-            name: "Silje Sletteng",
-            comment: "Jeg også!"
-        }, {
-            name: "Per Atle Holvik",
-            comment: "Elsker klima!"
-        } ],
-        likes: [ {
-            name: "Stian Westvig"
-        }, {
-            name: "Silje Sletteng"
-        }, {
-            name: "Per Atle Holvik"
-        } ],
-        hasLiked: true
-    }, {
-        image: "/frontend/img/statusimageplaceholder2.png",
-        name: "Ole Jørgen Grann",
-        body: "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
-        comments: [],
-        likes: [ {
-            name: "Stian Westvig"
-        }, {
-            name: "Silje Sletteng"
-        }, {
-            name: "Per Atle Holvik"
-        } ],
-        hasLiked: false
-    } ];
+    var result = asyncDataService.getStatuses();
+    result.success(function(data) {
+        statusUpdate.updates = data;
+    }).error(function() {
+        statusUpdate.updates = dataService.statuses;
+        console.log("async status data failed - using local backup data");
+    });
     statusUpdate.toggleLike = function(update) {
         var index = update.likes.indexOf(statusUpdate.currentUser);
         if (index > -1) {
@@ -11620,6 +11591,7 @@ app.controller("statusUpdateCtrl", function() {
             update.hasLiked = false;
         } else {
             update.likes.push(statusUpdate.currentUser);
+            console.log("update.likes", update.likes);
             update.hasLiked = true;
         }
     };
@@ -11805,10 +11777,11 @@ angular.module("agh.tooltip", [ "views/tooltip.html" ]).directive("tooltipHover"
         },
         link: function(scope, element, attrs, ctrl) {
             element.bind("mouseover mouseout", function() {
-                console.log("yooo");
-                scope.visible = !scope.visible;
-                console.log(scope.visible);
+                if (scope.items && scope.items.length > 0) {
+                    scope.visible = !scope.visible;
+                }
                 scope.$apply();
+                console.log("scope.items", scope.items);
             });
         }
     };
@@ -12070,6 +12043,42 @@ app.service("dataService", function() {
             endDate: "2014-05-28T19:00:00",
             region: "Trondheim",
             url: "/en/kalender/kalenderhendelse2/"
+        } ],
+        statuses: [ {
+            image: "/frontend/img/statusimageplaceholder1.png",
+            name: "Ole Jørgen Grann",
+            body: "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
+            comments: [ {
+                name: "Stian Westvig",
+                comment: "Jeg vil være med på klima konferanse!"
+            }, {
+                name: "Silje Sletteng",
+                comment: "Jeg også!"
+            }, {
+                name: "Per Atle Holvik",
+                comment: "Elsker klima!"
+            } ],
+            likes: [ {
+                name: "Stian Westvig"
+            }, {
+                name: "Silje Sletteng"
+            }, {
+                name: "Per Atle Holvik"
+            } ],
+            hasLiked: true
+        }, {
+            image: "/frontend/img/statusimageplaceholder2.png",
+            name: "Ole Jørgen Grann",
+            body: "Klimatilpasningskonferansen 27. mars til  KS er nå fullbooket - 150 påmeldt! Vi tar sjansen på å utvide til 170 deltagere. Hvis du ønsker å melde deg på - så gjør det nå: <a href='#'>http://ks.no/konferanse</a>",
+            comments: [],
+            likes: [ {
+                name: "Stian Westvig"
+            }, {
+                name: "Silje Sletteng"
+            }, {
+                name: "Per Atle Holvik"
+            } ],
+            hasLiked: false
         } ]
     };
 });
@@ -12091,5 +12100,11 @@ app.service("asyncDataService", function($http) {
                 url: urlString + intervalString
             });
         }
+    };
+    this.getStatuses = function() {
+        return $http({
+            method: "GET",
+            url: "/api/statuses"
+        });
     };
 });

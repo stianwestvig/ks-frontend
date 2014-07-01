@@ -1,6 +1,7 @@
 
 app.service('asyncDataService', function ($http) {
 
+    // this.getEvents
     this.getData = function(startDate, endDate) {
 
         if (startDate && endDate) {
@@ -24,6 +25,14 @@ app.service('asyncDataService', function ($http) {
         }
 
     };
+
+    this.getStatuses = function(){
+        return $http({
+            method: 'GET',
+            url: '/api/statuses'
+        });
+
+    }
 
 });
 

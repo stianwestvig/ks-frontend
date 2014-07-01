@@ -18,6 +18,7 @@ angular.module('agh.tooltip', ['views/tooltip.html'])
                         /*console.log('tooltip: scope.visible: ',scope.visible);*/
                     }
                     scope.$apply();
+                    console.log('scope.items',scope.items);
                 })
             }
         };

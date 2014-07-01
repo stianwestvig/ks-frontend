@@ -4856,6 +4856,9 @@ Header and navigation
     color: white; }
   .frontpage .shortcuts .ks-button-small {
     background-color: #1c4072; }
+  .frontpage .shortcuts .field-validation-error {
+    line-height: 1rem;
+    color: red; }
   .frontpage .ks-panel-white .teaser img {
     margin-bottom: 5px; }
   .frontpage .byline {

@@ -56,6 +56,11 @@
     .ks-button-small {
       background-color: $KSBluePrimary;
     }
+
+    .field-validation-error{
+      line-height: 1rem;
+      color: red;
+    }
   }
 
   /*4x articles on frontpage:*/

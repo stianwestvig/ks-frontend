@@ -4894,8 +4894,8 @@ ul.pager li {
   /* End: table containing styles. */ }
   .article .byline {
     margin-bottom: 1.25rem; }
-  .article .details span.date {
-    padding-left: 50px; }
+  .article .details p {
+    font-size: 1rem; }
   .article .tips ul {
     color: #27a0dd; }
     .article .tips ul li a {

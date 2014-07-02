@@ -37,6 +37,9 @@ p.leadtext {
 .upper {
   text-transform: uppercase; }
 
+[data-epi-property-name="MainIntro"] {
+  line-height: 1.6rem; }
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -4125,6 +4128,9 @@ p.leadtext {
 .upper {
   text-transform: uppercase; }
 
+[data-epi-property-name="MainIntro"] {
+  line-height: 1.6rem; }
+
 /***** KS Colors *****/
 /***** KS Measurements *****/
 /***** KS Typography *****/
@@ -4163,6 +4169,9 @@ p.leadtext {
 
 .upper {
   text-transform: uppercase; }
+
+[data-epi-property-name="MainIntro"] {
+  line-height: 1.6rem; }
 
 @font-face {
   font-family: 'icomoon';

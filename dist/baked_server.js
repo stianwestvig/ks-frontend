@@ -12139,10 +12139,7 @@ app.service("asyncDataService", function($http) {
         var urlString = "/api/status/" + id + isLike ? "/like" : "/unlike";
         return $http({
             method: "POST",
-            url: urlString,
-            data: {
-                comment: text
-            }
+            url: urlString
         });
     };
 });

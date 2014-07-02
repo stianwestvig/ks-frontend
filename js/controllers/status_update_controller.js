@@ -40,7 +40,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     statusUpdate.addUpdate = function(update){
 
         // post to server:
-
+        asyncDataService.postStatus(update);
 
         statusUpdate.updates.unshift(
             {
@@ -61,6 +61,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     statusUpdate.addComment = function(update, comment){
 
         // post to server:
+        asyncDataService.postComment(update.id, comment);
 
         update.comments.push(
             {

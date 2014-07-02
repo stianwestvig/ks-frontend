@@ -11596,6 +11596,7 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         }
     };
     statusUpdate.addUpdate = function(update) {
+        asyncDataService.postStatus(update);
         statusUpdate.updates.unshift({
             image: statusUpdate.currentUser.imageUrl,
             name: statusUpdate.currentUser.name,
@@ -11608,6 +11609,7 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         update.commentsVisible = !update.commentsVisible;
     };
     statusUpdate.addComment = function(update, comment) {
+        asyncDataService.postComment(update.id, comment);
         update.comments.push({
             name: statusUpdate.currentUser.name,
             comment: comment
@@ -12115,9 +12117,19 @@ app.service("asyncDataService", function($http) {
     this.postStatus = function(text) {
         return $http({
             method: "POST",
-            url: "/api/statuses/",
+            url: "/api/newstatus",
             data: {
-                statusText: text
+                message: text
+            }
+        });
+    };
+    this.postComment = function(id, text) {
+        var urlString = "/api/statuscomment/" + id;
+        return $http({
+            method: "POST",
+            url: urlString,
+            data: {
+                comment: text
             }
         });
     };

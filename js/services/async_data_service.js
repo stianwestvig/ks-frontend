@@ -41,12 +41,23 @@ app.service('asyncDataService', function ($http) {
     this.postStatus = function(text){
         return $http({
             method: 'POST',
-            url: '/api/statuses/',
+            url: '/api/newstatus',
             data: {
-                statusText: text
+                message: text
             }
         });
-    }
+    };
 
+    this.postComment = function(id, text){
+        var urlString = '/api/statuscomment/' + id;
+
+        return $http({
+            method: 'POST',
+            url: urlString,
+            data: {
+                comment: text
+            }
+        });
+    };
 });
 

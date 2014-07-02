@@ -63,7 +63,15 @@ app.service('asyncDataService', function ($http) {
 
     this.toggleLike = function(id, isLike){
 
-        var urlString = '/api/status/' + id + isLike?'/like':'/unlike';
+        var urlString = '/api/status/' + id;
+
+        if (isLike) {
+            urlString += '/like';
+        }
+        else {
+            urlString += '/unlike';
+        }
+
         return $http({
             method: 'POST',
             url: urlString

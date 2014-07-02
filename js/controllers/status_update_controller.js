@@ -15,26 +15,24 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
         console.log('async status data failed - using local backup data');
     });
 
-
-
-
-
     statusUpdate.toggleLike = function(update){
-        var index = update.likes.indexOf(statusUpdate.currentUser.name);
-        if (index > -1) {
 
+        if (update.hasLiked) {
+            var index = update.likes.indexOf(statusUpdate.currentUser.name);
             // post to server:
+            asyncDataService.toggleLike(update.id, false);
 
             update.likes.splice(index, 1);
             update.hasLiked = false;
         } else {
 
             // post to server:
+            asyncDataService.toggleLike(update.id, true);
 
             update.likes.push(statusUpdate.currentUser.name);
-            /*console.log('update.likes',update.likes);*/
             update.hasLiked = true;
         }
+
     };
 
     statusUpdate.addUpdate = function(update){

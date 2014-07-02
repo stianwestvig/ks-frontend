@@ -11586,11 +11586,13 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         console.log("async status data failed - using local backup data");
     });
     statusUpdate.toggleLike = function(update) {
-        var index = update.likes.indexOf(statusUpdate.currentUser.name);
-        if (index > -1) {
+        if (update.hasLiked) {
+            var index = update.likes.indexOf(statusUpdate.currentUser.name);
+            asyncDataService.toggleLike(update.id, false);
             update.likes.splice(index, 1);
             update.hasLiked = false;
         } else {
+            asyncDataService.toggleLike(update.id, true);
             update.likes.push(statusUpdate.currentUser.name);
             update.hasLiked = true;
         }
@@ -12125,6 +12127,16 @@ app.service("asyncDataService", function($http) {
     };
     this.postComment = function(id, text) {
         var urlString = "/api/statuscomment/" + id;
+        return $http({
+            method: "POST",
+            url: urlString,
+            data: {
+                comment: text
+            }
+        });
+    };
+    this.toggleLike = function(id, isLike) {
+        var urlString = "/api/status/" + id + isLike ? "/like" : "/unlike";
         return $http({
             method: "POST",
             url: urlString,

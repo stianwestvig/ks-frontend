@@ -59,5 +59,20 @@ app.service('asyncDataService', function ($http) {
             }
         });
     };
+
+
+    this.toggleLike = function(id, isLike){
+
+        var urlString = '/api/status/' + id + isLike?'/like':'/unlike';
+        return $http({
+            method: 'POST',
+            url: urlString,
+            data: {
+                comment: text
+            }
+        });
+    };
+
+
 });
 

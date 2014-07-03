@@ -1,7 +1,8 @@
 <div class="status-update" ng-controller="statusUpdateCtrl as statusUpdate">
     <div class="panel">
-        <h2 class="header5 update">Del oppdatering</h2>
-        <div class="text-container">
+        <h2 class="header5 update" ng-show="field">Del oppdatering</h2>
+        <h2 class="header5 update" ng-hide="field">{{statusUpdate.currentUser.name}} sine siste oppdateringer</h2>
+        <div class="text-container" ng-show="field">
             <textarea ng-model='update' placeholder="Hva skjer?"></textarea>
             <a ng-click="statusUpdate.addUpdate(update); update = '';" ng-model='update' class="ks-button-small right min-width">Del</a>
         </div>
@@ -60,3 +61,7 @@
         </div>
     </div>
 </div>
+
+
+
+

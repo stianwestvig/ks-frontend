@@ -11781,7 +11781,10 @@ app.directive("statusupdate", function() {
     return {
         restrict: "A",
         transclude: true,
-        templateUrl: "/frontend/views/status_update.html"
+        templateUrl: "/frontend/views/status_update.html",
+        scope: {
+            field: "@"
+        }
     };
 });
 

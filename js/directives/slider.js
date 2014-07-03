@@ -5,3 +5,4 @@ app.directive('slider', function(){
         templateUrl: 'views/slider.html'
     };
 });
+

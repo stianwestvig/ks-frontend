@@ -11578,12 +11578,12 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
     var statusUpdate = this;
     currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = $window.currentUser;
+    statusUpdate.errorHappened = false;
     var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
         statusUpdate.updates = data;
     }).error(function() {
-        statusUpdate.updates = dataService.statuses;
-        console.log("async status data failed - using local backup data");
+        statusUpdate.errorHappened = true;
     });
     statusUpdate.toggleLike = function(update) {
         if (update.hasLiked) {

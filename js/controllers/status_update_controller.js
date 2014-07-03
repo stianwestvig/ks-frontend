@@ -3,6 +3,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     var statusUpdate = this;
     currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = $window.currentUser;
+    statusUpdate.errorHappened = false;
 
 
 
@@ -11,8 +12,8 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     result.success(function(data){
         statusUpdate.updates = data;
     }).error(function(){
-        statusUpdate.updates = dataService.statuses;
-        console.log('async status data failed - using local backup data');
+        // statusUpdate.updates = dataService.statuses;
+        statusUpdate.errorHappened = true;
     });
 
     statusUpdate.toggleLike = function(update){

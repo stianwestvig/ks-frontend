@@ -11682,7 +11682,8 @@ app.filter("newlines", function() {
 
 app.controller("CalendarCtrl", function($scope, $http, helperService, dataService, asyncDataService) {
     var calendar = this;
-    this.dataLoaded = false;
+    calendar.dataLoaded = false;
+    calendar.errorHappened = false;
     calendar.regions = dataService.regions;
     calendar.refreshMonth = false;
     calendar.setStartDate = function(date) {
@@ -11715,7 +11716,9 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
             calendar.events = calendar.data;
             calendar.dataLoaded = true;
             calendar.initDataDates();
-        }).error(function(data, status, headers, config) {});
+        }).error(function(data, status, headers, config) {
+            calendar.errorHappened = true;
+        });
     };
     calendar.init = function($http) {
         var firstOfTheMonth = new Date();

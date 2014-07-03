@@ -1,7 +1,8 @@
 app.controller('CalendarCtrl', function($scope, $http, helperService, dataService, asyncDataService) {
 
     var calendar = this;
-    this.dataLoaded = false;
+    calendar.dataLoaded = false;
+    calendar.errorHappened = false;
 
 
     calendar.regions = dataService.regions;
@@ -46,23 +47,7 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
             calendar.dataLoaded = true;
             calendar.initDataDates();
         }).error(function(data, status, headers, config){
-            // console.log('KS Fiks: ajax call failed, getting backup data.', config);
-
-
-
-
-
-
-            /* TODO: implement graceful fallback if no data found. */
-
-
-
-
-
-            /*calendar.data = dataService.data;
-            calendar.events = calendar.data;
-            calendar.dataLoaded = true;
-            calendar.initDataDates();*/
+            calendar.errorHappened = true;
         });
     };
 

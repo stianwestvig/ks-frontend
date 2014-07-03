@@ -1,79 +1,86 @@
 <section ng-show="calendar.dataLoaded" class="main-section events" ng-controller="CalendarCtrl as calendar">
     <!-- main content -->
+    <div ng-show="calendar.errorHappened">
+        <h2 class="header5">Det skjedde en feil ved innlasting av kalenderen</h2>
+    </div>
 
-    <div class="row">
-        <!-- row for page the page -->
-        <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <div ng-show="!calendar.errorHappened">
+        <div class="row">
+            <!-- row for page the page -->
+            <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
 
-            <h1>Kommende arrangementer</h1>
-            <p class="leadtext">Her finner du bruksanvisninger om støttesystemer i KS</p>
+                <h1>Kommende arrangementer</h1>
+                <p class="leadtext">Her finner du bruksanvisninger om støttesystemer i KS</p>
 
-            <!-- month and region -->
-            <form class="custom" action="#">
-                <div class="row">
-                    <!-- <div class="small-12 medium-6 columns"><label for="month">Velg måned</label></div> -->
-                    <div class="small-12 medium-4 columns"><label for="region">Velg region</label></div>
-                </div>
-                <div class="row">
-                    <div class="small-12 medium-4 columns">
-                        <select name="region" id="region" ng-model="limit.region">
-                            <option value="">Alle regioner</option>
-                            <option ng-repeat="region in calendar.regions" value="{{region.name}}">{{region.name}}</option>
-                        </select>
+                <!-- month and region -->
+                <form class="custom" action="#">
+                    <div class="row">
+                        <!-- <div class="small-12 medium-6 columns"><label for="month">Velg måned</label></div> -->
+                        <div class="small-12 medium-4 columns"><label for="region">Velg region</label></div>
                     </div>
-                    <!-- optional reset button -->
-                    <div class="small-12 medium-3 large-2 columns end"><a class="ks-button postfix" ng-click="limit.region = ''; calendar.resetCalendar()">Nullstill</a></div>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="small-12 medium-4 columns">
+                            <select name="region" id="region" ng-model="limit.region">
+                                <option value="">Alle regioner</option>
+                                <option ng-repeat="region in calendar.regions" value="{{region.name}}">{{region.name}}</option>
+                            </select>
+                        </div>
+                        <!-- optional reset button -->
+                        <div class="small-12 medium-3 large-2 columns end"><a class="ks-button postfix" ng-click="limit.region = ''; calendar.resetCalendar()">Nullstill</a></div>
+                    </div>
+                </form>
 
             </div>
         </div>
 
-    <div class="row">
-        <!-- row for top with heading -->
-        <div class="small-12 medium-12 large-10 large-offset-1 columns">
-            <hr />
+        <div class="row">
+            <!-- row for top with heading -->
+            <div class="small-12 medium-12 large-10 large-offset-1 columns">
+                <hr />
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <!-- row for page the page -->
-        <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+        <div class="row">
+            <!-- row for page the page -->
+            <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
 
-            <div class="row">
-                <!-- right col pushed for medium -->
-                <div class="small-12 medium-4 columns contains-calendar">
-                    <datepicker ng-model="calendar.dt" events="calendar.events" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
-                </div>
+                <div class="row">
+                    <!-- right col pushed for medium -->
+                    <div class="small-12 medium-4 columns contains-calendar">
+                        <datepicker ng-model="calendar.dt" events="calendar.events" min-date="minDate" starting-day="1" show-weeks="false" class="datepicker"></datepicker>
+                    </div>
 
-                <!-- main col pulled for medium -->
-                <div class="small-12 medium-8 columns">
+                    <!-- main col pulled for medium -->
+                    <div class="small-12 medium-8 columns">
 
-                    <ul class="events-list">
+                        <ul class="events-list">
 
-                        <!--<li>start: {{calendar.getStartDate()}} end: {{calendar.getEndDate()}}</li>-->
-                        <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
-                            <div class="row">
-                                <div class="small-6 medium-2 columns date-column">
-                                    <div class="row">
-                                        <div class="small-12 columns text-center-medium-up"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
-                                        <div class="small-12 columns text-center-medium-up"><span class="date">{{event.startDate | date:'d'}}</span></div>
+                            <!--<li>start: {{calendar.getStartDate()}} end: {{calendar.getEndDate()}}</li>-->
+                            <li ng-repeat="event in filtered = (calendar.events | dateFilter: calendar.getStartDate():calendar.getEndDate() | filter: limit)">
+                                <div class="row">
+                                    <div class="small-6 medium-2 columns date-column">
+                                        <div class="row">
+                                            <div class="small-12 columns text-center-medium-up"><span class="month">{{event.startDate | date:'MMM'}}</span></div>
+                                            <div class="small-12 columns text-center-medium-up"><span class="date">{{event.startDate | date:'d'}}</span></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="small-6 medium-3 medium-push-7 columns region-column">{{event.region}}</div>
-                                <div class="small-12 medium-7 medium-pull-3 columns">
-                                    <h2 class="header5"><a href="{{event.url}}">{{event.title}}</a></h2>
-                                    <p>{{event.description | limitTo: 40 }}</p>
-                                </div>
+                                    <div class="small-6 medium-3 medium-push-7 columns region-column">{{event.region}}</div>
+                                    <div class="small-12 medium-7 medium-pull-3 columns">
+                                        <h2 class="header5"><a href="{{event.url}}">{{event.title}}</a></h2>
+                                        <p>{{event.description | limitTo: 40 }}</p>
+                                    </div>
 
-                            </div>
-                        </li>
-                        <li ng-show="filtered.length === 0"><h2 class="header5">Ingen hendelser for valgt periode og region</h2></li>
-                    </ul>
+                                </div>
+                            </li>
+                            <li ng-show="filtered.length === 0"><h2 class="header5">Ingen hendelser for valgt periode og region</h2></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 </section>
 <!-- end: main-section -->
 

@@ -48,11 +48,15 @@ Panels
   border: none;
 
   li {
-    color: $KSWhite;
+    color: $KSBlack;
 
     a {
-      color: $KSWhite;
+      color: $KSBlack;
     }
+  }
+
+  h2 {
+    color: $KSBlack;
   }
 }
 

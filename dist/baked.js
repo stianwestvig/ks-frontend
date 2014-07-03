@@ -11762,6 +11762,13 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
     }, true);
 });
 
+app.controller("searchCtrl", function($scope, $window) {
+    var search = this;
+    var active = location.search.indexOf("ansatt") > 0;
+    console.log("QUERY", location.search, active);
+    this.active = active;
+});
+
 app.directive("slider", function() {
     return {
         restrict: "A",

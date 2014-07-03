@@ -4241,9 +4241,11 @@ Panels
     .ks-panel-green h1.subheader, .ks-panel-green h2.subheader, .ks-panel-green h3.subheader, .ks-panel-green h4.subheader, .ks-panel-green h5.subheader, .ks-panel-green h6.subheader {
       line-height: 1.4; }
   .ks-panel-green li {
-    color: white; }
+    color: black; }
     .ks-panel-green li a {
-      color: white; }
+      color: black; }
+  .ks-panel-green h2 {
+    color: black; }
 
 .ks-panel-white {
   border-style: solid;
@@ -4518,13 +4520,16 @@ Header and navigation
       padding: 5px 15px;
       font-size: 0.875rem;
       color: white; }
+  .frontpage .shortcuts li {
+    color: black; }
   .frontpage .shortcuts a {
-    color: white;
+    color: black;
     margin-right: 10px; }
   .frontpage .shortcuts label {
     color: white; }
   .frontpage .shortcuts .ks-button-small {
-    background-color: #1c4072; }
+    background-color: #1c4072;
+    padding: 4px 22px; }
   .frontpage .shortcuts .field-validation-error {
     line-height: 1rem;
     color: red; }

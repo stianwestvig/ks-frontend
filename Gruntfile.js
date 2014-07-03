@@ -39,6 +39,7 @@ module.exports = function(grunt) {
                   'js/controllers/slider_controller.js',
                   'js/controllers/status_update_controller.js',
                   'js/controllers/calendar_controller.js',
+                  'js/controllers/search_controller.js',
                   'js/directives/slider.js',
                   'js/directives/status_update.js',
                   'js/directives/tooltip.js',

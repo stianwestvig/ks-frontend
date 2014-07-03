@@ -11764,11 +11764,9 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
 
 app.controller("searchCtrl", function($scope, $window) {
     var search = this;
-    var active = getParameterByName(ansatt).indexOf("true") > 0;
-    console.log("active", active);
-    if (active) {
-        tabs[1].active = true;
-    }
+    var active = location.search.indexOf("ansatt") > 0;
+    console.log("QUERY", location.search, active);
+    this.active = active;
 });
 
 app.directive("slider", function() {

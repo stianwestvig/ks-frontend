@@ -30,7 +30,7 @@ angular.module("views/tooltip.html", []).run(["$templateCache", function($templa
             "<div class='likes-list' >" +
             "<span>{{ items.length }}</span>" +
             "<ul ng-show=\"visible\">" +
-            "<li ng-repeat=\"item in items\" >{{ item.name }}</li>" +
+            "<li ng-repeat=\"item in items\" >{{ item }}</li>" +
          "</ul>"
      + "<div>"
     );

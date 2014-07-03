@@ -4,10 +4,10 @@
         <h2 class="header5">Det skjedde en feil ved innlasting av oppdateringer.</h2>
     </div>
 
-    <div class="panel">
-        <h2 class="header5 update" ng-show="field && !statusUpdate.errorHappened">Del oppdatering</h2>
-        <h2 class="header5 update" ng-hide="field && !statusUpdate.errorHappened">{{statusUpdate.currentUser.name}} sine siste oppdateringer</h2>
-        <div class="text-container" ng-show="field && !statusUpdate.errorHappened">
+    <div class="panel"ng-show="!statusUpdate.errorHappened">
+        <h2 class="header5 update" ng-show="field">Del oppdatering</h2>
+        <h2 class="header5 update" ng-hide="field">{{statusUpdate.currentUser.name}} sine siste oppdateringer</h2>
+        <div class="text-container" ng-show="field">
             <textarea ng-model='update' placeholder="Hva skjer?"></textarea>
             <a ng-click="statusUpdate.addUpdate(update); update = '';" ng-model='update' class="ks-button-small right min-width">Del</a>
         </div>

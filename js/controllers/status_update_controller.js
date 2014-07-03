@@ -42,7 +42,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
             // if success, update frontend with new post:
             result.success(function(data){
 
-                console.log(result, data);
+                // console.log(result, data);
                 statusUpdate.updates.unshift(
                     {
                         'id': data.pageId,

@@ -38,17 +38,24 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     statusUpdate.addUpdate = function(update){
 
         // post to server:
-        asyncDataService.postStatus(update);
+        var result = asyncDataService.postStatus(update);
 
-        statusUpdate.updates.unshift(
-            {
-                'image' : statusUpdate.currentUser.imageUrl,
-                'name' : statusUpdate.currentUser.name,
-                'body' : update,
-                'comments' : [],
-                likes : []
-            }
-        );
+        // if success, update frontend with new post:
+        result.success(function(data){
+
+            console.log(result, data);
+            statusUpdate.updates.unshift(
+                {
+                    'id': data.pageId,
+                    'image' : statusUpdate.currentUser.imageUrl,
+                    'name' : statusUpdate.currentUser.name,
+                    'body' : update,
+                    'comments' : [],
+                    likes : []
+                }
+            );
+        });
+
     };
 
     statusUpdate.toggleComments = function(update){

@@ -54,7 +54,7 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
 
 
             /* TODO: implement graceful fallback if no data found. */
-            
+
 
 
 

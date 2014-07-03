@@ -11598,13 +11598,17 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         }
     };
     statusUpdate.addUpdate = function(update) {
-        asyncDataService.postStatus(update);
-        statusUpdate.updates.unshift({
-            image: statusUpdate.currentUser.imageUrl,
-            name: statusUpdate.currentUser.name,
-            body: update,
-            comments: [],
-            likes: []
+        var result = asyncDataService.postStatus(update);
+        result.success(function(data) {
+            console.log(result, data);
+            statusUpdate.updates.unshift({
+                id: data.pageId,
+                image: statusUpdate.currentUser.imageUrl,
+                name: statusUpdate.currentUser.name,
+                body: update,
+                comments: [],
+                likes: []
+            });
         });
     };
     statusUpdate.toggleComments = function(update) {
@@ -11703,11 +11707,7 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
             calendar.dataLoaded = true;
             calendar.initDataDates();
         }).error(function(data, status, headers, config) {
-            console.log("KS Fiks: ajax call failed, getting backup data.");
-            calendar.data = dataService.data;
-            calendar.events = calendar.data;
-            calendar.dataLoaded = true;
-            calendar.initDataDates();
+            console.log("KS Fiks: ajax call failed, getting backup data.", config);
         });
     };
     calendar.init = function($http) {

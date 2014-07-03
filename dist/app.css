@@ -22,6 +22,9 @@ h4, .header4 {
 h5, .header5 {
   font-size: 1.125rem; }
 
+a {
+  color: #1c4072; }
+
 p, li {
   max-width: 34.375rem;
   font-size: 0.875rem; }
@@ -4113,6 +4116,9 @@ h4, .header4 {
 h5, .header5 {
   font-size: 1.125rem; }
 
+a {
+  color: #1c4072; }
+
 p, li {
   max-width: 34.375rem;
   font-size: 0.875rem; }
@@ -4154,6 +4160,9 @@ h4, .header4 {
 
 h5, .header5 {
   font-size: 1.125rem; }
+
+a {
+  color: #1c4072; }
 
 p, li {
   max-width: 34.375rem;
@@ -4431,7 +4440,8 @@ Header and navigation
     .tab-bar section.margin-correction {
       margin-left: -0.625rem; }
     .tab-bar section.search-container {
-      left: inherit; }
+      left: inherit;
+      margin-left: 20px; }
       .tab-bar section.search-container .mytime, .tab-bar section.search-container .user {
         line-height: normal;
         margin-top: 0.3125rem; }
@@ -4441,6 +4451,8 @@ Header and navigation
           min-width: 2.5rem;
           text-transform: none;
           margin-bottom: 0; }
+    .tab-bar section.mintid-container {
+      margin-top: 20px; }
 
 @media only screen and (min-width:40.063em) {
   .tab-bar section.search-container {
@@ -4810,7 +4822,7 @@ ul.events-list {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icomoon, .status-update h5.update:before, .status-update .update-list ul.update-buttons li:before, .main-menu a.back-button:before, .main-menu a.close-button:before {
+.icomoon, .status-update h2.update:before, .status-update .update-list ul.update-buttons li:before, .main-menu a.back-button:before, .main-menu a.close-button:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -4958,10 +4970,10 @@ ul.events-list {
 .status-update .panel {
   background-color: transparent;
   border: none; }
-.status-update h5.update {
+.status-update h2.update {
   margin-left: 10px;
   display: inline; }
-  .status-update h5.update:before {
+  .status-update h2.update:before {
     position: relative;
     content: "\e602";
     left: -6px;

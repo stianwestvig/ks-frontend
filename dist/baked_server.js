@@ -11581,7 +11581,6 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
     var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
         statusUpdate.updates = data;
-        console.log(statusUpdate.updates);
     }).error(function() {
         statusUpdate.updates = dataService.statuses;
         console.log("async status data failed - using local backup data");
@@ -11595,7 +11594,11 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
             });
         } else {
             asyncDataService.toggleLike(update.id, true).success(function() {
-                update.likes.push(statusUpdate.currentUser.name);
+                var newLike = {
+                    name: statusUpdate.currentUser.name,
+                    urlToProfilePage: statusUpdate.currentUser.profileUrl
+                };
+                update.likes.push(newLike);
                 update.hasLiked = true;
             });
         }
@@ -11797,7 +11800,7 @@ angular.module("agh.tooltip", [ "views/tooltip.html" ]).directive("tooltipHover"
 });
 
 angular.module("views/tooltip.html", []).run([ "$templateCache", function($templateCache) {
-    $templateCache.put("views/tooltip.html", "<div class='likes-list' >" + "<span>{{ items.length }}</span>" + '<ul ng-show="visible">' + '<li ng-repeat="item in items" >{{ item }}</li>' + "</ul>" + "<div>");
+    $templateCache.put("views/tooltip.html", "<div class='likes-list' >" + "<span>{{ items.length }}</span>" + '<ul ng-show="visible">' + '<li ng-repeat="item in items" >{{ item.name }}</li>' + "</ul>" + "<div>");
 } ]);
 
 angular.module("agh.multimenu", [ "views/multimenu.html", "menu_item.html" ]).service("menuService", [ "$rootScope", function($rootScope) {

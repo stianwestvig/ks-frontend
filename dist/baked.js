@@ -11588,13 +11588,15 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
     statusUpdate.toggleLike = function(update) {
         if (update.hasLiked) {
             var index = update.likes.indexOf(statusUpdate.currentUser.name);
-            asyncDataService.toggleLike(update.id, false);
-            update.likes.splice(index, 1);
-            update.hasLiked = false;
+            asyncDataService.toggleLike(update.id, false).success(function() {
+                update.likes.splice(index, 1);
+                update.hasLiked = false;
+            });
         } else {
-            asyncDataService.toggleLike(update.id, true);
-            update.likes.push(statusUpdate.currentUser.name);
-            update.hasLiked = true;
+            asyncDataService.toggleLike(update.id, true).success(function() {
+                update.likes.push(statusUpdate.currentUser.name);
+                update.hasLiked = true;
+            });
         }
     };
     statusUpdate.addUpdate = function(update) {
@@ -11615,10 +11617,12 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         update.commentsVisible = !update.commentsVisible;
     };
     statusUpdate.addComment = function(update, comment) {
-        asyncDataService.postComment(update.id, comment);
-        update.comments.push({
-            name: statusUpdate.currentUser.name,
-            comment: comment
+        var result = asyncDataService.postComment(update.id, comment);
+        result.success(function() {
+            update.comments.push({
+                name: statusUpdate.currentUser.name,
+                comment: comment
+            });
         });
     };
 });

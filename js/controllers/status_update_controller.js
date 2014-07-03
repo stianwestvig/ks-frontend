@@ -16,23 +16,22 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     });
 
     statusUpdate.toggleLike = function(update){
-
         if (update.hasLiked) {
             var index = update.likes.indexOf(statusUpdate.currentUser.name);
             // post to server:
-            asyncDataService.toggleLike(update.id, false);
-
-            update.likes.splice(index, 1);
-            update.hasLiked = false;
+            asyncDataService.toggleLike(update.id, false).success(function(){
+                // if success, remove like from frontend
+                update.likes.splice(index, 1);
+                update.hasLiked = false;
+            });
         } else {
-
             // post to server:
-            asyncDataService.toggleLike(update.id, true);
-
-            update.likes.push(statusUpdate.currentUser.name);
-            update.hasLiked = true;
+            asyncDataService.toggleLike(update.id, true).success(function(){
+                // if success, update frontend with new like
+                update.likes.push(statusUpdate.currentUser.name);
+                update.hasLiked = true;
+            });
         }
-
     };
 
     statusUpdate.addUpdate = function(update){
@@ -66,14 +65,17 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     statusUpdate.addComment = function(update, comment){
 
         // post to server:
-        asyncDataService.postComment(update.id, comment);
+        var result = asyncDataService.postComment(update.id, comment);
 
-        update.comments.push(
-            {
-                'name' : statusUpdate.currentUser.name,
-                'comment' : comment
-            }
-        )
+        // if success, update frontend with new comment:
+        result.success(function(){
+            update.comments.push(
+                {
+                    'name' : statusUpdate.currentUser.name,
+                    'comment' : comment
+                }
+            )
+        });
     }
 
 });

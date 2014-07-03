@@ -11603,7 +11603,6 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
         if (update) {
             var result = asyncDataService.postStatus(update);
             result.success(function(data) {
-                console.log(result, data);
                 statusUpdate.updates.unshift({
                     id: data.pageId,
                     image: statusUpdate.currentUser.imageUrl,
@@ -11712,9 +11711,7 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
             calendar.events = calendar.data;
             calendar.dataLoaded = true;
             calendar.initDataDates();
-        }).error(function(data, status, headers, config) {
-            console.log("KS Fiks: ajax call failed, getting backup data.", config);
-        });
+        }).error(function(data, status, headers, config) {});
     };
     calendar.init = function($http) {
         var firstOfTheMonth = new Date();

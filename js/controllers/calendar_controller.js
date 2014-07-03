@@ -46,7 +46,7 @@ app.controller('CalendarCtrl', function($scope, $http, helperService, dataServic
             calendar.dataLoaded = true;
             calendar.initDataDates();
         }).error(function(data, status, headers, config){
-            console.log('KS Fiks: ajax call failed, getting backup data.', config);
+            // console.log('KS Fiks: ajax call failed, getting backup data.', config);
 
 
 

@@ -35,25 +35,26 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     };
 
     statusUpdate.addUpdate = function(update){
+        if (update){
+            // post to server:
+            var result = asyncDataService.postStatus(update);
 
-        // post to server:
-        var result = asyncDataService.postStatus(update);
+            // if success, update frontend with new post:
+            result.success(function(data){
 
-        // if success, update frontend with new post:
-        result.success(function(data){
-
-            console.log(result, data);
-            statusUpdate.updates.unshift(
-                {
-                    'id': data.pageId,
-                    'image' : statusUpdate.currentUser.imageUrl,
-                    'name' : statusUpdate.currentUser.name,
-                    'body' : update,
-                    'comments' : [],
-                    likes : []
-                }
-            );
-        });
+                console.log(result, data);
+                statusUpdate.updates.unshift(
+                    {
+                        'id': data.pageId,
+                        'image' : statusUpdate.currentUser.imageUrl,
+                        'name' : statusUpdate.currentUser.name,
+                        'body' : update,
+                        'comments' : [],
+                        likes : []
+                    }
+                );
+            });
+        }
 
     };
 
@@ -63,7 +64,6 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
 
     statusUpdate.addComment = function(update, comment){
-
         // post to server:
         var result = asyncDataService.postComment(update.id, comment);
 
@@ -76,6 +76,7 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
                 }
             )
         });
+
     }
 
 });

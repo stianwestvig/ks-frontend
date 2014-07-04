@@ -4608,7 +4608,7 @@ ul.pager li {
   .events ul.events-list .region-column {
     border-left: 1px solid #c8c8c8;
     height: 2.5rem;
-    line-height: 2.5rem; } }
+    line-height: 1.4375rem; } }
 
 /* Events list is not nested so it can be reused on frontpage: */
 ul.events-list {
@@ -4618,7 +4618,7 @@ ul.events-list {
     border-right: 1px solid #c8c8c8; }
   ul.events-list .region-column {
     height: 2.5rem;
-    line-height: 1.4375rem; }
+    line-height: 2.5rem; }
   ul.events-list li {
     border-bottom: 1px solid #e7e7e7;
     margin-bottom: 0.625rem; }

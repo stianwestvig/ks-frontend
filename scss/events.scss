@@ -12,7 +12,7 @@
       .region-column {
         border-left: 1px solid $KSGreyBorderDarker;
         height: rem-calc(40);
-        line-height: rem-calc(40);
+        line-height: rem-calc(23);
       }
     }
   }
@@ -29,7 +29,7 @@ ul.events-list {
 
   .region-column {
     height: rem-calc(40);
-    line-height: rem-calc(23);
+    line-height: rem-calc(40);
   }
 
   li {

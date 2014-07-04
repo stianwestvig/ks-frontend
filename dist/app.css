@@ -4527,6 +4527,8 @@ Header and navigation
     margin-right: 10px; }
   .frontpage .shortcuts label {
     color: black; }
+  .frontpage .shortcuts form {
+    margin-bottom: 5px; }
   .frontpage .shortcuts .ks-button-small {
     background-color: #1c4072;
     padding: 4px 22px; }
@@ -4616,7 +4618,7 @@ ul.events-list {
     border-right: 1px solid #c8c8c8; }
   ul.events-list .region-column {
     height: 2.5rem;
-    line-height: 2.5rem; }
+    line-height: 1.4375rem; }
   ul.events-list li {
     border-bottom: 1px solid #e7e7e7;
     margin-bottom: 0.625rem; }

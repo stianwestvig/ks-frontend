@@ -11579,6 +11579,7 @@ app.controller("statusUpdateCtrl", function($window, asyncDataService, dataServi
     currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = $window.currentUser;
     statusUpdate.errorHappened = false;
+    console.log("stian debug", update);
     var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
         statusUpdate.updates = data;

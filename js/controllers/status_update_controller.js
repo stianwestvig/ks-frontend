@@ -5,6 +5,8 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
     statusUpdate.currentUser = $window.currentUser;
     statusUpdate.errorHappened = false;
 
+    console.log('stian debug', update);
+
 
 
     // get aync data:

@@ -20,7 +20,7 @@
                         <div class="small-12 medium-10 columns">
                             <div class="row">
                                 <div class="small-12 columns">
-                                    <h2>{{ update.name }}</h2>
+                                    <a href="{{currentUser.profileUrl}}"><h2>{{ update.name }}</h2></a>
                                     <p ng-bind-html="update.body | newlines" ></p>
                                     <ul class="update-buttons">
                                         <li><a ng-click="statusUpdate.toggleComments(update)">{{ update.commentsVisible  | iif : "Skjul kommentarer" : "Vis kommentarer"}}</a></li>
@@ -45,7 +45,7 @@
                                                 <img ng-src="{{update.image}}" />
                                             </div>
                                             <div class="small-11 medium-10 columns comment-row">
-                                                <h3>{{ comment.name }}</h3>
+                                                <a href="{{comment.urlToProfilePage}}"><h2>{{ comment.name }}</h2></a>
                                                 <p ng-bind-html="comment.comment | newlines"></p>
                                             </div>
                                         </div>

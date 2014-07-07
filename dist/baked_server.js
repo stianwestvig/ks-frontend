@@ -11775,7 +11775,7 @@ app.controller("searchCtrl", function($scope, $window) {
     }, {
         active: false
     } ];
-    if (location.search.indexOf("ansatt") > 0) {
+    if (location.search.indexOf("ansatte=true") > 0) {
         search.tabs[1].active = true;
     }
 });

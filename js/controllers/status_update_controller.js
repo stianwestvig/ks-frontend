@@ -79,11 +79,12 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
             update.comments.push(
                 {
                     'name' : statusUpdate.currentUser.name,
-                    'comment' : comment
+                    'comment' : comment,
+                    'urlToProfilePage': statusUpdate.currentUser.profileUrl,
+                    'urlToProfileImage': statusUpdate.currentUser.imageUrl
                 }
             )
         });
-
     }
 
 });

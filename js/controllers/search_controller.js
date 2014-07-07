@@ -3,11 +3,18 @@ app.controller('searchCtrl', function($scope, $window){
 
     var search = this;
 
-    var active = location.search.indexOf('ansatt') > 0;
-    console.log('QUERY',location.search, active);
+    // initial tabs - "alle sider" and "ansatt" - made to work with only these two.
+    search.tabs = [
+        { active: true },
+        { active: false }
+    ];
 
-    this.active = active;
-
+    // look for 'ansatt' in querystring, and select that tab if found:
+    if(location.search.indexOf('ansatt') > 0) {
+        search.tabs[1].active = true;
+    }
 });
+
+
 
 

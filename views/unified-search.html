@@ -5,7 +5,19 @@
         <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 columns">
             <h1>Søk</h1>
 
+
+
             <tabset ng-controller="searchCtrl as search">
+                <script>
+                    console.log(search);
+                </script>
+
+                <tab heading="Static title">Static content</tab>
+
+                <tab ng-repeat="tab in search.tabs" heading="{{tab.title}}" active="tab.active">
+                    {{tab.content}}
+                </tab>
+                <h1 ng-repeat="tab in search.tabs">yes?</h1>
                 <tab heading="Alle sider (4)">
 
                     <div class="row">

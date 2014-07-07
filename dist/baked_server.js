@@ -11576,7 +11576,7 @@ app.controller("sliderController", function($window) {
 
 app.controller("statusUpdateCtrl", function($window, asyncDataService, dataService) {
     var statusUpdate = this;
-    currentProfileLoginName = $window.currentProfileLoginName;
+    var currentProfileLoginName = $window.currentProfileLoginName;
     statusUpdate.currentUser = $window.currentUser;
     statusUpdate.errorHappened = false;
     console.log("stian debug", statusUpdate);
@@ -11770,9 +11770,14 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
 
 app.controller("searchCtrl", function($scope, $window) {
     var search = this;
-    var active = location.search.indexOf("ansatt") > 0;
-    console.log("QUERY", location.search, active);
-    this.active = active;
+    search.tabs = [ {
+        active: true
+    }, {
+        active: false
+    } ];
+    if (location.search.indexOf("ansatt") > 0) {
+        search.tabs[1].active = true;
+    }
 });
 
 app.directive("slider", function() {

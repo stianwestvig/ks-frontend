@@ -4535,8 +4535,12 @@ Header and navigation
   .frontpage .shortcuts .field-validation-error {
     line-height: 1rem;
     color: red; }
-  .frontpage .ks-panel-white .teaser img {
-    margin-bottom: 5px; }
+  .frontpage .ks-panel-white .teaser {
+    margin-bottom: 1.25rem; }
+    .frontpage .ks-panel-white .teaser img {
+      margin-bottom: 5px; }
+    .frontpage .ks-panel-white .teaser p {
+      margin-bottom: 0; }
   .frontpage .byline {
     margin-bottom: 0.625rem; }
     .frontpage .byline li {

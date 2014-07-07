@@ -76,8 +76,12 @@
   /*4x articles on frontpage:*/
   .ks-panel-white {
     .teaser {
+      margin-bottom: rem-calc(20);
       img {
         margin-bottom: 5px;
+      }
+      p {
+        margin-bottom: 0;
       }
     }
   }

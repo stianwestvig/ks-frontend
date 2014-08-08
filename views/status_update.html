@@ -6,7 +6,7 @@
 
     <div class="panel"ng-show="!statusUpdate.errorHappened">
         <h2 class="header5 update" ng-show="field">Del oppdatering</h2>
-        <h2 class="header5 update" ng-hide="field">{{statusUpdate.currentUser.name}} sine siste oppdateringer</h2>
+        <h2 class="header5 update" ng-hide="field">{{ statusUpdate.currentProfileName }} sine siste  oppdateringer</h2>
         <div class="text-container" ng-show="field">
             <textarea ng-model='update' placeholder="Hva skjer?"></textarea>
             <a ng-click="statusUpdate.addUpdate(update); update = '';" ng-model='update' class="ks-button-small right min-width">Del</a>
@@ -20,7 +20,7 @@
                         <div class="small-12 medium-10 columns">
                             <div class="row">
                                 <div class="small-12 columns">
-                                    <a href="{{statusUpdate.currentUser.profileUrl}}"><h2>{{ update.name }}</h2></a>
+                                    <a href="{{update.profileUrl}}"><h2>{{ update.name }}</h2></a>
                                     <p ng-bind-html="update.body | newlines" ></p>
                                     <ul class="update-buttons">
                                         <li><a ng-click="statusUpdate.toggleComments(update)">{{ update.commentsVisible  | iif : "Skjul kommentarer" : "Vis kommentarer"}}</a></li>

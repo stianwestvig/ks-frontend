@@ -2,18 +2,17 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
 
     var statusUpdate = this;
     var currentProfileLoginName = $window.currentProfileLoginName;
+    statusUpdate.currentProfileName = $window.currentProfileName;
     statusUpdate.currentUser = $window.currentUser;
     statusUpdate.errorHappened = false;
 
-    console.log('stian debug', statusUpdate);
-
-
-
     // get aync data:
     var result = asyncDataService.getStatuses(currentProfileLoginName);
-    result.success(function(data){
+    result.success(function (data) {
+        
         statusUpdate.updates = data;
-    }).error(function(){
+    }).error(function () {
+        
         // statusUpdate.updates = dataService.statuses;
         statusUpdate.errorHappened = true;
     });
@@ -24,6 +23,8 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
             // post to server:
             asyncDataService.toggleLike(update.id, false).success(function(){
                 // if success, remove like from frontend
+
+                
                 update.likes.splice(index, 1);
                 update.hasLiked = false;
             });

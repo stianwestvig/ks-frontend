@@ -11665,7 +11665,7 @@ app.run(function() {
     FastClick.attach(document.body);
 });
 
-app.controller("navigationController", function($scope, $window) {
+app.controller("navigationController", function($scope, menuData) {
     var navigation = this;
     navigation.hideNavigation = true;
     navigation.myTimeStatus = {
@@ -11689,10 +11689,10 @@ app.controller("navigationController", function($scope, $window) {
     navigation.setActive = function(item) {
         item.active = true;
     };
-    navigation.menuItems = $window.menuData;
+    navigation.menuItems = menuData;
 });
 
-app.controller("sliderController", function($window) {
+app.controller("sliderController", function(sliderData) {
     var slider = this;
     slider.slides = [ {
         active: false
@@ -11701,7 +11701,7 @@ app.controller("sliderController", function($window) {
     }, {
         active: false
     } ];
-    slider.slides = $window.sliderData;
+    slider.slides = sliderData;
     slider.slides[0].active = true;
     slider.setActive = function(currentSlide) {
         for (var i = 0; i < slider.slides.length; i++) {

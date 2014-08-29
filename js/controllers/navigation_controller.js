@@ -1,5 +1,5 @@
 
-app.controller('navigationController', function($scope, $window){
+app.controller('navigationController', function($scope, menuData){
 
     /*console.log("controller: menuData: ", $window.menuData);*/
 
@@ -29,8 +29,7 @@ app.controller('navigationController', function($scope, $window){
         item.active = true;
     };
 
-    navigation.menuItems = $window.menuData;
-
+    navigation.menuItems = menuData;
 });
 
 

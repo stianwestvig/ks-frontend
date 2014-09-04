@@ -4336,7 +4336,8 @@ Other
 
 .bottom-seeker {
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  margin-bottom: 0; }
   .bottom-seeker.right {
     right: 0.9375rem; }
 

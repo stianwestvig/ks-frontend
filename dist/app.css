@@ -4341,6 +4341,11 @@ Other
   .bottom-seeker.right {
     right: 0.9375rem; }
 
+/* Episerver quick navigator style override */
+#epi-quickNavigator {
+  top: inherit !important;
+  bottom: 0 !important; }
+
 /********************************
 Buttons and forms
 ********************************/

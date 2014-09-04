@@ -122,6 +122,10 @@ Other
 }
 
 
-
+/* Episerver quick navigator style override */
+#epi-quickNavigator {
+  top: inherit!important;
+  bottom: 0!important;
+}
 
 

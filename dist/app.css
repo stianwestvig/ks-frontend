@@ -4593,9 +4593,17 @@ ul.pager li {
     clear: left; }
   .article table {
     width: 100%; }
-  .article .contact ul {
-    list-style: none;
-    margin: 0; }
+  .article .contact {
+    display: block; }
+    .article .contact:hover h2, .article .contact:hover li {
+      text-decoration: underline; }
+    .article .contact:focus, .article .contact:active {
+      background-color: #5b5b08; }
+      .article .contact:focus h2, .article .contact:focus li, .article .contact:active h2, .article .contact:active li {
+        color: white; }
+    .article .contact ul {
+      list-style: none;
+      margin: 0; }
 
 .listpage ul.list {
   list-style: none;

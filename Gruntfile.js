@@ -124,6 +124,16 @@ module.exports = function(grunt) {
             ]
         }
     },
+      cachebreaker: {
+          dev: {
+              options: {
+                  match: ['baked_server.js', 'app.css']
+              },
+              files: {
+                  src: ['../Views/Shared/Layouts/_Root.cshtml']
+              }
+          }
+      },
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
@@ -144,7 +154,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-cache-breaker');
 
+  grunt.registerTask('cache', ['cachebreaker']);
   grunt.registerTask('build', ['sass', 'uglify', 'string-replace']);
   grunt.registerTask('default', ['build', 'watch']);
 };

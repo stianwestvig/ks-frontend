@@ -1,10 +1,10 @@
 
 <div ng-controller="sliderController as slider" class="slide-container">
     <div ng-repeat="slide in slider.slides" ng-show="slide.active" class="row relativity slide">
-        <div class="small-12 medium-12 large-8 columns">
+        <div class="small-12 medium-6 large-8 columns">
             <a href="{{slide.link}}"><img ng-src="{{slide.image}}" alt="{{slide.title}}"/></a>
         </div>
-        <div class="small-12 medium-12 large-4 columns">
+        <div class="small-12 medium-6 large-4 columns">
             <div class="teaser">
                 <!-- really: h2 -->
                 <h2 class="header3"><a href="{{slide.link}}">{{slide.title}}</a></h2>

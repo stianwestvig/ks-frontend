@@ -124,23 +124,24 @@ module.exports = function(grunt) {
             ]
         }
     },
-      cachebreaker: {
-          dev: {
-              options: {
-                  match: ['baked_server.js', 'app.css']
-              },
-              files: {
-                  src: ['../Views/Shared/Layouts/_Root.cshtml']
-              }
+
+    cachebreaker: {
+      dev: {
+          options: {
+              match: ['baked_server.js', 'app.css']
+          },
+          files: {
+              src: ['../Views/Shared/Layouts/_Root.cshtml']
           }
-      },
+      }
+    },
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
         js: {
             files: ["js/**/*.js"],
-            tasks: ["uglify"]
+            tasks: ["uglify", "string-replace"]
         },
 
       sass: {

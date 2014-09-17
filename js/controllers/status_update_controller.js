@@ -27,7 +27,6 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
             asyncDataService.toggleLike(update.id, false).success(function(){
                 // if success, remove like from frontend
 
-                
                 update.likes.splice(index, 1);
                 update.hasLiked = false;
             });

@@ -13,7 +13,10 @@ app.controller('statusUpdateCtrl', function($window, asyncDataService, dataServi
         statusUpdate.updates = data;
     }).error(function () {
         
+
+        // for offline frontend statuses to work, fall back to test data service:
         // statusUpdate.updates = dataService.statuses;
+
         statusUpdate.errorHappened = true;
     });
 

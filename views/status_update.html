@@ -42,7 +42,7 @@
                                         </div>
                                         <div ng-repeat="comment in update.comments" class="comment row collapse">
                                             <div class="medium-1 columns hide-for-small-only ">
-                                                <img ng-src="{{update.image}}" />
+                                                <img ng-src="{{comment.urlToProfileImage}}" />
                                             </div>
                                             <div class="small-11 medium-10 columns comment-row">
                                                 <a href="{{comment.urlToProfilePage}}"><h2>{{ comment.name }}</h2></a>

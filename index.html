@@ -26,7 +26,8 @@
 <!-- only for frontend project - routes from node server -->
 <script src="js/routes.js"></script>
 <script>
-    var menuData =  [
+    angular.module("app").value("menuData", [
+
 
         {
             'href': '/en/profilside/',
@@ -106,9 +107,10 @@
         }
 
 
-    ];
+    ]);
 
-    var sliderData = [
+    angular.module("app").value("sliderData", [
+
         {
             'image': 'img/meeting2.jpg',
             'title': 'Påmelding til kommunalpolitisk toppmøte 2014',
@@ -136,7 +138,7 @@
             'link': '#/article',
             'active': false
         }
-    ];
+    ]);
 
 </script>
 

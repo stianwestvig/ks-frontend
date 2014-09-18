@@ -1,7 +1,7 @@
 app.controller('statusUpdateCtrl', function(asyncDataService, dataService, currentUserService, currentProfileService){
 
     var statusUpdate = this;
-    var currentProfileLoginName = currentProfileService.loginName;
+    statusUpdate.currentProfileLoginName = currentProfileService.loginName;
     statusUpdate.currentProfileName = currentProfileService.name;
     statusUpdate.currentUser = currentUserService;
     statusUpdate.errorHappened = false;

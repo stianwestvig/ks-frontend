@@ -11744,11 +11744,10 @@ app.controller("sliderController", function(sliderDataService) {
 
 app.controller("statusUpdateCtrl", function(asyncDataService, dataService, currentUserService, currentProfileService) {
     var statusUpdate = this;
-    statusUpdate.currentProfileLoginName = currentProfileService.loginName;
-    statusUpdate.currentProfileName = currentProfileService.name;
+    statusUpdate.currentProfile = currentProfileService;
     statusUpdate.currentUser = currentUserService;
     statusUpdate.errorHappened = false;
-    var result = asyncDataService.getStatuses(currentProfileLoginName);
+    var result = asyncDataService.getStatuses(currentProfile.loginName);
     result.success(function(data) {
         statusUpdate.updates = data;
     }).error(function() {

@@ -5827,6 +5827,7 @@ Header and navigation
   .frontpage .ks-panel-white .teaser {
     margin-bottom: 1.25rem; }
     .frontpage .ks-panel-white .teaser img {
+      max-height: 88px;
       margin-bottom: 5px; }
     .frontpage .ks-panel-white .teaser p {
       margin-bottom: 0; }

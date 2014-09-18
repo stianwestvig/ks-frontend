@@ -1,8 +1,8 @@
-app.controller('sliderController', function(sliderData){
+app.controller('sliderController', function(sliderDataService){
     var slider = this;
 
     slider.slides = [{active:false},{active:false},{active:false}];
-    slider.slides = sliderData;
+    slider.slides = sliderDataService;
     slider.slides[0].active = true;
 
     slider.setActive = function (currentSlide){

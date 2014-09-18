@@ -11696,7 +11696,7 @@ app.run(function() {
     FastClick.attach(document.body);
 });
 
-app.controller("navigationController", function($scope, menuData) {
+app.controller("navigationController", function($scope, menuDataService) {
     var navigation = this;
     navigation.hideNavigation = true;
     navigation.myTimeStatus = {
@@ -11720,10 +11720,10 @@ app.controller("navigationController", function($scope, menuData) {
     navigation.setActive = function(item) {
         item.active = true;
     };
-    navigation.menuItems = menuData;
+    navigation.menuItems = menuDataService;
 });
 
-app.controller("sliderController", function(sliderData) {
+app.controller("sliderController", function(sliderDataService) {
     var slider = this;
     slider.slides = [ {
         active: false
@@ -11732,7 +11732,7 @@ app.controller("sliderController", function(sliderData) {
     }, {
         active: false
     } ];
-    slider.slides = sliderData;
+    slider.slides = sliderDataService;
     slider.slides[0].active = true;
     slider.setActive = function(currentSlide) {
         for (var i = 0; i < slider.slides.length; i++) {
@@ -11742,11 +11742,11 @@ app.controller("sliderController", function(sliderData) {
     };
 });
 
-app.controller("statusUpdateCtrl", function($window, asyncDataService, dataService) {
+app.controller("statusUpdateCtrl", function(asyncDataService, dataService, currentUserService, currentProfileService) {
     var statusUpdate = this;
-    var currentProfileLoginName = $window.currentProfileLoginName;
-    statusUpdate.currentProfileName = $window.currentProfileName;
-    statusUpdate.currentUser = $window.currentUser;
+    var currentProfileLoginName = currentProfileService.loginName;
+    statusUpdate.currentProfileName = currentProfileService.name;
+    statusUpdate.currentUser = currentUserService;
     statusUpdate.errorHappened = false;
     var result = asyncDataService.getStatuses(currentProfileLoginName);
     result.success(function(data) {
@@ -11936,7 +11936,7 @@ app.controller("CalendarCtrl", function($scope, $http, helperService, dataServic
     }, true);
 });
 
-app.controller("searchCtrl", function($scope, $window) {
+app.controller("searchCtrl", function($scope) {
     var search = this;
     search.tabs = [ {
         active: true

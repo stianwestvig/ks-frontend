@@ -1,9 +1,9 @@
-app.controller('statusUpdateCtrl', function($window, asyncDataService, dataService){
+app.controller('statusUpdateCtrl', function(asyncDataService, dataService, currentUserService, currentProfileService){
 
     var statusUpdate = this;
-    var currentProfileLoginName = $window.currentProfileLoginName;
-    statusUpdate.currentProfileName = $window.currentProfileName;
-    statusUpdate.currentUser = $window.currentUser;
+    var currentProfileLoginName = currentProfileService.loginName;
+    statusUpdate.currentProfileName = currentProfileService.name;
+    statusUpdate.currentUser = currentUserService;
     statusUpdate.errorHappened = false;
 
     // get aync data:

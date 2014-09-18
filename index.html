@@ -26,7 +26,7 @@
 <!-- only for frontend project - routes from node server -->
 <script src="js/routes.js"></script>
 <script>
-    angular.module("app").value("menuData", [
+    angular.module("app").value("menuDataService", [
 
 
         {
@@ -109,7 +109,7 @@
 
     ]);
 
-    angular.module("app").value("sliderData", [
+    angular.module("app").value("sliderDataService", [
 
         {
             'image': 'img/meeting2.jpg',
@@ -140,16 +140,20 @@
         }
     ]);
 
-</script>
-
-<script>
-    var currentUser = {
+    angular.module("app").value("currentUserService", {
 
         imageUrl: 'img/statusimageplaceholder1.png',
         name: 'Stian Westvig',
         profileUrl: '/ansatte/stian-westvig/'
-    }
+    });
+
+    angular.module("app").value("currentProfileService", {
+        loginName: 'stian.westvig',
+        name: 'Stian Westvig'
+    });
+
 </script>
+
 
 
 

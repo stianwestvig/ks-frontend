@@ -1,5 +1,5 @@
 
-app.controller('searchCtrl', function($scope, $window){
+app.controller('searchCtrl', function($scope){
 
     var search = this;
 

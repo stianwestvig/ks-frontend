@@ -1,7 +1,5 @@
 
-app.controller('navigationController', function($scope, menuData){
-
-    /*console.log("controller: menuData: ", $window.menuData);*/
+app.controller('navigationController', function($scope, menuDataService){
 
     var navigation = this;
     navigation.hideNavigation = true;
@@ -29,7 +27,7 @@ app.controller('navigationController', function($scope, menuData){
         item.active = true;
     };
 
-    navigation.menuItems = menuData;
+    navigation.menuItems = menuDataService;
 });
 
 

@@ -5793,7 +5793,8 @@ Header and navigation
   /* Shortcuts */
   /*4x articles on frontpage:*/ }
   .frontpage ul.events-list li {
-    padding-bottom: 0.625rem; }
+    padding-bottom: 0.625rem;
+    max-width: none; }
     .frontpage ul.events-list li:last-child {
       border-bottom: none; }
   .frontpage .slide {

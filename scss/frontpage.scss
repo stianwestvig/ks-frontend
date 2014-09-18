@@ -3,6 +3,7 @@
   ul.events-list {
     li {
       padding-bottom: rem-calc(10);
+      max-width: none;
 
       &:last-child {
         border-bottom: none;

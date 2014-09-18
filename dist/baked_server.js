@@ -11747,7 +11747,7 @@ app.controller("statusUpdateCtrl", function(asyncDataService, dataService, curre
     statusUpdate.currentProfile = currentProfileService;
     statusUpdate.currentUser = currentUserService;
     statusUpdate.errorHappened = false;
-    var result = asyncDataService.getStatuses(currentProfile.loginName);
+    var result = asyncDataService.getStatuses(statusUpdate.currentProfile.loginName);
     result.success(function(data) {
         statusUpdate.updates = data;
     }).error(function() {

@@ -6,7 +6,7 @@ app.controller('statusUpdateCtrl', function(asyncDataService, dataService, curre
     statusUpdate.errorHappened = false;
 
     // get aync data:
-    var result = asyncDataService.getStatuses(currentProfile.loginName);
+    var result = asyncDataService.getStatuses(statusUpdate.currentProfile.loginName);
     result.success(function (data) {
         
         statusUpdate.updates = data;

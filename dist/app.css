@@ -365,7 +365,7 @@ td, th {
   padding: 0; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -1214,7 +1214,7 @@ select {
     left: auto; } }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -1358,7 +1358,7 @@ select {
   content: "/"; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -1636,7 +1636,7 @@ button::-moz-focus-inner {
     display: inline-block; } }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -1728,7 +1728,7 @@ select {
   width: 100%; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -2228,6 +2228,7 @@ select {
   border: 1px solid #cccccc;
   padding: 0.5rem;
   font-size: 0.875rem;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.75);
   line-height: normal;
   border-radius: 0;
@@ -2331,7 +2332,7 @@ label.error {
   color: #f04124; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -2438,7 +2439,7 @@ select {
       display: block; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -2796,11 +2797,12 @@ abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #222222;
-  border-bottom: 1px dotted #dddddd;
   cursor: help; }
 
 abbr {
   text-transform: none; }
+  abbr[title] {
+    border-bottom: 1px dotted #dddddd; }
 
 /* Blockquotes */
 blockquote {
@@ -2910,7 +2912,7 @@ blockquote, blockquote p {
     display: inherit !important; } }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -3046,7 +3048,7 @@ select {
     border-radius: 3px; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -3138,7 +3140,7 @@ select {
   width: 100%; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -3496,11 +3498,12 @@ abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #222222;
-  border-bottom: 1px dotted #dddddd;
   cursor: help; }
 
 abbr {
   text-transform: none; }
+  abbr[title] {
+    border-bottom: 1px dotted #dddddd; }
 
 /* Blockquotes */
 blockquote {
@@ -4026,7 +4029,7 @@ ul.off-canvas-list {
   display: inline; }
 
 meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -5262,7 +5265,7 @@ th.hide-for-touch {
 
 /* Foundation table styles is only for contents of articles */
 .article meta.foundation-version {
-  font-family: "/5.4.3/"; }
+  font-family: "/5.4.5/"; }
 .article meta.foundation-mq-small {
   font-family: "/only screen/";
   width: 0em; }

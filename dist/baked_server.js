@@ -9099,11 +9099,28 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         }
     };
 }), angular.module("ui.bootstrap.dateparser", []).service("dateParser", [ "$locale", "orderByFilter", function(a, b) {
-    function c(a, b, c) {
+    function c(a) {
+        var c = [], d = a.split("");
+        return angular.forEach(e, function(b, e) {
+            var f = a.indexOf(e);
+            if (f > -1) {
+                a = a.split(""), d[f] = "(" + b.regex + ")", a[f] = "$";
+                for (var g = f + 1, h = f + e.length; h > g; g++) d[g] = "", a[g] = "$";
+                a = a.join(""), c.push({
+                    index: f,
+                    apply: b.apply
+                });
+            }
+        }), {
+            regex: new RegExp("^" + d.join("") + "$"),
+            map: b(c, "index")
+        };
+    }
+    function d(a, b, c) {
         return 1 === b && c > 28 ? 29 === c && (a % 4 === 0 && a % 100 !== 0 || a % 400 === 0) : 3 === b || 5 === b || 8 === b || 10 === b ? 31 > c : !0;
     }
     this.parsers = {};
-    var d = {
+    var e = {
         yyyy: {
             regex: "\\d{4}",
             apply: function(a) {
@@ -9165,38 +9182,22 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             regex: a.DATETIME_FORMATS.SHORTDAY.join("|")
         }
     };
-    this.createParser = function(a) {
-        var c = [], e = a.split("");
-        return angular.forEach(d, function(b, d) {
-            var f = a.indexOf(d);
-            if (f > -1) {
-                a = a.split(""), e[f] = "(" + b.regex + ")", a[f] = "$";
-                for (var g = f + 1, h = f + d.length; h > g; g++) e[g] = "", a[g] = "$";
-                a = a.join(""), c.push({
-                    index: f,
-                    apply: b.apply
-                });
-            }
-        }), {
-            regex: new RegExp("^" + e.join("") + "$"),
-            map: b(c, "index")
-        };
-    }, this.parse = function(b, d) {
-        if (!angular.isString(b)) return b;
-        d = a.DATETIME_FORMATS[d] || d, this.parsers[d] || (this.parsers[d] = this.createParser(d));
-        var e = this.parsers[d], f = e.regex, g = e.map, h = b.match(f);
-        if (h && h.length) {
-            for (var i, j = {
+    this.parse = function(b, e) {
+        if (!angular.isString(b) || !e) return b;
+        e = a.DATETIME_FORMATS[e] || e, this.parsers[e] || (this.parsers[e] = c(e));
+        var f = this.parsers[e], g = f.regex, h = f.map, i = b.match(g);
+        if (i && i.length) {
+            for (var j, k = {
                 year: 1900,
                 month: 0,
                 date: 1,
                 hours: 0
-            }, k = 1, l = h.length; l > k; k++) {
-                var m = g[k - 1];
-                m.apply && m.apply.call(j, h[k]);
+            }, l = 1, m = i.length; m > l; l++) {
+                var n = h[l - 1];
+                n.apply && n.apply.call(k, i[l]);
             }
-            return c(j.year, j.month, j.date) && (i = new Date(j.year, j.month, j.date, j.hours)), 
-            i;
+            return d(k.year, k.month, k.date) && (j = new Date(k.year, k.month, k.date, k.hours)), 
+            j;
         }
     };
 } ]), angular.module("ui.bootstrap.position", []).factory("$position", [ "$document", "$window", function(a, b) {
@@ -9563,10 +9564,18 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             var r = angular.element(q.children()[0]);
             j.datepickerOptions && angular.forEach(h.$parent.$eval(j.datepickerOptions), function(a, b) {
                 r.attr(l(b), a);
-            }), angular.forEach([ "minDate", "maxDate" ], function(a) {
-                j[a] && (h.$parent.$watch(b(j[a]), function(b) {
-                    h[a] = b;
-                }), r.attr(l(a), a));
+            }), h.watchData = {}, angular.forEach([ "minDate", "maxDate", "datepickerMode" ], function(a) {
+                if (j[a]) {
+                    var c = b(j[a]);
+                    if (h.$parent.$watch(c, function(b) {
+                        h.watchData[a] = b;
+                    }), r.attr(l(a), "watchData." + a), "datepickerMode" === a) {
+                        var d = c.assign;
+                        h.$watch("watchData." + a, function(a, b) {
+                            a !== b && d(h.$parent, a);
+                        });
+                    }
+                }
             }), j.dateDisabled && r.attr("date-disabled", "dateDisabled({ date: date, mode: mode })"), 
             k.$parsers.unshift(m), h.dateSelection = function(a) {
                 angular.isDefined(a) && (h.date = a), k.$setViewValue(h.date), k.$render(), o && (h.isOpen = !1, 
@@ -9601,7 +9610,7 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
                 h.isOpen = !1, i[0].focus();
             };
             var u = a(q)(h);
-            p ? c.find("body").append(u) : i.after(u), h.$on("$destroy", function() {
+            q.remove(), p ? c.find("body").append(u) : i.after(u), h.$on("$destroy", function() {
                 u.remove(), i.unbind("keydown", t), c.unbind("click", s);
             });
         }
@@ -9629,7 +9638,8 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         b === e && (b = null, a.unbind("click", c), a.unbind("keydown", d));
     };
     var c = function(a) {
-        a && a.isDefaultPrevented() || b.$apply(function() {
+        var c = b.getToggleElement();
+        a && c && c[0].contains(a.target) || b.$apply(function() {
             b.isOpen = !1;
         });
     }, d = function(a) {
@@ -9645,6 +9655,8 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         return i.isOpen = arguments.length ? !!a : !i.isOpen;
     }, this.isOpen = function() {
         return i.isOpen;
+    }, i.getToggleElement = function() {
+        return h.toggleElement;
     }, i.focusToggleElement = function() {
         h.toggleElement && h.toggleElement[0].focus();
     }, i.$watch("isOpen", function(b, c) {
@@ -9659,7 +9671,6 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
     });
 } ]).directive("dropdown", function() {
     return {
-        restrict: "CA",
         controller: "DropdownController",
         link: function(a, b, c, d) {
             d.init(b);
@@ -9667,7 +9678,6 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
     };
 }).directive("dropdownToggle", function() {
     return {
-        restrict: "CA",
         require: "?^dropdown",
         link: function(a, b, c, d) {
             if (d) {
@@ -9730,8 +9740,8 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         restrict: "EA",
         replace: !0,
         templateUrl: "template/modal/backdrop.html",
-        link: function(b) {
-            b.animate = !1, a(function() {
+        link: function(b, c, d) {
+            b.backdropClass = d.backdropClass || "", b.animate = !1, a(function() {
                 b.animate = !0;
             });
         }
@@ -9750,7 +9760,7 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         },
         link: function(c, d, e) {
             d.addClass(e.windowClass || ""), c.size = e.size, b(function() {
-                c.animate = !0, d[0].focus();
+                c.animate = !0, d[0].querySelectorAll("[autofocus]").length || d[0].focus();
             }), c.close = function(b) {
                 var c = a.getTop();
                 c && c.value.backdrop && "static" != c.value.backdrop && b.target === b.currentTarget && (b.preventDefault(), 
@@ -9758,7 +9768,15 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             };
         }
     };
-} ]).factory("$modalStack", [ "$transition", "$timeout", "$document", "$compile", "$rootScope", "$$stackedMap", function(a, b, c, d, e, f) {
+} ]).directive("modalTransclude", function() {
+    return {
+        link: function(a, b, c, d, e) {
+            e(a.$parent, function(a) {
+                b.empty(), b.append(a);
+            });
+        }
+    };
+}).factory("$modalStack", [ "$transition", "$timeout", "$document", "$compile", "$rootScope", "$$stackedMap", function(a, b, c, d, e, f) {
     function g() {
         for (var a = -1, b = n.keys(), c = 0; c < b.length; c++) n.get(b[c]).value.backdrop && (a = c);
         return a;
@@ -9788,7 +9806,7 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             c.bind(h, function() {
                 b.cancel(i), g(), d.$apply();
             });
-        } else b(g, 0);
+        } else b(g);
     }
     var k, l, m = "modal-open", n = f.createNew(), o = {};
     return e.$watch(g, function(a) {
@@ -9806,24 +9824,27 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             keyboard: b.keyboard
         });
         var f = c.find("body").eq(0), h = g();
-        h >= 0 && !k && (l = e.$new(!0), l.index = h, k = d("<div modal-backdrop></div>")(l), 
-        f.append(k));
-        var i = angular.element("<div modal-window></div>");
-        i.attr({
+        if (h >= 0 && !k) {
+            l = e.$new(!0), l.index = h;
+            var i = angular.element("<div modal-backdrop></div>");
+            i.attr("backdrop-class", b.backdropClass), k = d(i)(l), f.append(k);
+        }
+        var j = angular.element("<div modal-window></div>");
+        j.attr({
             "template-url": b.windowTemplateUrl,
             "window-class": b.windowClass,
             size: b.size,
             index: n.length() - 1,
             animate: "animate"
         }).html(b.content);
-        var j = d(i)(b.scope);
-        n.top().value.modalDomEl = j, f.append(j), f.addClass(m);
+        var o = d(j)(b.scope);
+        n.top().value.modalDomEl = o, f.append(o), f.addClass(m);
     }, o.close = function(a, b) {
-        var c = n.get(a).value;
-        c && (c.deferred.resolve(b), h(a));
+        var c = n.get(a);
+        c && (c.value.deferred.resolve(b), h(a));
     }, o.dismiss = function(a, b) {
-        var c = n.get(a).value;
-        c && (c.deferred.reject(b), h(a));
+        var c = n.get(a);
+        c && (c.value.deferred.reject(b), h(a));
     }, o.dismissAll = function(a) {
         for (var b = this.getTop(); b; ) this.dismiss(b.key, a), b = this.getTop();
     }, o.getTop = function() {
@@ -9837,7 +9858,7 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         },
         $get: [ "$injector", "$rootScope", "$q", "$http", "$templateCache", "$controller", "$modalStack", function(b, c, d, e, f, g, h) {
             function i(a) {
-                return a.template ? d.when(a.template) : e.get(a.templateUrl, {
+                return a.template ? d.when(a.template) : e.get(angular.isFunction(a.templateUrl) ? a.templateUrl() : a.templateUrl, {
                     cache: f
                 }).then(function(a) {
                     return a.data;
@@ -9869,12 +9890,13 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
                     var f, i = {}, j = 1;
                     b.controller && (i.$scope = d, i.$modalInstance = k, angular.forEach(b.resolve, function(b, c) {
                         i[c] = a[j++];
-                    }), f = g(b.controller, i)), h.open(k, {
+                    }), f = g(b.controller, i), b.controllerAs && (d[b.controllerAs] = f)), h.open(k, {
                         scope: d,
                         deferred: e,
                         content: a[0],
                         backdrop: b.backdrop,
                         keyboard: b.keyboard,
+                        backdropClass: b.backdropClass,
                         windowClass: b.windowClass,
                         windowTemplateUrl: b.windowTemplateUrl,
                         size: b.size
@@ -10459,7 +10481,7 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
         }
     };
 }), angular.module("ui.bootstrap.typeahead", [ "ui.bootstrap.position", "ui.bootstrap.bindHtml" ]).factory("typeaheadParser", [ "$parse", function(a) {
-    var b = /^\s*(.*?)(?:\s+as\s+(.*?))?\s+for\s+(?:([\$\w][\$\w\d]*))\s+in\s+(.*)$/;
+    var b = /^\s*([\s\S]+?)(?:\s+as\s+([\s\S]+?))?\s+for\s+(?:([\$\w][\$\w\d]*))\s+in\s+([\s\S]+?)$/;
     return {
         parse: function(c) {
             var d = c.match(b);
@@ -10526,11 +10548,16 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
                 });
             };
             z(), w.query = void 0;
-            var C;
-            l.$parsers.unshift(function(a) {
-                return m = !0, a && a.length >= n ? o > 0 ? (C && d.cancel(C), C = d(function() {
+            var C, D = function(a) {
+                C = d(function() {
                     B(a);
-                }, o)) : B(a) : (q(i, !1), z()), p ? a : a ? void l.$setValidity("editable", !1) : (l.$setValidity("editable", !0), 
+                }, o);
+            }, E = function() {
+                C && d.cancel(C);
+            };
+            l.$parsers.unshift(function(a) {
+                return m = !0, a && a.length >= n ? o > 0 ? (E(), D(a)) : B(a) : (q(i, !1), E(), 
+                z()), p ? a : a ? void l.$setValidity("editable", !1) : (l.$setValidity("editable", !0), 
                 a);
             }), l.$formatters.push(function(a) {
                 var b, c, d = {};
@@ -10555,14 +10582,14 @@ angular.module("ui.bootstrap.transition", []).factory("$transition", [ "$q", "$t
             }), j.bind("blur", function() {
                 m = !1;
             });
-            var D = function(a) {
+            var F = function(a) {
                 j[0] !== a.target && (z(), w.$digest());
             };
-            e.bind("click", D), i.$on("$destroy", function() {
-                e.unbind("click", D);
+            e.bind("click", F), i.$on("$destroy", function() {
+                e.unbind("click", F);
             });
-            var E = a(y)(w);
-            t ? e.find("body").append(E) : j.after(E);
+            var G = a(y)(w);
+            t ? e.find("body").append(G) : j.after(G);
         }
     };
 } ]).directive("typeaheadPopup", function() {

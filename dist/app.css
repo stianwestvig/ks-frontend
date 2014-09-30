@@ -5804,6 +5804,8 @@ Header and navigation
     margin-bottom: 1.25rem; }
     .frontpage .slide.ng-hide-add {
       display: inline !important; }
+    .frontpage .slide img {
+      max-height: 305px; }
     .frontpage .slide .teaser a {
       color: #cd2346; }
       .frontpage .slide .teaser a:hover {
@@ -5848,6 +5850,14 @@ Header and navigation
       font-family: "icomoon";
       display: inline-block;
       margin-right: 0.3125rem; }
+
+@media only screen and (min-width:40.063em) and (max-width:64em) {
+  .frontpage .slide img {
+    max-height: 241px; } }
+
+@media only screen and (min-width:64.063em) {
+  .frontpage .slide img {
+    max-height: 252px; } }
 
 /* pager is not nested so it can be reused on search result page */
 ul.pager li {

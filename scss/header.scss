@@ -43,8 +43,7 @@ Header and navigation
     }
   }
 
-  section {
-    text-align: left;
+  div {
 
     &.margin-correction {
       margin-left: rem-calc(-10);
@@ -53,7 +52,7 @@ Header and navigation
 
     &.search-container {
       left: inherit;
-      margin-left: 20px;
+      // margin-left: 20px;
 
       .mytime, .user {
         line-height: normal;
@@ -72,7 +71,7 @@ Header and navigation
     }
 
     &.mintid-container {
-      // margin-top: 20px;
+      margin-top: 20px;
     }
   }
 }

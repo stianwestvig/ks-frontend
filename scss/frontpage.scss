@@ -80,8 +80,16 @@
 
   /*4x articles on frontpage:*/
   .ks-panel-white {
-    .teaser {
+    a.teaser {
+
+      display: block;
+      color: $KSRed;
       margin-bottom: rem-calc(20);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
       img {
         max-height: 88px;
         margin-bottom: 5px;

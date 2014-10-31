@@ -2,7 +2,7 @@
 /********************************
 Buttons and forms
 ********************************/
-.ks-button {
+.ks-button, .xform  input[type="submit"] {
   @include button($padding:rem-calc(12), $bg:$KSRed, $full-width:false);
 }
 
@@ -31,3 +31,4 @@ select {
   background-position: 98% center;
   background-repeat: no-repeat;
 }
+

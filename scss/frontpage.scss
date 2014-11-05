@@ -89,6 +89,11 @@
 
   /*4x articles on frontpage:*/
   .ks-panel-white {
+
+    // remove whitespace over status update:
+    padding-bottom: 0;
+    margin-bottom: 0;
+
     a.teaser {
 
       display: block;

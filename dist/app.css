@@ -5831,17 +5831,20 @@ Header and navigation
   .frontpage .shortcuts .field-validation-error {
     line-height: 1rem;
     color: red; }
-  .frontpage .ks-panel-white a.teaser {
-    display: block;
-    color: #cd2346;
-    margin-bottom: 1.25rem; }
-    .frontpage .ks-panel-white a.teaser:hover {
-      text-decoration: underline; }
-    .frontpage .ks-panel-white a.teaser img {
-      max-height: 88px;
-      margin-bottom: 5px; }
-    .frontpage .ks-panel-white a.teaser p {
-      margin-bottom: 0; }
+  .frontpage .ks-panel-white {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+    .frontpage .ks-panel-white a.teaser {
+      display: block;
+      color: #cd2346;
+      margin-bottom: 1.25rem; }
+      .frontpage .ks-panel-white a.teaser:hover {
+        text-decoration: underline; }
+      .frontpage .ks-panel-white a.teaser img {
+        max-height: 88px;
+        margin-bottom: 5px; }
+      .frontpage .ks-panel-white a.teaser p {
+        margin-bottom: 0; }
   .frontpage .byline {
     margin-bottom: 0.625rem; }
     .frontpage .byline li {

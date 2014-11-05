@@ -69,10 +69,6 @@ Header and navigation
         }
       }
     }
-
-    &.mintid-container {
-      margin-top: 20px;
-    }
   }
 }
 
@@ -87,7 +83,7 @@ Header and navigation
 }
 
 .breadcrumbs {
-  margin-bottom: 1.25rem;
+  margin-bottom: rem-calc(5);
 
   li {
     line-height: rem-calc(20);

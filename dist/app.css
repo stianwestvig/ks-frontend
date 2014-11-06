@@ -5863,7 +5863,9 @@ Header and navigation
     color: red; }
   .frontpage .ks-panel-white {
     padding-bottom: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    background-color: #f9f8f2;
+    border: none; }
     .frontpage .ks-panel-white a.teaser {
       display: block;
       color: #cd2346;

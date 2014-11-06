@@ -5843,9 +5843,10 @@ Header and navigation
     font-size: 0.875rem;
     color: white; }
   .frontpage .mintid-container {
-    margin-bottom: 20px; }
-    .frontpage .mintid-container iframe {
-      width: 100%; }
+    text-align: center;
+    /*iframe {
+      width: 100%;
+    }*/ }
   .frontpage .shortcuts li {
     color: black; }
   .frontpage .shortcuts a {

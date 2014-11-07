@@ -71,13 +71,14 @@
   }
 
   /* Mintid */
-  .mintid-container {
-    text-align: center;
-
-    /*iframe {
-      width: 100%;
-    }*/
+  .panel {
+    &.mintid-container {
+      text-align: center;
+      background-color: #F9F8F2;
+      border: none;
+    }
   }
+
 
   /* Shortcuts */
   .shortcuts {

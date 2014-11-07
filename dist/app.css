@@ -5842,11 +5842,10 @@ Header and navigation
     padding: 5px 15px;
     font-size: 0.875rem;
     color: white; }
-  .frontpage .mintid-container {
+  .frontpage .panel.mintid-container {
     text-align: center;
-    /*iframe {
-      width: 100%;
-    }*/ }
+    background-color: #f9f8f2;
+    border: none; }
   .frontpage .shortcuts li {
     color: black; }
   .frontpage .shortcuts a {

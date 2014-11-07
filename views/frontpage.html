@@ -2,18 +2,17 @@
     <!-- main content -->
 
     <div class="row">
-        <div class="small-12 medium-12 large-8 columns end">
 
-            <!-- slider -->
+        <!-- main col -->
+        <div class="small-12 medium-6 large-8 columns">
             <!--<div slider=""></div>-->
-
 
             <!-- begin big news, replacement for slider -->
             <div class="row bignews">
-                <div class="small-12 medium-6 columns">
+                <div class="small-12 medium-12 large-6 columns">
                     <a href="#/article"><img ng-src="img/meeting2.jpg" alt="Påmelding til kommunalpolitisk toppmøte 2014" src="img/meeting2.jpg"></a>
                 </div>
-                <div class="small-12 medium-6 columns">
+                <div class="small-12 medium-12 large-6 columns">
                     <div class="teaser">
                         <!-- really: h2 -->
                         <h2 class="header3"><a href="#/article">Påmelding til kommunalpolitisk toppmøte 2014</a></h2>
@@ -27,61 +26,10 @@
             </div>
             <!-- end: big news -->
 
-
-        </div>
-        <div class="small-12 medium-12 large-4 columns">
-            <div class="row">
-
-                <div class="small-12 medium-6 large-12 columns">
-                    <div class="panel mintid-container">
-                        <iframe src="http://mintid/MinTidPluginAspx/WinTidPlugin.aspx" width="310" height="73" frameborder="0" scrolling="no"></iframe>
-                         <!--<img src="/img/mintid.png" alt="debug iframe pic." />-->
-                         <!--<iframe src="http://foundation.zurb.com/docs/components/reveal.html" height="75" frameborder="0" scrolling="no"></iframe>-->
-                    </div>
-                </div>
-
-                <!--if "husk" is empty: remove all under here: -->
-                <div class="small-12 medium-6 large-12 columns">
-                    <!-- husk -->
-                    <div class="ks-panel-blue">
-                        <h2 class="header3">HUSK</h2>
-                        <p>Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00
-                            Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00
-                        </p>
-                    </div>
-                </div>
-
-                <!-- snarveier -->
-                <!--<div class="small-12 medium-6 large-12 columns">
-                    <div class="ks-panel-green shortcuts">
-                        <h2 class="header5">Mine snarveier</h2>
-                        <ul>
-                            <li><a href="#/article">Ks.no</a></li>
-                            <li><a href="#/article">Påmelding</a></li>
-                            <li><a href="#/events">Kalender</a></li>
-                            <li><a href="#/article">Arkivering</a></li>
-                            <li><a href="#/frontpage">Ks.no</a></li>
-                            <li><a href="#/article">Påmelding</a></li>
-                            <li><a href="#/events">Kalender</a></li>
-                            <li><a href="#/persons">Arkivering</a></li>
-                        </ul>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="small-12 medium-12 large-4 large-push-8 columns">
-            <!-- kalender -->
-            <div ng-include src="'views/calendar.html'"></div>
-        </div>
-
-        <div class="small-12 large-8 large-pull-4 columns">
             <!-- 4x articles -->
             <div class="ks-panel-white">
                 <div class="row">
-                    <div class="small-12 medium-6 columns">
+                    <div class="small-12 medium-12 large-6 columns">
                         <a href="#" class="teaser">
                             <h2 class="header5">Påmelding til kommunalpolitisk toppmøte 2014</h2>
                             <div class="row">
@@ -97,7 +45,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="small-12 medium-6 columns">
+                    <div class="small-12 medium-12 large-6 columns">
                         <a href="#" class="teaser">
                             <h2 class="header5">Påmelding til kommunalpolitisk toppmøte</h2>
                             <div class="row">
@@ -115,7 +63,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-12 medium-6 columns">
+                    <div class="small-12 medium-12 large-6 columns">
                         <a href="#" class="teaser">
                             <h2 class="header5">Utvendig vindusvask 17. mars</h2>
                             <div class="row">
@@ -131,7 +79,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="small-12 medium-6 columns">
+                    <div class="small-12 medium-12 large-6 columns">
                         <a href="#" class="teaser">
                             <h2 class="header5">Påmelding til kommunalpolitisk toppmøte 2014</h2>
                             <div class="row">
@@ -150,18 +98,34 @@
                 </div>
             </div>
             <!-- end: articles-wrapper -->
-        </div>
 
-    </div>
-
-
-    <!-- status update -->
-    <div class="row">
-        <div class="small-12 medium-12 large-8 columns">
             <div statusupdate="" field="false" ></div>
         </div>
-    </div>
 
+
+        <!-- right col -->
+        <div class="small-12 medium-6 large-4 columns">
+            <div class="panel mintid-container">
+                <iframe src="http://mintid/MinTidPluginAspx/WinTidPlugin.aspx" width="310" height="73" frameborder="0" scrolling="no"></iframe>
+                <!--<img src="/img/mintid.png" alt="debug iframe pic." />-->
+                <!--<iframe src="http://foundation.zurb.com/docs/components/reveal.html" height="75" frameborder="0" scrolling="no"></iframe>-->
+            </div>
+
+            <!-- husk -->
+            <div class="ks-panel-blue">
+                <h2 class="header3">HUSK</h2>
+                <p>Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00
+                    Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00 Avdelingsmøte 25. april kl 16:00
+                </p>
+            </div>
+
+            <!-- kalender -->
+            <div ng-include src="'views/calendar.html'"></div>
+        </div>
+
+
+
+    </div>
 
 </section>
 <!-- end: main-section -->

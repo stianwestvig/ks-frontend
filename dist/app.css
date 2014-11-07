@@ -5832,16 +5832,20 @@ Header and navigation
     max-width: none; }
     .frontpage ul.events-list li:last-child {
       border-bottom: none; }
-  .frontpage .bignews img {
-    max-height: 305px; }
-  .frontpage .bignews .teaser a {
-    color: #cd2346; }
-    .frontpage .bignews .teaser a:hover {
-      text-decoration: underline; }
-  .frontpage .bignews .teaser .ks-button-small {
-    padding: 5px 15px;
-    font-size: 0.875rem;
-    color: white; }
+  .frontpage .bignews {
+    margin-bottom: 1.25rem; }
+    .frontpage .bignews p {
+      margin-bottom: 0; }
+    .frontpage .bignews img {
+      max-height: 305px; }
+    .frontpage .bignews .teaser a {
+      color: #cd2346; }
+      .frontpage .bignews .teaser a:hover {
+        text-decoration: underline; }
+    .frontpage .bignews .teaser .ks-button-small {
+      padding: 5px 15px;
+      font-size: 0.875rem;
+      color: white; }
   .frontpage .panel.mintid-container {
     text-align: center;
     background-color: #f9f8f2;

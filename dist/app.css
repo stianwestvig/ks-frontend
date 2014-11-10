@@ -6418,7 +6418,8 @@ ul.events-list {
       padding: 5px;
       left: 239px; }
       .status-update .update-list ul.update-buttons div.likes-list ul li {
-        font-size: 12px; }
+        font-size: 12px;
+        color: white; }
       .status-update .update-list ul.update-buttons div.likes-list ul:after {
         width: 0;
         height: 0;

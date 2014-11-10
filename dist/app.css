@@ -6334,6 +6334,7 @@ ul.events-list {
   content: "\f0e5";
 }*/
 .status-update .panel {
+  position: relative;
   background-color: transparent;
   border: none; }
 .status-update h2.update {

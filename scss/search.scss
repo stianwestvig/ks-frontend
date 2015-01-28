@@ -11,6 +11,10 @@
       background-color: $KSRed;
     }
 
+    .filter-helper {
+      line-height: rem-calc(33);
+    }
+
     .helper {
       font-size: rem-calc(14);
       font-style: italic;

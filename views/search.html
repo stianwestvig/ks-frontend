@@ -4,7 +4,71 @@
     <div class="row">
         <div class="small-12 medium-8 medium-offset-2 large-8 large-offset-3 columns" ng-controller="searchCtrl as search">
             <tabset>
-                <tab heading="Alle sider (4)" active="search.tabs[0].active">
+                <tab heading="Kolleger (5)" active="search.tabs[0].active">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <form class="search" action="/#/persons">
+                                <div class="row collapse">
+                                    <div class="small-8 medium-6 columns magnify-carrier">
+                                        <input type="text" name="search" class="searchfield" placeholder="Finn kollega" /><span class="icon-search2"></span>
+                                    </div>
+                                    <div class="small-4 columns medium-3 end">
+                                        <input class="ks-button-small postfix" type="submit" value="Finn kollega"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small12 columns">
+                                        <p class="helper">Fant du ikke personen du søkte etter? Søk i fornavn eller etternavn. </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <h2 class="header5 results">Ditt søk gav 5 treff blandt kolleger.</h2>
+
+                            <ul class="list">
+                                <li>
+                                    <h2 class="header4"><a href="#/article">Stian Westvig</a></h2>
+                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
+                                </li>
+                                <li>
+                                    <h2 class="header4"><a href="#/article">Adam Haeger</a></h2>
+                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
+                                </li>
+                                <li>
+                                    <h2 class="header4"><a href="#/article">Thor Henden</a></h2>
+                                    <p>Hvordan registrerer du en reiseregning? Og hvordan skal for eksempel en prosjektleder attestere regninger i Current? Her får du svaret!</p>
+                                </li>
+                                <li>
+                                    <h2 class="header4"><a href="#/article">Per Atle Holvik</a></h2>
+                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
+                                </li>
+                                <li>
+                                    <h2 class="header4"><a href="#/article">Silje Sletteng</a></h2>
+                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <ul class="inline-list right pager">
+                                &lt;!&ndash; querystring params for paging er seff opp til backend å bestemme :) &ndash;&gt;
+                                <li><a href="#/search/?page=1&persons=true" class="active">1</a></li>
+                                <li><a href="#/search/?page=2&persons=true">2</a></li>
+                                <li><a href="#/search/?page=3&persons=true">3</a></li>
+                                <li><a href="#/search/?page=4&persons=true">4</a></li>
+                                <li><a href="#/search/?page=5&persons=true">5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </tab>
+                <tab heading="Alle sider (4)" active="search.tabs[1].active">
 
                     <div class="row">
                         <div class="small-12 columns">
@@ -75,70 +139,6 @@
                             </ul>
                         </div>
                     </div>
-                </tab>
-                <tab heading="Kolleger (5)" active="search.tabs[1].active">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <form class="search" action="/#/persons">
-                                <div class="row collapse">
-                                    <div class="small-8 medium-6 columns magnify-carrier">
-                                        <input type="text" name="search" class="searchfield" placeholder="Finn kollega" /><span class="icon-search2"></span>
-                                    </div>
-                                    <div class="small-4 columns medium-3 end">
-                                        <input class="ks-button-small postfix" type="submit" value="Finn kollega"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="small12 columns">
-                                        <p class="helper">Fant du ikke personen du søkte etter? Søk i fornavn eller etternavn. </p>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <h2 class="header5 results">Ditt søk gav 5 treff blandt kolleger.</h2>
-
-                            <ul class="list">
-                                <li>
-                                    <h2 class="header4"><a href="#/article">Stian Westvig</a></h2>
-                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
-                                </li>
-                                <li>
-                                    <h2 class="header4"><a href="#/article">Adam Haeger</a></h2>
-                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
-                                </li>
-                                <li>
-                                    <h2 class="header4"><a href="#/article">Thor Henden</a></h2>
-                                    <p>Hvordan registrerer du en reiseregning? Og hvordan skal for eksempel en prosjektleder attestere regninger i Current? Her får du svaret!</p>
-                                </li>
-                                <li>
-                                    <h2 class="header4"><a href="#/article">Per Atle Holvik</a></h2>
-                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
-                                </li>
-                                <li>
-                                    <h2 class="header4"><a href="#/article">Silje Sletteng</a></h2>
-                                    <p>Les mer om hvordan du kan bruke 360 -vårt system for dokumenthåndtering</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <ul class="inline-list right pager">
-                                &lt;!&ndash; querystring params for paging er seff opp til backend å bestemme :) &ndash;&gt;
-                                <li><a href="#/search/?page=1&persons=true" class="active">1</a></li>
-                                <li><a href="#/search/?page=2&persons=true">2</a></li>
-                                <li><a href="#/search/?page=3&persons=true">3</a></li>
-                                <li><a href="#/search/?page=4&persons=true">4</a></li>
-                                <li><a href="#/search/?page=5&persons=true">5</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-
                 </tab>
             </tabset>
 

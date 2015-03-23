@@ -9,8 +9,8 @@ app.controller('searchCtrl', function($scope){
         { active: false }
     ];
 
-    // look for 'ansatt' in querystring, and select that tab if found:
-    if(location.search.indexOf('ansatte=true') > 0) {
+    // look for 'sider' in querystring, and select that tab if found:
+    if(location.search.indexOf('sider=true') > 0) {
         search.tabs[1].active = true;
     }
 });
